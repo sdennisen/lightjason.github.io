@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta name="msvalidate.01" content="2EB13C5538E9973D8DFC39C6A455DEFE"><meta name="google-site-verification" content="sVNU1mmaPgvbzlig03vdNtqHYnJNzvbdQYLCWqvtxRU"><meta name="description" content="LightJason is an artificial intelligence BDI multi-agent framework for adding AI with optimization and fuzzy-logical concepts to existing software-architecture"><meta name="keywords" content="AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=0.9"><link href="https://fonts.googleapis.com/css?family=Pridi:200,300,400,500,600,700" rel="stylesheet" media="all"><script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script><link href="https://lightjason.github.io/css/prism.css" rel="stylesheet" media="all"><link href="https://lightjason.github.io/css/layout.css" rel="stylesheet" media="all"><link href="https://lightjason.github.io/css/print.css" rel="stylesheet" media="print"><link href="https://lightjason.github.io/css/mobile.css" rel="stylesheet" media="screen and (max-width:1000px)"><link href="https://lightjason.github.io/css/lightbox.min.css" rel="stylesheet" media="screen"><script src="https://lightjason.github.io/js/prism.js"></script><script src="https://lightjason.github.io/js/prism-agentspeak.js"></script><script src="https://lightjason.github.io/js/toc.min.js"></script><script src="https://lightjason.github.io/js/teletype.js"></script><script src="https://lightjason.github.io/js/script.js"></script><script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-89676576-1","auto"),ga("send","pageview")</script><script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!1,skipTags:["script","noscript","style","textarea","pre","code"],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["autoload-all.js"]}}})</script><link href="https://lightjason.github.io/images/favicon.png" type="image/png" rel="shortcut icon"><link href="https://lightjason.github.io/news/index.xml" type="application/rss+xml" rel="alternate" title="LightJason"><title>LightJason — Tutorial: Efficient Beliefbase</title><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@LightJasonAI"><meta name="twitter:title" content="LightJason - Tutorial: Efficient Beliefbase"><meta name="twitter:description" content="In contrast to Prolog and original Jason, the beliefbase of LightJason is more than a list of facts. LightJason supports a hierarchical structure of beliefs. We support a more organised data structure with efficient searching and unification of beliefs.
+ Previous Knowledge This tutorial describs the usage of beliefbases in a more general usages but also with on-demand access.
+ the scenario starts with the AgentSpeak 15min tutorial it is also nessessary to understand the basic structure of literals and the extended literal structure in LightJason  What is the basic structure of a beliefbase?..."><meta name="twitter:image" content="https://lightjason.github.io/images/logo.png"><meta property="og:site_name" content="LightJason"><meta property="og:url" content="http://lightjason.org"><meta property="og:title" content="LightJason - Tutorial: Efficient Beliefbase"><meta property="og:image" content="https://lightjason.github.io/images/logo.png"><meta property="og:description" content="In contrast to Prolog and original Jason, the beliefbase of LightJason is more than a list of facts. LightJason supports a hierarchical structure of beliefs. We support a more organised data structure with efficient searching and unification of beliefs.
+ Previous Knowledge This tutorial describs the usage of beliefbases in a more general usages but also with on-demand access.
+ the scenario starts with the AgentSpeak 15min tutorial it is also nessessary to understand the basic structure of literals and the extended literal structure in LightJason  What is the basic structure of a beliefbase?..."><script type="application/ld+json">[{
+	"@context": "http://schema.org",
+	"@type": "Organization",	
+	"name" : "LightJason",
+	"email" : "info@lightjason.org",
+	"url" : "http://lightjason.org",
+	"logo" : "https://lightjason.github.io/images/logo.png",
+	"founders": [{
+			"@type": "Person",
+			"email" : "malte@lightjason.org",
+			"name" : "Malte Aschermann",
+			"givenName" : "Malte",
+			"familyName" : "Aschermann"
+			, "image" : "http://meclab.in.tu-clausthal.de/images/people/malte_aschermann.png"
+		}
+		,{
+			"@type": "Person",
+			"email" : "philipp@lightjson.org",
+			"name" : "Philipp Kraus",
+			"givenName" : "Philipp",
+			"familyName" : "Kraus"
+			, "image" : "http://www.gravatar.com/avatar/2de3ae533823dae934d3b45b239f797c"
+			, "sameAs" : [
+				"http://xing.to/philippkraus",
+				"http://www.linkedin.com/in/philipp-kraus"
+			]
+		}
+		]
+},
+
+
+{
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	"name": "LightJason",
+	"alternateName": "LightJason",
+	"url":"http://lightjason.org"
+	, "license" : "https://creativecommons.org/licenses/by-sa/4.0/"
+	, "genre" : "AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation", "keywords" : "AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation"
+	, "author" : [{
+			"@type": "Person",
+			"email" : "malte@lightjason.org",
+			"name" : "Malte Aschermann",
+			"givenName" : "Malte",
+			"familyName" : "Aschermann"
+			, "image" : "http://meclab.in.tu-clausthal.de/images/people/malte_aschermann.png"
+		}
+		,{
+			"@type": "Person",
+			"email" : "philipp@lightjson.org",
+			"name" : "Philipp Kraus",
+			"givenName" : "Philipp",
+			"familyName" : "Kraus"
+			, "image" : "http://www.gravatar.com/avatar/2de3ae533823dae934d3b45b239f797c"
+			, "sameAs" : [
+				"http://xing.to/philippkraus",
+				"http://www.linkedin.com/in/philipp-kraus"
+			]
+		}
+		]
+}
+,{
+	"@context" : "http://schema.org",
+	"@type" : "TechArticle",
+	"headline" : "Tutorial: Efficient Beliefbase",
+	"proficiencyLevel" : "Beginner",
+	"wordCount" :  800 ,
+	"datePublished" : "2017-01-01T12:00:00+01:00",
+	"image" : "https://lightjason.github.io/images/logo.png" 
+}
+]</script></head><body><div class="document"><div id="nav">☰</div><div class="documentwrapper"><div class="bodywrapper"><div class="body"><h1 id="root"><a href="#root">Tutorial: Efficient Beliefbase</a></h1><p>In contrast to Prolog and original Jason, the beliefbase of LightJason is more than a list of facts. LightJason supports a hierarchical structure of beliefs. We support a more organised data structure with efficient searching and unification of beliefs.</p><div id="toccontainer">Contents [<a href="#" id="tochideshow">Hide</a>]<div id="toc"></div></div><h2 id="previous-knowledge">Previous Knowledge</h2><p>This tutorial describs the usage of beliefbases in a more general usages but also with <em>on-demand access</em>.</p><ul><li>the scenario starts with the <a href="/tutorials/agentspeak-in-fifteen-minutes/">AgentSpeak 15min</a> tutorial</li><li>it is also nessessary to understand the basic structure of <a href="/knowledgebase/logicalprogramming/#a-name-atomliterals-atom-literals-a">literals</a></li><li>and the <a href="/knowledgebase/differencetojason/#terms-and-literals">extended literal</a> structure in LightJason</li></ul><h2 id="what-is-the-basic-structure-of-a-beliefbase">What is the basic structure of a beliefbase?</h2><p>The beliefbase consists of three different elements</p><ul><li><strong>Storage</strong> is a persistent thread-safe structure for the literals and views</li><li><strong>Views</strong> are structured elements to build the hierarchical naming structure of the literal</li><li><strong>Beliefbase</strong> is a middleware between views and storage to create goal-trigger</li></ul><h3 id="persistence">Persistence</h3><p>In general, beliefs can be stored in a persistent way. So an literal object will be set into the storage and the views creates the tree structure.</p><img src="/images/beliefbase.svg#centering" alt="beliefbase" style="width:30%"><p>In this example, there are two agents and both agents are referenced to the equal storage, but use different views.</p><ul><li><p>Agent 1 gets access to the literal by the structure 
+<pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">foo/value(5)
+</code></pre>
+</p></li><li><p>Agent 2 gets access to the literal by the structure 
+<pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">foo2/value(5)
+</code></pre>
+</p></li></ul><p>This structure allows the agent to store knowledge in a persistent way with generating the goals. But this type of beliefs consumes more memory and reduce performance during modification. On each cycle the storage can generate or delete beliefs which triggers the goals.</p><h3 id="on-demand">On-Demand</h3><p>The on-demand beliefbase allows you to create a non-persistence belief definition, which is suitable to get access to the environment / underlying software architecture. It follows up the <a href="https://en.wikipedia.org/wiki/Lazy_loading">lazy loading pattern</a>)</p><img src="/images/ondemandbeliefbase.svg#centering" alt="on-demand beliefbase" style="width:50%"><p>For some practical explanation, think about agents as:</p><blockquote><p>Agents are <em>individual and self-organized</em> items, which perceives their environment autonomous.</p></blockquote><p>We built this structure with <em>on-demand beliefbases</em> into LightJason/AgentSpeak(L++), so you get access to a belief which will be created if you access it and after usage the literal object will be removed. This is a very efficient way for perceiving. We recommend the following workflow:</p><ol><li>build an on-demand beliefbase for all dynamic access and changeable information e.g. environment, other agents</li><li>create a plan which will run continuously, i.e. the plan runs in each cycle</li><li>within this plan access the belief</li><li>if the belief can be unified within the plan condition, get the information out of the belief and put it – if needed – into a persistent beliefbase</li></ol><h4 id="agent-with-on-demand-beliefbase">Agent with on-demand beliefbase</h4><p>Java agent class with inner on-demand beliefbase class. The inner class can get access to all properties within the agent class. The environment class contains attributes to generate data as literals for each agent. The on-demand beliefbase is only a wrapper for the environment literals.</p>
+
+<pre><code class="language-java">/* agent class which can deal with an environment */
+public final class MyAgent extends IBaseAgent&lt;MyAgent&gt;
+{
+    /**
+     * environment reference
+     */ 
+    private Environment m_environment;
+
+    /*
+     * constructor of the agent
+     * @param p_environment environment reference
+     * @param p_configuration agent configuration of the agent generator
+     */
+    public MyAgent( final Environment p_environment, final IAgentConfiguration&lt;MyAgent&gt; p_configuration )
+    {
+        super( p_configuration );
+        m_environment = p_environment;
+        
+        m_beliefbase
+            // the on-demand beliefbase referenced all beliefs with &quot;env/&quot;
+            .add( new EnvironmentBeliefbase().create( &quot;env&quot; ) );
+    }
+    
+    /* inner class with on-demand beliefbase */
+    private final class EnvironmentBeliefbase extends IDemandBeliefbase
+    {
+        @Override
+        public final int size()
+        {
+            // returns the number of the literals within the environment for the agent
+            return m_environment.size( MyAgent.this );
+        }
+
+        @Override
+        public final boolean empty()
+        {
+            // returns empty-flag for literals of this agent
+            return m_environment.empty( MyAgent.this );
+        }
+
+        @Override
+        public final boolean containsLiteral( final String p_key )
+        {
+            // checks the existence of a literal for the agent
+            return m_environment.containsKey( MyAgent.this, p_key.toLowerCase() );
+        }
+
+        @Override
+        public final Stream&lt;ILiteral&gt; streamLiteral()
+        {
+            // returns a stream of all literals for the agent
+            return m_environment.stream( MyAgent.this );
+        }
+
+        @Override
+        public final Collection&lt;ILiteral&gt; literal( final String p_key )
+        {
+            // return a collection of all literals for the agent
+            return this.containsLiteral( p_key )
+                   ? m_environment.stream( MyAgent.this ).collect( Collectors.toSet() )
+                   : Collections.emptySet();
+        }
+    }
+}
+</code></pre>
+
+<h4 id="asl-of-the-agent">ASL of the agent</h4><p>On the ASL side all beliefs with the prefix <code>env/</code> will be matched to the on-demand beliefbase and will be passed back to the agent. On the unification (<code>>></code>) the literal will be generated and unified into the variable <code>X</code>. After printing the value of X, it will be stored in the persistent beliefbase. Because of LightJason’s system architecture the <code>checkenvironment</code> plan will be run in each cycle (in parallel to other plans), so you can control the agent’s perceptions in a clean way.</p>
+
+<p><pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">!checkenvironment.</p>
+
+<p>+!checkenvironment
+    : &gt;&gt;env/foo(X) &lt;-
+        generic/print( &ldquo;envrionment&rdquo;, X );
+        +myknowledge(X);
+        !checkenvironment
+.</p>
+
+<p>+myknowledge(T) &lt;-
+    generic/print( &ldquo;I get knowledge&rdquo;, T )
+.<br />
+</code></pre>
+<p></p></div></div></div><div class="sidebar" role="navigation" aria-label="main navigation"><div class="sidebarwrapper"><div class="logo"><a href="https://lightjason.github.io/">LightJason</a><div class="subtitle">Concurrent BDI multi-agent system</div></div><ul><li><a class="reference internal" href="/news/">News</a> <span class="sublink">(<a href="/news/index.xml">RSS</a>)</span></li><li><a class="reference internal" href="/publication/">Publication</a></li><li><a class="reference internal" href="/framework/">Framework</a></li><li><a class="reference internal" href="/knowledgebase/">Knowledge Base</a></li><li><a class="reference internal" href="/tutorials/">Tutorials</a></li><li><a class="reference internal" href="/about/">About</a></li><li><a class="reference internal" href="/contact/">Contact</a></li></ul><ul class="horizontal socialmedia"><li><a href="https://github.com/LightJason"><img src="/images/github.svg" alt="github" class="socialmediaimg"></a></li><li><a href="http://twitter.com/LightJasonAI"><img src="/images/twitter.svg" alt="twitter" class="socialmediaimg"></a></li><li><a href="https://vimeo.com/lightjason"><img src="/images/vimeo.svg" alt="vimeo" class="socialmediaimg"></a></li></ul><ul class="socialmediaaction"><li><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs")</script><a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a></li><li><script src="https://apis.google.com/js/platform.js" async defer></script><script>window.___gcfg={lang:"en-GB",parsetags:"onload"}</script><div class="g-plus" data-action="share" data-annotation="none"></div></li><li><script>!function(e,n,t){var o,c=e.getElementsByTagName(n)[0];e.getElementById(t)||(o=e.createElement(n),o.id=t,o.src="//connect.facebook.net/en-GB/sdk.js#xfbml=1&version=v2.8&appId=360647707384539",c.parentNode.insertBefore(o,c))}(document,"script","facebook-jssdk")</script><div class="fb-like" data-href="http://lightjason.org/tutorials/efficient-beliefbase/" data-layout="button" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div></li></ul></div></div><div class="clear"></div></div><div class="footer"><span class="contact">info [at] lightjason.org</span><ul class="horizontal"><li><a href="https://github.com/LightJason/AgentSpeak">AgentSpeak(L++) Repository</a></li><li><a href="https://github.com/LightJason/REST">REST-API Repository</a></li><li>© Feb 2017</li></ul></div><script src="https://lightjason.github.io/js/lightbox.min.js"></script></body></html>

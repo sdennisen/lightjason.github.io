@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LightJason</title>
+    <link>https://lightjason.github.io/index.xml</link>
+    <description>Recent content on LightJason</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 17 Feb 2017 20:29:56 +0100</lastBuildDate>
+    <atom:link href="https://lightjason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Update actions and agent cycle documentation</title>
+      <link>https://lightjason.github.io/news/2017-02-actionscycle/</link>
+      <pubDate>Fri, 17 Feb 2017 20:29:56 +0100</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2017-02-actionscycle/</guid>
+      <description>&lt;p&gt;Update &lt;a href=&#34;https://lightjason.github.io/knowledgebase/actions&#34;&gt;actions&lt;/a&gt; and &lt;a href=&#34;https://lightjason.github.io/knowledgebase/differencetojason&#34;&gt;agent cycle&lt;/a&gt; description within the knowledge base. &lt;/p&gt;
+
+&lt;p&gt;The agent cycle images allows you to use a &lt;em&gt;mouse over effect&lt;/em&gt; to highlight elements. The action list links to the source code documentation. We will append the description of the actions soon.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tutorial and knowledge base working in progress</title>
+      <link>https://lightjason.github.io/news/2017-02-tutorials/</link>
+      <pubDate>Fri, 10 Feb 2017 00:11:43 +0100</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2017-02-tutorials/</guid>
+      <description>&lt;p&gt;Update the &lt;a href=&#34;https://lightjason.github.io/knowledgebase&#34;&gt;knowledge base&lt;/a&gt; and &lt;a href=&#34;https://lightjason.github.io/tutorials&#34;&gt;tutorials&lt;/a&gt; and add an &lt;a href=&#34;https://github.com/LightJason/Examples&#34;&gt;example repository&lt;/a&gt; with source codes and generated jar files also: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We reduce the tutorials, so that each tutorial contains only &lt;em&gt;one&lt;/em&gt; description with sources. For each tutorial we create a &lt;em&gt;full working&lt;/em&gt; example and explain it.&lt;/li&gt;
+&lt;li&gt;On the knowledge base we put a schematic illustration of our &lt;em&gt;agent cycle&lt;/em&gt; and compare it with the original Jason cycle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tutorials and knowledge base are &lt;em&gt;heavily under developing&lt;/em&gt;, because we would like to use LightJason also in teaching&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Add emergency video</title>
+      <link>https://lightjason.github.io/news/2017-02-video/</link>
+      <pubDate>Thu, 02 Feb 2017 01:13:14 +0100</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2017-02-video/</guid>
+      <description>&lt;p&gt;Our first &lt;em&gt;benchmarking video&lt;/em&gt; (which is also inserted into our &lt;a href=&#34;https://lightjason.github.io/publication&#34;&gt;technical report&lt;/a&gt;). The video present a performance test of our framework with 15.000 agents on an emergency scenarion.
+&lt;/p&gt;
+
+&lt;p&gt;The video is running in realtime on a single computer (iMac with 2,9 GHz Intel Core i5, 16 GB RAM and OSX El Captain 10.11.6).&lt;/p&gt;
+
+&lt;iframe class=&#34;video&#34; src=&#34;https://player.vimeo.com/video/202120833&#34; width=&#34;640&#34; height=&#34;360&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;a class=&#34;videoprintlink&#34; href=&#34;https://vimeo.com/lightjason/emergencyscenario&#34;&gt;https://vimeo.com/lightjason/emergencyscenario&lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>Update publication</title>
+      <link>https://lightjason.github.io/news/2017-02-publication/</link>
+      <pubDate>Wed, 01 Feb 2017 06:18:00 +0100</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2017-02-publication/</guid>
+      <description>&lt;p&gt;We have updated the our &lt;a href=&#34;https://lightjason.github.io/publication&#34;&gt;publication list&lt;/a&gt; and the PDF files for downloading.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mobile website</title>
+      <link>https://lightjason.github.io/news/2017-01-mobile/</link>
+      <pubDate>Thu, 05 Jan 2017 16:17:51 +0100</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2017-01-mobile/</guid>
+      <description>&lt;p&gt;We have created a &lt;em&gt;mobile version&lt;/em&gt; of our website for any mobile devices, but we need to optimize the website for caching.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Update</title>
+      <link>https://lightjason.github.io/news/2017-01-tutorial/</link>
+      <pubDate>Sun, 01 Jan 2017 22:02:54 +0100</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2017-01-tutorial/</guid>
+      <description>&lt;p&gt;We update the tutorials with a short introduction in &lt;a href=&#34;https://lightjason.github.io/tutorials/efficient-beliefbase&#34;&gt;efficient beliefbases&lt;/a&gt; and &lt;a href=&#34;https://lightjason.github.io/tutorials/communication&#34;&gt;communication&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://lightjason.github.io/&#34;&gt;LightJason achitecture&lt;/a&gt; allows you to create &lt;em&gt;on-demand beliefbases&lt;/em&gt; (which uses a &lt;a href=&#34;https://en.wikipedia.org/wiki/Lazy_loading&#34;&gt;lazy loading&lt;/a&gt;) structure. The beliefs within the beliefbase are generated during the agent gets access to the literal. This pattern is very fast and efficient.&lt;/p&gt;
+
+&lt;p&gt;The communication of &lt;a href=&#34;https://lightjason.github.io/&#34;&gt;LightJason&lt;/a&gt; does not define any build-in agent communication, so for each scenario you need to create your own communication structure. within the tutorial we show you a baseline example to implement communication.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EUMAS 2016 Slides</title>
+      <link>https://lightjason.github.io/news/2016-12-eumas/</link>
+      <pubDate>Thu, 15 Dec 2016 17:30:49 +0100</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2016-12-eumas/</guid>
+      <description>&lt;p&gt;Our slides of our &lt;a href=&#34;http://eumas-at2016.webs.upv.es/EUMAS2016.html&#34;&gt;EUMAS 2016&lt;/a&gt; talk, a &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes&#34;&gt;15min tutorial&lt;/a&gt; to create a full working AgentSpeak(L++) example from scratch. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>REST-API</title>
+      <link>https://lightjason.github.io/news/2016-12-restapi/</link>
+      <pubDate>Thu, 01 Dec 2016 17:23:49 +0100</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2016-12-restapi/</guid>
+      <description>&lt;p&gt;We added a &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST-API&lt;/a&gt; to control the agent execution structure and behaviour. &lt;/p&gt;
+
+&lt;p&gt;The API is written with &lt;a href=&#34;https://jersey.java.net/&#34;&gt;Jersey&lt;/a&gt; and can be included into existing &lt;a href=&#34;https://en.wikipedia.org/wiki/Java_servlet&#34;&gt;Servlet&lt;/a&gt; structures. The component is written as a single add-on for our AgentSpeak(L++) agents and is located in its own &lt;a href=&#34;https://github.com/LightJason/REST&#34;&gt;repository&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EUMAS 2016</title>
+      <link>https://lightjason.github.io/news/2016-11-eumas/</link>
+      <pubDate>Fri, 25 Nov 2016 11:30:33 +0200</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2016-11-eumas/</guid>
+      <description>&lt;p&gt;We will join the &lt;a href=&#34;http://eumas-at2016.webs.upv.es/EUMAS2016.html&#34;&gt;EUMAS 2016&lt;/a&gt; conference and present our current work. Right now we are within the testing-phase of LightJason&amp;rsquo;s AgentSpeak(L++). Right now there exist some examples for various domains and applications: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Towers of Hanoi&lt;/em&gt; &lt;a href=&#34;https://github.com/LightJason/AgentSpeak/blob/master/src/test/resources/agent/hanoi.asl&#34;&gt;ASL&lt;/a&gt; and &lt;a href=&#34;https://github.com/LightJason/AgentSpeak/blob/master/src/test/java/org/lightjason/agentspeak/agent/IBaseHanoiTowers.java&#34;&gt;Java class&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/flashpixx/RoutingSimulation&#34;&gt;Pokemon-Scenario&lt;/a&gt; currently under development&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/APTD/Simulation&#34;&gt;Asimov&lt;/a&gt; our new research project&lt;/li&gt;
+&lt;li&gt;A full documentation on the website is also still under construction (hope for finishing at the end of Jan 2017)&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Add Railroad / Syntax Diagrams</title>
+      <link>https://lightjason.github.io/news/2016-07-railroad/</link>
+      <pubDate>Sat, 16 Jul 2016 00:31:06 +0200</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2016-07-railroad/</guid>
+      <description>&lt;p&gt;For our &lt;a href=&#34;https://lightjason.github.io/framework/agentspeak&#34;&gt;AgentSpeak(L++)&lt;/a&gt; language defintion, we have created &lt;a href=&#34;https://en.wikipedia.org/wiki/Syntax_diagram&#34;&gt;railroad / syntax diagrams&lt;/a&gt; based on the &lt;a href=&#34;https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form&#34;&gt;EBNF&lt;/a&gt; grammar definition. &lt;/p&gt;
+
+&lt;p&gt;There are two main diagram types. The diagram are interactive so the grammar rules can be swapped and each element within a rule is clickable and referenced its own definition. The grammar files will be generated automatically based on the current source code definition&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm&#34;&gt;Agent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/PlanBundle.g4/index.htm&#34;&gt;PlanBundle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Project is start-up</title>
+      <link>https://lightjason.github.io/news/2016-07-projectonline/</link>
+      <pubDate>Fri, 01 Jul 2016 19:30:33 +0200</pubDate>
+      
+      <guid>https://lightjason.github.io/news/2016-07-projectonline/</guid>
+      <description>&lt;p&gt;We have created the main website of the project, registered the domain &lt;a href=&#34;http://lightjason.org&#34;&gt;lightjason.org&lt;/a&gt; and right now trying to create the first full Maven package. &lt;/p&gt;
+
+&lt;p&gt;We are working on a first example similar to the &lt;em&gt;Gold Miners&lt;/em&gt; scenario (see &lt;a href=&#34;http://jacamo.sourceforge.net/tutorial/gold-miners/&#34;&gt;JaCaMo&lt;/a&gt;) but with OpenGL support with the Java &lt;a href=&#34;https://libgdx.badlogicgames.com/&#34;&gt;LibGDX&lt;/a&gt; library. We will be working on the project and the website continuously.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lightjason.github.io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/</guid>
+      <description>
+
+&lt;p&gt;LightJason is a &lt;em&gt;concurrent BDI multi-agent framework&lt;/em&gt; for creating a multi-agent systems with Java. A &lt;a href=&#34;https://en.wikipedia.org/wiki/Multi-agent_system&#34;&gt;multi-agent system&lt;/a&gt; is part of the research of &lt;a href=&#34;https://en.wikipedia.org/wiki/Artificial_intelligence&#34;&gt;artificial intelligence&lt;/a&gt;. We try to create a framework which allows to add AI algorithms to an existing software-architecture. The framework combines classical artificial intelligence with optimization and &lt;a href=&#34;https://en.wikipedia.org/wiki/Fuzzy_logic&#34;&gt;fuzzy-logical&lt;/a&gt; concepts on a high-scalable concurrency architecture.&lt;/p&gt;
+
+&lt;p&gt;The project is inspired by &lt;a href=&#34;https://en.wikipedia.org/wiki/AgentSpeak&#34;&gt;AgentSpeak(L)&lt;/a&gt; and  &lt;a href=&#34;http://jason.sourceforge.net&#34;&gt;Jason&lt;/a&gt;, but designed and implemented from scratch.
+LightJason is fine-tuned to concurrent plan execution suitable for distributed frameworks and aims at efficient and scalable integration with existing platforms.
+To design agents, this framework uses &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm&#34;&gt;AgentSpeak(L++)&lt;/a&gt;, a modular extension of AgentSpeak(L), including new features, e.g.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;framework/agentspeak#lambdaexpression&#34;&gt;lambda-expression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;framework/agentspeak#multiplanrule&#34;&gt;multi-plan / -rule definition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;framework/agentspeak#repairaction&#34;&gt;explicit repair-action&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;framework/agentspeak#multiassignment&#34;&gt;multi-variable assignments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;framework/agentspeak#parallelism&#34;&gt;parallel execution and thread-safe variables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We are working on the theoretical background and developing the whole system with current software development technologies.&lt;/p&gt;
+
+&lt;p&gt;One of our main desires is to publish a full useable framework which can be used in &lt;em&gt;productive systems&lt;/em&gt; and is understandable also for &lt;em&gt;non-computer scientists&lt;/em&gt;. We try to close the gap between modelling aspects, performance and scalability and human-understandable clean written source code.&lt;/p&gt;
+
+&lt;h5 id=&#34;feedback-and-user-contribution&#34;&gt;Feedback and User Contribution&lt;/h5&gt;
+
+&lt;p&gt;We welcome any constructive feedback.
+If you think there is anything missing or wish to contribute to our documentation feel free to &lt;a href=&#34;https://lightjason.github.io/contact&#34;&gt;contact us&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;send us &lt;a href=&#34;https://help.github.com/articles/about-pull-requests/&#34;&gt;pull requests&lt;/a&gt; for contributing to our &lt;a href=&#34;https://github.com/LightJason/&#34;&gt;repositories&lt;/a&gt; with corrections and further input (preferably)&lt;/li&gt;
+&lt;li&gt;create an &lt;a href=&#34;https://github.com/LightJason/AgentSpeak/issues&#34;&gt;issue&lt;/a&gt; or&lt;/li&gt;
+&lt;li&gt;write us an &lt;a href=&#34;https://lightjason.github.io/contact&#34;&gt;email&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://lightjason.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/about/</guid>
+      <description>&lt;p&gt;This project arises during our PhD time, because our research deals with &lt;a href=&#34;https://en.wikipedia.org/wiki/Multi-agent_system&#34;&gt;multi-agent systems&lt;/a&gt;.
+Our research projects consider &lt;em&gt;traffic&lt;/em&gt; and &lt;em&gt;crowd simulation&lt;/em&gt;, but we try to simulate &lt;em&gt;complex manner of human behaviour&lt;/em&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://lightjason.github.io/contact&#34;&gt;Malte&lt;/a&gt;&amp;rsquo;s research depends on &lt;em&gt;complex overtaking
+manoeuvre&lt;/em&gt; and &lt;em&gt;norm usage&lt;/em&gt; with the on a high
+abstraction level. The research contains a more
+application-based structure, but it is a great and
+helpful work, in which way a multi-agent system can
+be used in complex simulation scenarios.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;p/&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://lightjason.github.io/contact&#34;&gt;Philipp&lt;/a&gt;&amp;rsquo;s focus of research is the &lt;em&gt;high scalability&lt;/em&gt; of such
+complex simulation systems with data mining / big
+data and software developing aspects.
+His thesis mainly contains algorithms, data structure, software developing and formal structure.
+The applied software building process is inspired by &lt;a href=&#34;https://en.wikipedia.org/wiki/Scrum_(software_development)&#34;&gt;Scrum&lt;/a&gt; and
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Continuous_integration&#34;&gt;Continuous Integration&lt;/a&gt; to get a long-live, robust
+software architecture.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Based on these perspectives, we can motivate our work.
+Our work is inspired by &lt;a href=&#34;http://jason.sourceforge.net/&#34;&gt;Jason&lt;/a&gt;, a multi-agent framework developed by Jomi F. Hübner and Rafael H. Bordini, wich we didn&amp;rsquo;t use due to conflicts with our requirements. Instead we based our work on some of their theoretical concepts and ideas.&lt;/p&gt;
+
+&lt;p&gt;We tried a lot of different types of frameworks like &lt;a href=&#34;http://www.terrame.org/&#34;&gt;TerraME&lt;/a&gt;, &lt;a href=&#34;http://www.flame.ac.uk/&#34;&gt;FLAME&lt;/a&gt;, &lt;a href=&#34;http://ii.tudelft.nl/trac/goal&#34;&gt;GOAL&lt;/a&gt; or &lt;a href=&#34;http://cs.gmu.edu/~eclab/projects/mason/&#34;&gt;MASON&lt;/a&gt; to create an usable system for our simulation, but without success, so that we build up our framework from scratch.&lt;/p&gt;
+
+&lt;p&gt;From another point of view, we had compared the main &lt;em&gt;popular programming language indices&lt;/em&gt; &lt;a href=&#34;http://www.tiobe.com/tiobe-index/&#34;&gt;Tiobe&lt;/a&gt;, &lt;a href=&#34;http://redmonk.com/sogrady/2016/02/19/language-rankings-1-16/&#34;&gt;RedMonk&lt;/a&gt; and &lt;a href=&#34;http://pypl.github.io/PYPL.html&#34;&gt;PopularitY&lt;/a&gt; in 2015 / 2016 and we found out, that agent-programming languages are not listed on any index, only &lt;em&gt;logical programming (Prolog)&lt;/em&gt; is found on Tiobe.
+Our goal for this system is to create a practically usable and well documented framework which can also be used by non-software-developers and included in already existing projects. We try to explain the ideas, concepts and technical background in a clean and understandable way to get a better approval of agent-programming and modelling.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;All content of the website is defined under the
+&lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Creative Commons License (CC BY-SA 4.0)&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;img src=&#34;https://mirrors.creativecommons.org/presskit/icons/cc.svg#floatcentering&#34; alt=&#34;cc&#34; /&gt;
+&lt;img src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg#floatcentering&#34; alt=&#34;by&#34; /&gt;
+&lt;img src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg#floatcentering&#34; alt=&#34;sa&#34; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AgentSpeak(L&#43;&#43;) Language Features</title>
+      <link>https://lightjason.github.io/framework/agentspeak/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/framework/agentspeak/</guid>
+      <description>
+
+&lt;p&gt;We present here a short overview of language examples of our &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; syntax. You can found the full &lt;a href=&#34;https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form&#34;&gt;EBNF description&lt;/a&gt; of the language syntax on the project &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/&#34;&gt;documentation page&lt;/a&gt;. The Railroad / Syntax diagrams of the &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; language:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/&#34;&gt;Agent Railroad / Syntax Diagram&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/PlanBundle.g4/&#34;&gt;PlanBundle Railroad / Syntax Diagram&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;a-name-lambdaexpression-a-lambda-expression&#34;&gt;&lt;a name=&#34;lambdaexpression&#34;&gt;&lt;/a&gt;Lambda Expression&lt;/h2&gt;
+
+&lt;p&gt;The language does not support a looping directly, but we are using &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#945f3fc449518a73b9f5f32868db466c&#34;&gt;lambda expression&lt;/a&gt; which care based on the theoretical structure of a &lt;a href=&#34;https://en.wikipedia.org/wiki/Lambda_calculus&#34;&gt;lambda calculus&lt;/a&gt;. In a short word we use a defintion like a &lt;em&gt;for each&lt;/em&gt; call, so each element in a variable can be looped.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The example creates a list of the number &lt;em&gt;[1,20)&lt;/em&gt; and we are looping over the elements, first in sequential order and call the &lt;em&gt;print&lt;/em&gt; action for each element and in the second call we are summarize each value to the variable &lt;em&gt;R&lt;/em&gt;. &lt;em&gt;R&lt;/em&gt; is in this case the &lt;em&gt;returning variable&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;L = collection/list/range(1, 20);
+(L) -&amp;gt; Y : generic/print(Y);
+(L) -&amp;gt; Y | R : R = Y+1;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-name-repairaction-a-explicit-repair-action&#34;&gt;&lt;a name=&#34;repairaction&#34;&gt;&lt;/a&gt;Explicit Repair-Action&lt;/h2&gt;
+
+&lt;p&gt;In generell supports the implementation &lt;em&gt;repair planning&lt;/em&gt; with the default behaviour &lt;code&gt;-!&lt;/code&gt;. In this additional structure we support also &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#503f34271b101269197f766a6b90e4a9&#34;&gt;repair action chains&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The example shows the execution of three actions &lt;em&gt;actionA&lt;/em&gt;, &lt;em&gt;actionB&lt;/em&gt;, &lt;em&gt;actionC&lt;/em&gt;. The system execute the &lt;em&gt;actionA&lt;/em&gt; first, if the action fails, &lt;em&gt;actionB&lt;/em&gt; will be executed, if this also fails &lt;em&gt;actionC&lt;/em&gt; will be executed. If &lt;em&gt;actionC&lt;/em&gt; fails also, the whole plan fails.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+actionA &amp;lt;&amp;lt; actionB &amp;lt;&amp;lt; actionC;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you don&amp;rsquo;t want, that a plan is failing, if an action fails you can put at the end of this chain a &lt;code&gt;true&lt;/code&gt; value. This models the behaviour &lt;em&gt;anything can go wrong, but the agent ignore the error(s)&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;!-- htmlmin:ignore --&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;actionA &amp;lt;&amp;lt; true;
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-name-multiplanrule-a-multi-plan-and-rule-definition&#34;&gt;&lt;a name=&#34;multiplanrule&#34;&gt;&lt;/a&gt;Multi-Plan and Rule Definition&lt;/h2&gt;
+
+&lt;p&gt;In general Prolog uses only logical rules, &lt;em&gt;AgentSpeak(L)&lt;/em&gt; and &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; use rules and also adds a plan structure. Within a Prolog structure the ordering of rules and plans are neccessary of the execution semantic (see in &lt;a href=&#34;http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;amp;pageid=lpn-htmlse10&#34;&gt;Learn Prolog Now!&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;But in the &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; the ordering of rules and plans are not relevant for the execution semantic. On this case within the source code plan and rule structures are grouped.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This example shows the &lt;a href=&#34;https://en.wikipedia.org/wiki/Ackermann_function&#34;&gt;Ackermann function&lt;/a&gt;. The first line defines the &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#d0404623ab035c7e30f997d91d173a52&#34;&gt;rule&lt;/a&gt; name (literal) similar to Prolog. Each rule will be added by the &lt;code&gt;:-&lt;/code&gt; rule-sign under the literal. In classical Prolog the rule-literal must be for each different rule and Prolog executes the rules in sequential order. In our case we change this behaviour, so that each rule, which can be executed, will be executed. So we put a condition first to the rule, so this condition will deny or allow the execution. After that the rule-body will be added. For calling a rule from a plan or a rule, you need to put a &lt;code&gt;$&lt;/code&gt;-sign in front of the rule-name.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;ackermann(N, M, R)
+    :- N == 0; M &amp;gt; 0; R = M+1
+    :- M == 0; N &amp;gt; 0; TN = N-1; $ackermann(TN, 1, RA); R = RA
+    :- N &amp;gt; 0; M &amp;gt; 0; TN = N-1; TM = M-1; $ackermann(N, TM, RI); $ackermann(TN, RI, RO); R = RO
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The second example shows the structure for &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#5fc25157650d0cb24f02216d904584df&#34;&gt;plans&lt;/a&gt;. For plans it is similar to the rule structure, but the &lt;code&gt;&amp;lt;-&lt;/code&gt; plan-sign is used and a condition of the plan execution can be added. Here exist three plans, the first will be executed, iif there is a belief &lt;code&gt;hello&lt;/code&gt; with a string value, the second plan will be executed, iif there exists a belief &lt;code&gt;hello&lt;/code&gt; with a numeric value which is greater than $1000$ and the third plan will be run every time (default plan).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;+!main&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;: &amp;gt;&amp;gt;( hallo(X), generic/type/isstring(X) ) &amp;lt;-
+        generic/print(&amp;quot;---&amp;quot;, &amp;quot;first plan&amp;quot;, &amp;quot;---&amp;quot;, &amp;quot;unification variables&amp;quot;, X)
+
+: &amp;gt;&amp;gt;( hallo(X), generic/type/isnumeric(X) &amp;amp;&amp;amp; X &amp;gt; 1000 )  &amp;lt;-
+    generic/print(&amp;quot;---&amp;quot;, &amp;quot;second plan&amp;quot;, &amp;quot;---&amp;quot;, &amp;quot;unification variables&amp;quot;, X)
+
+&amp;lt;- generic/print(&amp;quot;---&amp;quot;, &amp;quot;third (default) plan&amp;quot;, &amp;quot;---&amp;quot;).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-name-multiassignment-a-multi-assignments&#34;&gt;&lt;a name=&#34;multiassignment&#34;&gt;&lt;/a&gt;Multi Assignments&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#aaf72be46bb3458f45cf02c8858d96be&#34;&gt;multi-assignment&lt;/a&gt; allowed to extract elements from a list into different variables. It is similar to the &lt;a href=&#34;https://en.wikibooks.org/wiki/Prolog/Lists&#34;&gt;head-tail-notation of Prolog&lt;/a&gt; but here we can create complex structures.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The examples creates a list if number within in the range &lt;em&gt;[1,20)&lt;/em&gt; and 1 will be put into the variable &lt;em&gt;A&lt;/em&gt;, 2 in &lt;em&gt;B&lt;/em&gt;, 3 in &lt;em&gt;C&lt;/em&gt;, 4 will be ignore, 5 in &lt;em&gt;D&lt;/em&gt;, 6 in &lt;em&gt;E&lt;/em&gt;, 7 in &lt;em&gt;F&lt;/em&gt; and the list &lt;em&gt;[8,20)&lt;/em&gt; in &lt;em&gt;G&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;L = collection/list/range(1, 20);
+[A|B|C|_|D|E|F|G] = L;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-name-parallelism-a-parallelism-thread-safe-variables&#34;&gt;&lt;a name=&#34;parallelism&#34;&gt;&lt;/a&gt;Parallelism &amp;amp; Thread-Safe Variables&lt;/h2&gt;
+
+&lt;p&gt;The main sign for parallelism ist the &lt;em&gt;at-sign (@)&lt;/em&gt; character. If the @ is put in front of an action or variable the action will be executioned in parallel and the variable will be thread-safe. Not each action supports a parallel execution&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Basic Knowledge: Actions</title>
+      <link>https://lightjason.github.io/knowledgebase/actions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/knowledgebase/actions/</guid>
+      <description>&lt;p&gt;This text gives you an overview over the main build-in actions in LightJason/AgentSpeak(L++).&lt;/p&gt;
+
+&lt;p&gt;All actions are organised within the &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/d8/da4/namespaceorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin.html&#34;&gt;action.buildin&lt;/a&gt; package. Each packages defines a semantic structure of the actions.
+For an example on how to make use of actions have a look at our &lt;a href=&#34;https://github.com/LightJason/AgentSpeak/blob/master/src/test/resources/agent/complete.asl&#34;&gt;testing agent&lt;/a&gt; which uses many built-in actions provided by AgentSpeak(L++).&lt;/p&gt;
+
+&lt;h2 id=&#34;collection&#34;&gt;collection&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/dc6/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1CSize.html&#34;&gt;collection/size&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the size of the collection.&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;collection/list&#34;&gt;collection/list&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/d97/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CRange.html&#34;&gt;collection/list/range&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a list with a integer ranged list.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Creates a list of integer values within the range $ [\text{argument 1}, \text{argument 2}) $  &lt;pre&gt;&lt;code&gt;L=collection/list/create(0,10);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/ded/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CSymmetricDifference.html&#34;&gt;collection/list/symmetricdifference&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates the symmetric difference between lists (difference of union and intersection).&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Creates the symmetric difference of all arguments, so all arguments are collections and the action will return a list with the symmetric difference $ (\mathbb{X} \setminus \mathbb{Y}) \cup (\mathbb{B} \setminus \mathbb{A}) $  &lt;pre&gt;&lt;code&gt;D=collection/list/symmetricdifference([1,2,[3,4]],[7,8,9,4],[[1,2],[3]]);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;dt&gt;See&lt;/dt&gt;&lt;dd&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Symmetric_difference&#34; /&gt;https://en.wikipedia.org/wiki/Symmetric_difference&lt;/a&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/d4f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CGet.html&#34;&gt;collection/list/get&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns an element of the list by the index.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;The first argument is a list and the second an index, so the action returns the element &lt;pre&gt;&lt;code&gt;V=collection/list/get(L,2);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/dd9/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CFlatConcat.html&#34;&gt;collection/list/flatconcat&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a flat concated list of any term data.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;The arguments of this action are nested lists and the action transfer all nested structures to a straight list &lt;pre&gt;&lt;code&gt;F=collection/list/flatconcat([1,2,[3,4]],[[1,2],[7,8]]);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/dff/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CZip.html&#34;&gt;collection/list/zip&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a list of tuples with elements of two lists.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Creates list of tupels of both list arguments $ \mathbb{X} $ and $ \mathbb{Y} $ and returns a list of $ \langle x_i, y_i \rangle $  &lt;pre&gt;&lt;code&gt;T=collection/list/zip([1,,3,5,7],[2,4,6,8]);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/d8f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CIntersect.html&#34;&gt;collection/list/intersect&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates the intersection between lists.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;All arguments are lists and the action returns the intersection $ \cap M_i \forall i \in \mathbb{N} $  &lt;pre&gt;&lt;code&gt;I=collection/list/intersect([1,2,[3,4]],[3,4,[8,9]],[1,2,3,5]);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/dd3/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CCreate.html&#34;&gt;collection/list/create&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a list.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Creates a list of the arguments, so each argument of the action is put to the list, is the argument empty an empty-list object will be returned &lt;pre&gt;&lt;code&gt;L=collection/list/create(&#34;a&#34;,1,&#34;b&#34;,2);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/de9/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CIsEmpty.html&#34;&gt;collection/list/isempty&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;checks a list if empty.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Concats all list arguments (and removes the nested structures) and returns a boolean of the empty check &lt;pre&gt;&lt;code&gt;E=collection/list/isempty([]);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d6c/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CUnion.html&#34;&gt;collection/list/union&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates the union between lists (not unique).&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Creates the union of all arguemnts with removing nested structures $ \cup X_i \forall i \in \mathbb{N} $  &lt;pre&gt;&lt;code&gt;U=collection/list/union(L,[1,2],[3,4,[5,6]];
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/d89/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CSet.html&#34;&gt;collection/list/set&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;adds an element to the list.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Sets an element within the list by index, the first argument is the list object, the second the index value and third the new value of the element &lt;pre&gt;&lt;code&gt;collection/list/set(L,2,&#34;astringvalue&#34;);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d71/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CReverse.html&#34;&gt;collection/list/reverse&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;reverses a list.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;All arguments of the action are lists and the action will remove nested structures and reverse all elements in a single list &lt;pre&gt;&lt;code&gt;R=collection/list/reverse(L,[1,2],[3,4,[7,8]]);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/d45/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CComplement.html&#34;&gt;collection/list/complement&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates the complement between lists.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;The action uses two input arguments $ \mathbb{A} $ and $ \mathbb{B} $ and returns a list of all elements which contains $ \mathbb{A} \setminus \mathbb{B} $  &lt;pre&gt;&lt;code&gt;L=collection/list/complement([1,2,3],[3,4,5]);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d46/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CUnique.html&#34;&gt;collection/list/unique&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns an unique list of the list.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;All arguments are collections and the action removes nested structures and returns a list with unique elements &lt;pre&gt;&lt;code&gt;U=collection/list/unique(L);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/d0c/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CSubList.html&#34;&gt;collection/list/sublist&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a sublist within the index range.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Creates a sublist of an existing list by an index range, first argument is the list object, second the lower-bound, third the upper-bound within the range $ [ \text{lower-bound}, \text{upper-bound} ) $  &lt;pre&gt;&lt;code&gt;LS=collection/list/get(L,2,5);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/dcf/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1list_1_1CRemove.html&#34;&gt;collection/list/remove&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns an element of the list by the index.&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;Description&lt;/dt&gt;&lt;dd&gt;Removes an element by the list index, the first argument is the list object, the second argument is the index &lt;pre&gt;&lt;code&gt;collection/list/remove(L,3);
+&lt;/code&gt;&lt;/pre&gt; &lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;collection/map&#34;&gt;collection/map&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/d36/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1map_1_1CRemove.html&#34;&gt;collection/map/remove&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;removes an element of the map&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d69/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1map_1_1CCreate.html&#34;&gt;collection/map/create&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a hashmap&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/dfb/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1map_1_1CValues.html&#34;&gt;collection/map/values&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns all values of the map&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d8/dd0/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1map_1_1CPut.html&#34;&gt;collection/map/put&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;adds an element to the map&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/d21/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1map_1_1CGet.html&#34;&gt;collection/map/get&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns an element of the map by its key value&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/de2/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1map_1_1CKeys.html&#34;&gt;collection/map/keys&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns all key values of the map&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/de3/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1map_1_1CPutIfAbsent.html&#34;&gt;collection/map/putifabsent&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;adds an element to the map iif not exists&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;collection/multimap&#34;&gt;collection/multimap&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d0/df7/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1multimap_1_1CAsMap.html&#34;&gt;collection/multimap/asmap&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the multimap as map&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dc/d91/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1multimap_1_1CGet.html&#34;&gt;collection/multimap/get&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;get a element-list of the multimap by key&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d8/d29/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1multimap_1_1CCreate.html&#34;&gt;collection/multimap/create&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a multi-hashmap&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;collection/tuple&#34;&gt;collection/tuple&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/d1e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1tuple_1_1CFlat.html&#34;&gt;collection/tuple/flat&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;unflats the tuple into variables&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/d2e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1collection_1_1tuple_1_1CCreate.html&#34;&gt;collection/tuple/create&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a tuple of two elements&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;crypto&#34;&gt;crypto&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/d78/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1crypto_1_1CEncrypt.html&#34;&gt;crypto/encrypt&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;encrypting algorithm&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d80/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1crypto_1_1CCreateKey.html&#34;&gt;crypto/createkey&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates an encrypting / decrypting key pair&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/d6a/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1crypto_1_1CDecrypt.html&#34;&gt;crypto/decrypt&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;dencrypting algorithm&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/df5/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1crypto_1_1CHash.html&#34;&gt;crypto/hash&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;hash algorithm&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;See&lt;/dt&gt;&lt;dd&gt;&lt;a href=&#34;http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest&#34; /&gt;http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&#34;https://github.com/google/guava/wiki/HashingExplained&#34; /&gt;https://github.com/google/guava/wiki/HashingExplained&lt;/a&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;generic&#34;&gt;generic&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d0/d8b/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1CThrow.html&#34;&gt;generic/throw&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for throwing a runtime execption&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/dc7/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1CPrint.html&#34;&gt;generic/print&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for sum of elements&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;generic/agent&#34;&gt;generic/agent&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/ddb/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1agent_1_1CPlanList.html&#34;&gt;generic/agent/planlist&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to get plan-information as a map with string with literal of plan-literal as tupel of successful and failed plans&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/de7/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1agent_1_1CBeliefList.html&#34;&gt;generic/agent/belieflist&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a list of all belief literals&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/dc7/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1agent_1_1CSleep.html&#34;&gt;generic/agent/sleep&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;sets the agent to the sleep state for an infinity or fixed time&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/da0/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1agent_1_1CCreateLiteral.html&#34;&gt;generic/agent/createliteral&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a literal by the input data&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d3/d3f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1agent_1_1CClearBeliefbase.html&#34;&gt;generic/agent/clearbeliefbase&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;clears all elements from the beliefbase&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;generic/datetime&#34;&gt;generic/datetime&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/df0/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1datetime_1_1CCycleTime.html&#34;&gt;generic/datetime/cycletime&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to get time in nanoseconds to the last cycle call&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d43/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1datetime_1_1CTime.html&#34;&gt;generic/datetime/time&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for getting the current time&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d8/d34/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1datetime_1_1CDate.html&#34;&gt;generic/datetime/date&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for getting the current date&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/d58/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1datetime_1_1CDateTime.html&#34;&gt;generic/datetime/datetime&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to create a date-time structure&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;generic/storage&#34;&gt;generic/storage&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/dfd/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1storage_1_1CRemove.html&#34;&gt;generic/storage/remove&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;removes an element by name from the agent-storage&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/d01/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1storage_1_1CClear.html&#34;&gt;generic/storage/clear&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;removes all elements of the storage which are not forbidden&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d69/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1storage_1_1CAdd.html&#34;&gt;generic/storage/add&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;adds or overwrites an element in the agent-storage&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/dc2/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1storage_1_1CExists.html&#34;&gt;generic/storage/exists&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;check if an element exists within the agent-storage&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;generic/string&#34;&gt;generic/string&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/d1f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CLower.html&#34;&gt;generic/string/lower&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to create a lower-case string&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d8/d45/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CContains.html&#34;&gt;generic/string/contains&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to check string for a substring&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/d5c/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CStartsWith.html&#34;&gt;generic/string/startswith&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to check string for starts-with&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/d96/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CReplace.html&#34;&gt;generic/string/replace&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to replace any occurence within a string&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/d12/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CReverse.html&#34;&gt;generic/string/reverse&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to reverse a string&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/d21/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CEndsWith.html&#34;&gt;generic/string/endswith&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to check string for starts-with&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/d01/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CUpper.html&#34;&gt;generic/string/upper&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to create an upper-case string&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/dad/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CBase64Encode.html&#34;&gt;generic/string/base64encode&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to encodes a string with Base64&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;See&lt;/dt&gt;&lt;dd&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Base64&#34; /&gt;https://en.wikipedia.org/wiki/Base64&lt;/a&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/d0e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CBase64Decode.html&#34;&gt;generic/string/base64decode&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to encodes a string with Base64&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;See&lt;/dt&gt;&lt;dd&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Base64&#34; /&gt;https://en.wikipedia.org/wiki/Base64&lt;/a&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d0/dad/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CConcat.html&#34;&gt;generic/string/concat&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to concat strings&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d4f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CSize.html&#34;&gt;generic/string/size&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to get the string length&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/d1c/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1string_1_1CRandom.html&#34;&gt;generic/string/random&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to create a random string&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;generic/type&#34;&gt;generic/type&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d3c/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CParseInt.html&#34;&gt;generic/type/parseint&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for parsing an integer from string&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d8/d61/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CIsNumeric.html&#34;&gt;generic/type/isnumeric&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to check if a type is a number&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/de2/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CToString.html&#34;&gt;generic/type/tostring&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to convert any data to its string representation&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d1c/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CIs.html&#34;&gt;generic/type/is&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to check if a type is a class&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/df4/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CToInt.html&#34;&gt;generic/type/toint&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to cast a vale to an integral value&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/d00/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CIsString.html&#34;&gt;generic/type/isstring&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to check if a type is a string&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/d99/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CParseFloat.html&#34;&gt;generic/type/parsefloat&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for parsing a float from string&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/db0/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CToFloat.html&#34;&gt;generic/type/tofloat&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to cast a vale to an floating-point value&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/d70/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CParseLiteral.html&#34;&gt;generic/type/parseliteral&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for parsing a literal from string&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/dcd/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1generic_1_1type_1_1CTo.html&#34;&gt;generic/type/to&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to cast any java object type&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;math&#34;&gt;math&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/dbd/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CTanh.html&#34;&gt;math/tanh&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for tangens hyperbolic value $ tanh( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/d5d/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CCos.html&#34;&gt;math/cos&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for cosinus value $ cos( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/dc3/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CMaxIndex.html&#34;&gt;math/maxindex&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for index of maximum&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/d8f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CATan.html&#34;&gt;math/atan&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for tangens value $ tan( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d3/d61/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CStirling.html&#34;&gt;math/stirling&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for calculating stirling number $ S(n,k) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/df0/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CAbs.html&#34;&gt;math/abs&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for absolute value $ \lvert x_i \rvert $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dc/dca/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CLog10.html&#34;&gt;math/log10&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for logarithm (base 10) value $ log_{10} x_i $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/d08/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CACos.html&#34;&gt;math/acos&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for arc cosinus value $ cos( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/d0c/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CDegrees.html&#34;&gt;math/degrees&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for converting value to radians value&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/d0d/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CAverage.html&#34;&gt;math/average&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for average $ \frac{1}{i} \sum_{i} x_i $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dc/d8e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CMinIndex.html&#34;&gt;math/minindex&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for index of minimum&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/d52/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CBinomial.html&#34;&gt;math/binomial&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for calculating binomial coefficient $ \binom{n}{k} $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d8/df6/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CRadians.html&#34;&gt;math/radians&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for radiant value&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/d64/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CExp.html&#34;&gt;math/exp&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for exponential value $ e^{x_i} $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/dc7/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CFloor.html&#34;&gt;math/floor&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for floor value $ \lfloor x_i \rfloor $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/d0a/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CNextPrime.html&#34;&gt;math/nextprime&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for create the next prime number&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dc/dde/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CMin.html&#34;&gt;math/min&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for minimum $ min( x_0, x_1, \ldots, x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/db9/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CIsPrime.html&#34;&gt;math/isprime&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for checking for a prime number&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d00/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CSqrt.html&#34;&gt;math/sqrt&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for sqrt value $ \sqrt{ x_i } $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/dc9/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CFactorial.html&#34;&gt;math/factorial&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for calculating factorial $ ! x_i $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d74/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CLog.html&#34;&gt;math/log&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for logarithm value $ log( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d3/d24/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CCeil.html&#34;&gt;math/ceil&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for ceil value $ \lceil x_i \rceil $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d13/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CRound.html&#34;&gt;math/round&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for rounded value&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/d1b/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CASin.html&#34;&gt;math/asin&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for arc sinus value $ sin( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/d8d/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CCosh.html&#34;&gt;math/cosh&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for cosinus hyperbolic value $ cosh( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d09/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CSignum.html&#34;&gt;math/signum&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for signum value&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d79/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CSin.html&#34;&gt;math/sin&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for sinus value $ sin( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/ddb/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CHypot.html&#34;&gt;math/hypot&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for calculating $ \sqrt{ x^2 + y^2 } $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d8/d9e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CTan.html&#34;&gt;math/tan&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for tangens value $ tan( x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/d67/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CMax.html&#34;&gt;math/max&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for maximum $ max( x_0, x_1, \ldots, x_i ) $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/d83/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CPrimeFactors.html&#34;&gt;math/primefactors&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for creating prime factors&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d02/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CSum.html&#34;&gt;math/sum&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for sum of elements $ \sum_{i} x_i $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/da0/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1CSinh.html&#34;&gt;math/sinh&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for sinus hyperbolic value $ sinh( x_i ) $ &lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;math/blas&#34;&gt;math/blas&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d0/d17/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1CSize.html&#34;&gt;math/blas/size&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the elements within the BLAS structure&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/d67/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1CMultiply.html&#34;&gt;math/blas/multiply&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;defines matrix- / vector-products&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d6e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1CElementWise.html&#34;&gt;math/blas/elementwise&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;elementweise vector / matrix operation&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;math/blas/matrix&#34;&gt;math/blas/matrix&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d39/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CAssign.html&#34;&gt;math/blas/matrix/assign&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;assigns a value or matrix to all elements&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d18/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CTwoNorm.html&#34;&gt;math/blas/matrix/twonorm&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the two-norm of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/d3b/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CFrobeniusNorm.html&#34;&gt;math/blas/matrix/frobeniusnorm&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the frobenius-norm of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/d48/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CSet.html&#34;&gt;math/blas/matrix/set&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;set a single element of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d23/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CColumn.html&#34;&gt;math/blas/matrix/column&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a single column of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d05/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CDeterminant.html&#34;&gt;math/blas/matrix/determinant&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the determinant of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/dce/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1COneNorm.html&#34;&gt;math/blas/matrix/onenorm&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the one-norm of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/da4/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CGet.html&#34;&gt;math/blas/matrix/get&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a single element of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/d00/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CNonZero.html&#34;&gt;math/blas/matrix/nonzero&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the number of non-zero cells&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/de1/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CCreate.html&#34;&gt;math/blas/matrix/create&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a dense- or sparse-matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d3/d82/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CCopy.html&#34;&gt;math/blas/matrix/copy&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a copy of the matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dc/d9b/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CSingularValue.html&#34;&gt;math/blas/matrix/singularvalue&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates the singular value decomposition of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/d98/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CRowNumber.html&#34;&gt;math/blas/matrix/rownumber&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the row number of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d8/d89/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CInfinityNorm.html&#34;&gt;math/blas/matrix/infinitynorm&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the infinitiy-norm of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d0/d30/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CPower.html&#34;&gt;math/blas/matrix/power&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the matrix power&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/d99/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CEigenValue.html&#34;&gt;math/blas/matrix/eigenvalue&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates the eigenvalues of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/d46/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CRank.html&#34;&gt;math/blas/matrix/rank&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;rank of the matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/dc9/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CTrace.html&#34;&gt;math/blas/matrix/trace&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates the trace of the matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/df6/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CSubMatrix.html&#34;&gt;math/blas/matrix/submatrix&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a submatrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/df2/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CInvert.html&#34;&gt;math/blas/matrix/invert&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;inverts the matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d58/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CColumnNumber.html&#34;&gt;math/blas/matrix/columnnumber&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the column number of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d0f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CSum.html&#34;&gt;math/blas/matrix/sum&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns sum of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d0e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CTranspose.html&#34;&gt;math/blas/matrix/transpose&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;transpose the matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/d29/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CCondition.html&#34;&gt;math/blas/matrix/condition&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the condition of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/dfe/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CParse.html&#34;&gt;math/blas/matrix/parse&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a dense- or sparse-matrix from a string semicolon splits the rows, spaces / comma splits the columns&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d26/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CSolve.html&#34;&gt;math/blas/matrix/solve&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;solver of matrix-equation $ A \cdot X = B $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/df3/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1matrix_1_1CRow.html&#34;&gt;math/blas/matrix/row&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a single row of a matrix&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;math/blas/vector&#34;&gt;math/blas/vector&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d37/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CSum.html&#34;&gt;math/blas/vector/sum&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns sum of a vector&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d17/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CCopy.html&#34;&gt;math/blas/vector/copy&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a copy of the matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d16/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CToList.html&#34;&gt;math/blas/vector/tolist&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;converts a vector to a list&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d3/deb/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CCreate.html&#34;&gt;math/blas/vector/create&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a dense- or sparse-vector&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dc/d88/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CAssign.html&#34;&gt;math/blas/vector/assign&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;assigns a value or matrix to all elements&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/d7f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CSet.html&#34;&gt;math/blas/vector/set&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;set a single element of a matrix&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/d55/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CNonZero.html&#34;&gt;math/blas/vector/nonzero&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns the number of non-zero cells&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/da0/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CDotProduct.html&#34;&gt;math/blas/vector/dotproduct&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns sum of a vector&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d4/dec/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CFromList.html&#34;&gt;math/blas/vector/fromlist&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a dense- or sparse-vector from a list&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/ddf/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CParse.html&#34;&gt;math/blas/vector/parse&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a dense- or sparse-vector from as string seperator is comma, semicolon or space&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d3/d96/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1blas_1_1vector_1_1CGet.html&#34;&gt;math/blas/vector/get&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;returns a single element of a vector&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;math/interpolate&#34;&gt;math/interpolate&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/df4/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1interpolate_1_1CInterpolate.html&#34;&gt;math/interpolate/interpolate&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to create interpolated values&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/d80/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1interpolate_1_1CCreate.html&#34;&gt;math/interpolate/create&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to create a spline interpolation&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;math/linearprogram&#34;&gt;math/linearprogram&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/d46/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1linearprogram_1_1CSolve.html&#34;&gt;math/linearprogram/solve&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;solves the linear program&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d1/db4/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1linearprogram_1_1CCreate.html&#34;&gt;math/linearprogram/create&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to create a linear program with an objective functions $ \left( \sum_{i=1} c_i \cdot x_i \right) + d $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/da5/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1linearprogram_1_1CEquationConstraint.html&#34;&gt;math/linearprogram/equationconstraint&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;add a linear value constraint to the LP with the definition $ \left( \sum_{i=1} c_i \cdot x_i \right) + c_{const} = \left( \sum_{i=1} r_i \cdot x_i \right) + r_{const} $ , $ \left( \sum_{i=1} c_i \cdot x_i \right) + c_{const} \geq \left( \sum_{i=1} r_i \cdot x_i \right) + r_{const} $  $ \left( \sum_{i=1} c_i \cdot x_i \right) + c_{const} \leq \left( \sum_{i=1} r_i \cdot x_i \right) + r_{const} $ &lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d7/d6d/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1linearprogram_1_1CValueConstraint.html&#34;&gt;math/linearprogram/valueconstraint&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;add a linear value constraint to the LP with the definition $ \sum_{i=1} c_i \cdot x_i = v $ , $ \sum_{i=1} c_i \cdot x_i \geq v $  $ \sum_{i=1} c_i \cdot x_i \leq v $ &lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;math/shape&#34;&gt;math/shape&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dc/d5a/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1shape_1_1CInCircle.html&#34;&gt;math/shape/incircle&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action check if a point is within a circle&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/d99/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1shape_1_1CInTriangle.html&#34;&gt;math/shape/intriangle&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action check if a point is within a triangle&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;See&lt;/dt&gt;&lt;dd&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Barycentric_coordinate_system&#34; /&gt;https://en.wikipedia.org/wiki/Barycentric_coordinate_system&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&#34;http://jsfiddle.net/dog_funtom/H7D7g/&#34; /&gt;http://jsfiddle.net/dog_funtom/H7D7g/&lt;/a&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/df/dee/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1shape_1_1CInRectangle.html&#34;&gt;math/shape/inrectangle&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action check if a point within a rectangle&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;math/statistic&#34;&gt;math/statistic&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d93/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CExponentialProportionateSelection.html&#34;&gt;math/statistic/exponentialproportionateselection&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to define a fitness-proportinate-selection mechanism&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;See&lt;/dt&gt;&lt;dd&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Boltzmann_distribution&#34; /&gt;https://en.wikipedia.org/wiki/Boltzmann_distribution&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Log-linear_model&#34; /&gt;https://en.wikipedia.org/wiki/Log-linear_model&lt;/a&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/d0d/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CGetStatisticValue.html&#34;&gt;math/statistic/getstatisticvalue&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to return a statistic value&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d0/d8f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CCreateDistribution.html&#34;&gt;math/statistic/createdistribution&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;creates a distribution object&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d5/d37/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CRandomSimple.html&#34;&gt;math/statistic/randomsimple&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;create a (set) of simple random values&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d3/df9/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CLinearProportionateSelection.html&#34;&gt;math/statistic/linearproportionateselection&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to define a exponential fitness-proportinate-selection mechanism&lt;dl class=&#34;tooltip&#34;&gt;&lt;dt&gt;See&lt;/dt&gt;&lt;dd&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Fitness_proportionate_selection&#34; /&gt;https://en.wikipedia.org/wiki/Fitness_proportionate_selection&lt;/a&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d2/d98/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CRandomSample.html&#34;&gt;math/statistic/randomsample&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;create a (set) of random values&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/d2f/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CCreateStatistic.html&#34;&gt;math/statistic/createstatistic&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to create a summary statistic&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d9/d8d/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CAddStatisticValue.html&#34;&gt;math/statistic/addstatisticvalue&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to push a value to the statistic object&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/de/d8e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1math_1_1statistic_1_1CClearStatistic.html&#34;&gt;math/statistic/clearstatistic&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to clears the statistic&lt;/dd&gt;&lt;/dl&gt;&lt;h2 id=&#34;rest&#34;&gt;rest&lt;/h2&gt;&lt;dl&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/db/d28/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1rest_1_1CJsonList.html&#34;&gt;rest/jsonlist&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for calling a restful service with a json object list&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d3/d0e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1rest_1_1CXMLObject.html&#34;&gt;rest/xmlobject&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action to call a restful service with xml data&lt;/dd&gt;&lt;dt&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/d6/d4e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin_1_1rest_1_1CJsonObject.html&#34;&gt;rest/jsonobject&lt;/a&gt;&lt;/dt&gt;
+    &lt;dd class=&#34;tooltiptoggle&#34;&gt;action for calling a restful service with a json object&lt;/dd&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,16 @@
+*.*
+!.gitignore
+!circle.yml
+!*.html
+!*.xml
+!*.css
+!*.js
+!*.json
+!*.bib
+!*.zip
+!*.png
+!*.gif
+!*.pdf
+!*.svg
+!*.txt
+

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frameworks on LightJason</title>
+    <link>https://lightjason.github.io/framework/index.xml</link>
+    <description>Recent content in Frameworks on LightJason</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <atom:link href="https://lightjason.github.io/framework/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AgentSpeak(L&#43;&#43;) Language Features</title>
+      <link>https://lightjason.github.io/framework/agentspeak/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/framework/agentspeak/</guid>
+      <description>
+
+&lt;p&gt;We present here a short overview of language examples of our &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; syntax. You can found the full &lt;a href=&#34;https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form&#34;&gt;EBNF description&lt;/a&gt; of the language syntax on the project &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/&#34;&gt;documentation page&lt;/a&gt;. The Railroad / Syntax diagrams of the &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; language:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/&#34;&gt;Agent Railroad / Syntax Diagram&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/PlanBundle.g4/&#34;&gt;PlanBundle Railroad / Syntax Diagram&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;a-name-lambdaexpression-a-lambda-expression&#34;&gt;&lt;a name=&#34;lambdaexpression&#34;&gt;&lt;/a&gt;Lambda Expression&lt;/h2&gt;
+
+&lt;p&gt;The language does not support a looping directly, but we are using &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#945f3fc449518a73b9f5f32868db466c&#34;&gt;lambda expression&lt;/a&gt; which care based on the theoretical structure of a &lt;a href=&#34;https://en.wikipedia.org/wiki/Lambda_calculus&#34;&gt;lambda calculus&lt;/a&gt;. In a short word we use a defintion like a &lt;em&gt;for each&lt;/em&gt; call, so each element in a variable can be looped.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The example creates a list of the number &lt;em&gt;[1,20)&lt;/em&gt; and we are looping over the elements, first in sequential order and call the &lt;em&gt;print&lt;/em&gt; action for each element and in the second call we are summarize each value to the variable &lt;em&gt;R&lt;/em&gt;. &lt;em&gt;R&lt;/em&gt; is in this case the &lt;em&gt;returning variable&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;L = collection/list/range(1, 20);
+(L) -&amp;gt; Y : generic/print(Y);
+(L) -&amp;gt; Y | R : R = Y+1;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-name-repairaction-a-explicit-repair-action&#34;&gt;&lt;a name=&#34;repairaction&#34;&gt;&lt;/a&gt;Explicit Repair-Action&lt;/h2&gt;
+
+&lt;p&gt;In generell supports the implementation &lt;em&gt;repair planning&lt;/em&gt; with the default behaviour &lt;code&gt;-!&lt;/code&gt;. In this additional structure we support also &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#503f34271b101269197f766a6b90e4a9&#34;&gt;repair action chains&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The example shows the execution of three actions &lt;em&gt;actionA&lt;/em&gt;, &lt;em&gt;actionB&lt;/em&gt;, &lt;em&gt;actionC&lt;/em&gt;. The system execute the &lt;em&gt;actionA&lt;/em&gt; first, if the action fails, &lt;em&gt;actionB&lt;/em&gt; will be executed, if this also fails &lt;em&gt;actionC&lt;/em&gt; will be executed. If &lt;em&gt;actionC&lt;/em&gt; fails also, the whole plan fails.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+actionA &amp;lt;&amp;lt; actionB &amp;lt;&amp;lt; actionC;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you don&amp;rsquo;t want, that a plan is failing, if an action fails you can put at the end of this chain a &lt;code&gt;true&lt;/code&gt; value. This models the behaviour &lt;em&gt;anything can go wrong, but the agent ignore the error(s)&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;!-- htmlmin:ignore --&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;actionA &amp;lt;&amp;lt; true;
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-name-multiplanrule-a-multi-plan-and-rule-definition&#34;&gt;&lt;a name=&#34;multiplanrule&#34;&gt;&lt;/a&gt;Multi-Plan and Rule Definition&lt;/h2&gt;
+
+&lt;p&gt;In general Prolog uses only logical rules, &lt;em&gt;AgentSpeak(L)&lt;/em&gt; and &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; use rules and also adds a plan structure. Within a Prolog structure the ordering of rules and plans are neccessary of the execution semantic (see in &lt;a href=&#34;http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;amp;pageid=lpn-htmlse10&#34;&gt;Learn Prolog Now!&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;But in the &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; the ordering of rules and plans are not relevant for the execution semantic. On this case within the source code plan and rule structures are grouped.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This example shows the &lt;a href=&#34;https://en.wikipedia.org/wiki/Ackermann_function&#34;&gt;Ackermann function&lt;/a&gt;. The first line defines the &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#d0404623ab035c7e30f997d91d173a52&#34;&gt;rule&lt;/a&gt; name (literal) similar to Prolog. Each rule will be added by the &lt;code&gt;:-&lt;/code&gt; rule-sign under the literal. In classical Prolog the rule-literal must be for each different rule and Prolog executes the rules in sequential order. In our case we change this behaviour, so that each rule, which can be executed, will be executed. So we put a condition first to the rule, so this condition will deny or allow the execution. After that the rule-body will be added. For calling a rule from a plan or a rule, you need to put a &lt;code&gt;$&lt;/code&gt;-sign in front of the rule-name.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;ackermann(N, M, R)
+    :- N == 0; M &amp;gt; 0; R = M+1
+    :- M == 0; N &amp;gt; 0; TN = N-1; $ackermann(TN, 1, RA); R = RA
+    :- N &amp;gt; 0; M &amp;gt; 0; TN = N-1; TM = M-1; $ackermann(N, TM, RI); $ackermann(TN, RI, RO); R = RO
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The second example shows the structure for &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#5fc25157650d0cb24f02216d904584df&#34;&gt;plans&lt;/a&gt;. For plans it is similar to the rule structure, but the &lt;code&gt;&amp;lt;-&lt;/code&gt; plan-sign is used and a condition of the plan execution can be added. Here exist three plans, the first will be executed, iif there is a belief &lt;code&gt;hello&lt;/code&gt; with a string value, the second plan will be executed, iif there exists a belief &lt;code&gt;hello&lt;/code&gt; with a numeric value which is greater than $1000$ and the third plan will be run every time (default plan).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;+!main&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;: &amp;gt;&amp;gt;( hallo(X), generic/type/isstring(X) ) &amp;lt;-
+        generic/print(&amp;quot;---&amp;quot;, &amp;quot;first plan&amp;quot;, &amp;quot;---&amp;quot;, &amp;quot;unification variables&amp;quot;, X)
+
+: &amp;gt;&amp;gt;( hallo(X), generic/type/isnumeric(X) &amp;amp;&amp;amp; X &amp;gt; 1000 )  &amp;lt;-
+    generic/print(&amp;quot;---&amp;quot;, &amp;quot;second plan&amp;quot;, &amp;quot;---&amp;quot;, &amp;quot;unification variables&amp;quot;, X)
+
+&amp;lt;- generic/print(&amp;quot;---&amp;quot;, &amp;quot;third (default) plan&amp;quot;, &amp;quot;---&amp;quot;).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-name-multiassignment-a-multi-assignments&#34;&gt;&lt;a name=&#34;multiassignment&#34;&gt;&lt;/a&gt;Multi Assignments&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#aaf72be46bb3458f45cf02c8858d96be&#34;&gt;multi-assignment&lt;/a&gt; allowed to extract elements from a list into different variables. It is similar to the &lt;a href=&#34;https://en.wikibooks.org/wiki/Prolog/Lists&#34;&gt;head-tail-notation of Prolog&lt;/a&gt; but here we can create complex structures.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The examples creates a list if number within in the range &lt;em&gt;[1,20)&lt;/em&gt; and 1 will be put into the variable &lt;em&gt;A&lt;/em&gt;, 2 in &lt;em&gt;B&lt;/em&gt;, 3 in &lt;em&gt;C&lt;/em&gt;, 4 will be ignore, 5 in &lt;em&gt;D&lt;/em&gt;, 6 in &lt;em&gt;E&lt;/em&gt;, 7 in &lt;em&gt;F&lt;/em&gt; and the list &lt;em&gt;[8,20)&lt;/em&gt; in &lt;em&gt;G&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;L = collection/list/range(1, 20);
+[A|B|C|_|D|E|F|G] = L;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-name-parallelism-a-parallelism-thread-safe-variables&#34;&gt;&lt;a name=&#34;parallelism&#34;&gt;&lt;/a&gt;Parallelism &amp;amp; Thread-Safe Variables&lt;/h2&gt;
+
+&lt;p&gt;The main sign for parallelism ist the &lt;em&gt;at-sign (@)&lt;/em&gt; character. If the @ is put in front of an action or variable the action will be executioned in parallel and the variable will be thread-safe. Not each action supports a parallel execution&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Framework</title>
+      <link>https://lightjason.github.io/framework/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/framework/</guid>
+      <description>
+
+&lt;p&gt;The multi-agent framework is split up into different parts. Each component has got its own documentation. At this section, we would like to give an overview over all elements within the framework. All frameworks are published to &lt;a href=&#34;http://mvnrepository.com&#34;&gt;Maven Central&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The source codes are written in Java (latest release version) with a defined syntax structure and all code documentation will be created with &lt;a href=&#34;http://www.doxygen.org&#34;&gt;Doxygen&lt;/a&gt;. We are also using unit testing and the &lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;Git-Flow&lt;/a&gt; developing model.&lt;/p&gt;
+
+&lt;h2 id=&#34;agentspeak-l-agentspeak-l-https-camo-githubusercontent-com-91d144939950611f83510276f546163e62f3f0f1-68747470733a2f2f636972636c6563692e636f6d2f67682f4c696768744a61736f6e2f4167656e74537065616b2e7376673f7374796c653d736869656c64&#34;&gt;AgentSpeak(L++) &lt;img src=&#34;https://camo.githubusercontent.com/91d144939950611f83510276f546163e62f3f0f1/68747470733a2f2f636972636c6563692e636f6d2f67682f4c696768744a61736f6e2f4167656e74537065616b2e7376673f7374796c653d736869656c64&#34; alt=&#34;AgentSpeak(L++)&#34; /&gt;&lt;/h2&gt;
+
+&lt;p&gt;This component defines the main agent structure. It defines the whole syntax and the base agent structure. It also supports an agent generator and configuration, so that you can create a set of agents by an ASL-file. Based on the interface structure, you can redefine all elements if you like. A full &lt;a href=&#34;https://en.wikipedia.org/wiki/Syntax_diagram&#34;&gt;railroad diagram&lt;/a&gt; of our &lt;em&gt;AgentSpeak(L++)&lt;/em&gt; syntax can be found on the feature page.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Agent Examples
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/LightJason/AgentSpeak/blob/master/src/test/resources/agent/complete.asl&#34;&gt;Testing Agent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/LightJason/AgentSpeak/blob/master/src/test/resources/agent/hanoi.asl&#34;&gt;Agent&lt;/a&gt; which plays &lt;a href=&#34;https://en.wikipedia.org/wiki/Tower_of_Hanoi&#34;&gt;Tower of Hanoi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Grammar / Syntax Definition
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/&#34;&gt;Agent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/PlanBundle.g4/&#34;&gt;PlanBundle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;agentspeak&#34;&gt;Language Features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/&#34;&gt;Source Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.openhub.net/p/LightJason-AgentSpeak&#34;&gt;OpenHub Code Statistic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://libraries.io/github/LightJason/AgentSpeak&#34;&gt;Libraries.io Statistic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;benchmarking-emergency-scenario&#34;&gt;Benchmarking Emergency Scenario&lt;/h3&gt;
+
+&lt;p&gt;The video present a performance test of our framework with 15.000 agents on an emergency scenarion. The video is running in realtime on a single computer (iMac with 2,9 GHz Intel Core i5, 16 GB RAM and OSX El Captain 10.11.6).&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The agents calculates their landmarks to the exit point (position 140 / 140 in the middle) on a grid world with 250x250 cells and starts walking. If a cell is block by another agent, the agents tries to go to the right side, if not possible to the left side, if this is not possible, the agent stops walking and waits a random time for continuing walking. If the agent don&amp;rsquo;t reach a landmark within 5 times, he skips the landmark and start walking to the next one except the exit point.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;iframe class=&#34;video&#34; src=&#34;https://player.vimeo.com/video/202120833&#34; width=&#34;640&#34; height=&#34;360&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;a class=&#34;videoprintlink&#34; href=&#34;https://vimeo.com/lightjason/emergencyscenario&#34;&gt;https://vimeo.com/lightjason/emergencyscenario&lt;/a&gt;
+
+&lt;h2 id=&#34;rest-api-rest-api-https-camo-githubusercontent-com-a72dbacc13be27a0b87b8be9177f52180610b50f-68747470733a2f2f636972636c6563692e636f6d2f67682f4c696768744a61736f6e2f524553542e7376673f7374796c653d736869656c64&#34;&gt;REST-API &lt;img src=&#34;https://camo.githubusercontent.com/a72dbacc13be27a0b87b8be9177f52180610b50f/68747470733a2f2f636972636c6563692e636f6d2f67682f4c696768744a61736f6e2f524553542e7376673f7374796c653d736869656c64&#34; alt=&#34;REST-API&#34; /&gt;&lt;/h2&gt;
+
+&lt;p&gt;A &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST-API (ReSTful)&lt;/a&gt; is a system to define communication over &lt;a href=&#34;https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol&#34;&gt;HTTP&lt;/a&gt; for distributed systems. We are supporting such a REST-API to control a set of agents which can be also grouped.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://lightjason.github.io/REST/sources/index.html&#34;&gt;Source Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.openhub.net/p/LightJason-REST&#34;&gt;OpenHub Code Statistic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://libraries.io/github/LightJason/REST&#34;&gt;Libraries.io Statistic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

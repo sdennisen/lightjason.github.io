@@ -1,0 +1,1771 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on LightJason</title>
+    <link>https://lightjason.github.io/tutorials/index.xml</link>
+    <description>Recent content in Tutorials on LightJason</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <atom:link href="https://lightjason.github.io/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Tutorial: Actions</title>
+      <link>https://lightjason.github.io/tutorials/actions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/tutorials/actions/</guid>
+      <description>
+
+&lt;p&gt;This tutorial explains the concept and usage of actions. Actions are the &lt;em&gt;executable mechanisms&lt;/em&gt;. We support a lot of different actions, which supports some &lt;a href=&#34;https://lightjason.github.io/knowledgebase/actions&#34;&gt;basic functionality&lt;/a&gt;. Actions are an important part within a multi-agent system e.g. for &lt;a href=&#34;https://lightjason.github.io/tutorials/communication&#34;&gt;communication&lt;/a&gt;, modifying the &lt;a href=&#34;https://lightjason.github.io/tutorials/environment&#34;&gt;environment&lt;/a&gt; or the internal state of the agent.&lt;/p&gt;
+
+&lt;div id=&#34;toccontainer&#34;&gt;Contents [&lt;a href=&#34;#&#34; id=&#34;tochideshow&#34;&gt;Hide&lt;/a&gt;]&lt;div id=&#34;toc&#34;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;previous-knowledge&#34;&gt;Previous Knowledge&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes/&#34;&gt;AgentSpeak 15min&lt;/a&gt; tutorial defines the basic knowledge and working scenario.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-are-actions&#34;&gt;What are actions?&lt;/h2&gt;
+
+&lt;p&gt;For actions there exists two point of views:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;software-based, so an action is a method (within a class) which will be executed during the agent cycle with the current agent-based execution context&lt;/li&gt;
+&lt;li&gt;agent-based, the action is represent by a literal within a rule or plan, but during execution the same action can be run more than one times in parallel&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;On this two definitions on the Java-side a method must be written and be combined with the literal information for the AgentSpeak(L++) script, so that the agent can get access to the method. LightJason supports for this structure an interface, method annotations and reading mechanism to create all action objects.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-kind-of-actions-exists&#34;&gt;What kind of actions exists?&lt;/h2&gt;
+
+&lt;p&gt;There are two kind of actions, which can be used both also in similar context. The usage of the action based on the software-design and so there is no general approach to use the action&lt;/p&gt;
+
+&lt;h3 id=&#34;standalone-actions-external-actions&#34;&gt;Standalone-Actions - External Actions&lt;/h3&gt;
+
+&lt;p&gt;Standalone actions, which are named in the Jason definition &lt;em&gt;external actions&lt;/em&gt;, are classes which implement the &lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dc/d53/interfaceorg_1_1lightjason_1_1agentspeak_1_1action_1_1IAction.html&#34;&gt;IAction&lt;/a&gt; interface. But we recommand to use the base implementation &lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/da/d94/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1IBaseAction.html&#34;&gt;IBaseAction&lt;/a&gt;. For getting an overview of the structure take a look on the &lt;a href=&#34;https://lightjason.github.io/AgentSpeak/sources/dd/d3e/classorg_1_1lightjason_1_1agentspeak_1_1action_1_1IBaseAction__coll__graph.svg&#34; data-lightbox=&#34;ibaseaction-inheritance-diagram&#34; data-title=&#34;IBaseAction inheritance diagram&#34;&gt;IBaseAction inheritance diagram&lt;/a&gt;. The recommand parts of an action are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a &lt;code&gt;name&lt;/code&gt; which represent the call on the agent script&lt;/li&gt;
+&lt;li&gt;the number of &lt;code&gt;minimal arguments&lt;/code&gt; for checking the correct number of arguments during parsing&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;execution&lt;/code&gt; which defines the functionality of the action&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are some other methods inside the definition:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;score&lt;/code&gt; method allows to define a cost-value of an action for the aggregation function&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;variables&lt;/code&gt; method returns a list of variables if the action generates variables&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;object-actions-internal-actions&#34;&gt;Object-Actions - Internal Actions&lt;/h3&gt;
+
+&lt;p&gt;Object actions are methods inside the agent class or super classes of the agent class. LightJason can read all calss methods (not static or abstract methods) and create the actions on-fly. With black- and white-listing you can define a very detailed action generation. The visibility of a method can be public, private or protected.
+For the usage there exists three annotation:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;method annotation &lt;code&gt;@IAgentActionName&lt;/code&gt; for defining action name&lt;/li&gt;
+&lt;li&gt;class annotation &lt;code&gt;@IAgentAction&lt;/code&gt;, which can get two arguments:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;access&lt;/code&gt; with the values &lt;code&gt;BLACKLIST&lt;/code&gt; or &lt;code&gt;WHITELIST&lt;/code&gt; to define the filter mechanism (default: &lt;code&gt;BLACKLIST&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;classes&lt;/code&gt; a list of class objects for which the filtering should be defined (default empty for all classes)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;method annotation &lt;code&gt;@IAgentActionFilter&lt;/code&gt; with the &lt;code&gt;classes&lt;/code&gt; argument for definining class filtering of a method (see &lt;code&gt;@IAgentAction&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Parameter of the method will be packed / unpacked into terms automatically.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-can-i-create-an-action&#34;&gt;How can I create an action?&lt;/h2&gt;
+
+&lt;p&gt;Within the section both kind of actions are shown. The code of an action should be very efficient and minimalistic, because an action will called multiple times from an agent, because plan execution is in parallel, also agent execution is in parallel.&lt;/p&gt;
+
+&lt;h3 id=&#34;agentspeak-l-script&#34;&gt;AgentSpeak(L++) Script&lt;/h3&gt;
+
+&lt;p&gt;The agent script shows the usage of the own action, it can be used like a build-in action. The naming is equal to the &lt;code&gt;name&lt;/code&gt;-method or annotation.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-agentspeak &#34;  data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+!main.
+&amp;#43;!main &amp;lt;-
+    
+    I = math/statistic/randomsimple() * 12 &amp;#43; 4;
+    R = generic/string/random( I, &amp;#34;abcdefghijklmnopqrstuvwxyz&amp;#34;);
+    
+    N = my/standalone-action( R );
+    
+    L = my/object-action( N );
+    
+    generic/print( &amp;#34;agent uses string&amp;#34;, R, &amp;#34;gets from standalone action&amp;#34;, N, &amp;#34;and from object action&amp;#34;, L )
+.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;term-data-representation&#34;&gt;Term Data Representation&lt;/h3&gt;
+
+&lt;p&gt;The data representation can be comprehend by the standalone action.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-agentspeak &#34;  data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.action.IBaseAction;
+import org.lightjason.agentspeak.common.CPath;
+import org.lightjason.agentspeak.common.IPath;
+import org.lightjason.agentspeak.language.CRawTerm;
+import org.lightjason.agentspeak.language.ITerm;
+import org.lightjason.agentspeak.language.execution.IContext;
+import org.lightjason.agentspeak.language.execution.fuzzy.CFuzzyValue;
+import org.lightjason.agentspeak.language.execution.fuzzy.IFuzzyValue;
+import java.text.MessageFormat;
+import java.util.List;
+final class CStandAloneAction extends IBaseAction
+{
+    @Override
+    public final IPath name()
+    {
+        return CPath.from( &amp;#34;my/standalone-action&amp;#34; );
+    }
+    @Override
+    public final int minimalArgumentNumber()
+    {
+        return 1;
+    }
+    @Override
+    public final IFuzzyValue&amp;lt;Boolean&amp;gt; execute( final IContext p_context, final boolean p_parallel, final List&amp;lt;ITerm&amp;gt; p_argument,
+                                               final List&amp;lt;ITerm&amp;gt; p_return, final List&amp;lt;ITerm&amp;gt; p_annotation
+    )
+    {
+        
+        System.out.println(
+            MessageFormat.format(
+                &amp;#34;agent {0} calls standalone-action with parameter {1}&amp;#34;,
+                p_context.agent().hashCode(),
+                p_argument.get( 0 ).&amp;lt;String&amp;gt;raw()
+            )
+        );
+        
+        p_return.add(
+            CRawTerm.from(
+                p_argument.get( 0 ).&amp;lt;String&amp;gt;raw().length()
+            )
+        );
+        
+        return CFuzzyValue.from( true );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;efficent-concurrency-action&#34;&gt;Efficent Concurrency Action&lt;/h2&gt;
+
+&lt;p&gt;In detail to the standalone action &lt;strong&gt;keep in mind, that the action is called multiple times&lt;/strong&gt;, because the plan and rule execution is done in parallel and multiple agent can run the action in parallel. The &lt;code&gt;synchronized&lt;/code&gt; keyword is not a general solution for avoiding &lt;a href=&#34;https://en.wikipedia.org/wiki/Race_condition&#34;&gt;race condition&lt;/a&gt; because synchronization slows down the performance.&lt;/p&gt;
+
+&lt;p&gt;In common work the object-orientated design of the action class can be changed to removing synchronization. If you get race condition exceptions or performance problems, just redesign your architecture. A good design of concurrency architecture can be found on all &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/d8/da4/namespaceorg_1_1lightjason_1_1agentspeak_1_1action_1_1buildin.html&#34;&gt;build-in actions&lt;/a&gt; of the framework&lt;/p&gt;
+
+&lt;h2 id=&#34;reference-solution&#34;&gt;Reference Solution&lt;/h2&gt;
+
+&lt;p&gt;This tutorial depends on the tutorial &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes&#34;&gt;AgentSpeak-in-15min&lt;/a&gt;, so the whole build process is explained within the basic tutorial. If you struggled at some point or wish to obtain our exemplary solution with code documentation to this tutorial, you can download the archive &lt;a href=&#34;https://github.com/LightJason/Examples/archive/tutorial-agent-action.zip&#34;&gt;tutorial-agent-action.zip&lt;/a&gt; containing the source code and a executable &lt;a href=&#34;https://github.com/LightJason/Examples/raw/jar-tutorial-agent-action/myagentapp-1.0-SNAPSHOT.jar&#34;&gt;Jar file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We run the example with 5 agents and 1 cycle&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;agent 981.414.120 calls standalone-action with parameter rvuoaiwqa
+agent 263.847.538 calls standalone-action with parameter tqhkgkrcpziag
+agent 1.675.634.764 calls standalone-action with parameter aefrnaopw
+agent uses string   aefrnaopw   gets from standalone action   9   and from object action   1675634757
+agent uses string   tqhkgkrcpziag   gets from standalone action   13   and from object action   263847551
+agent 1.053.779.425 calls standalone-action with parameter dwyziieavx
+agent uses string   rvuoaiwqa   gets from standalone action   9   and from object action   981414113
+agent uses string   dwyziieavx   gets from standalone action   10   and from object action   1053779435
+agent 1.128.132.589 calls standalone-action with parameter urm
+agent uses string   urm   gets from standalone action   3   and from object action   1128132590
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Communication</title>
+      <link>https://lightjason.github.io/tutorials/communication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/tutorials/communication/</guid>
+      <description>
+
+&lt;p&gt;LightJason architecture does not support in general a build-in communication, because communication and
+agent addressing / naming depends on the domain or underlying software architecture. To create a
+communication structure you have to build-up your own naming model, a send action with a receiving plan and a data structure to map agent names / addresses to agent objects.&lt;/p&gt;
+
+&lt;div id=&#34;toccontainer&#34;&gt;Contents [&lt;a href=&#34;#&#34; id=&#34;tochideshow&#34;&gt;Hide&lt;/a&gt;]&lt;div id=&#34;toc&#34;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;previous-knowledge&#34;&gt;Previous Knowledge&lt;/h2&gt;
+
+&lt;p&gt;The tutorial can be done into two steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;the basic agent definition from the &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes/&#34;&gt;AgentSpeak 15min&lt;/a&gt; tutorial&lt;/li&gt;
+&lt;li&gt;the &lt;a href=&#34;https://lightjason.github.io/tutorials/trigger/&#34;&gt;triggering&lt;/a&gt; and &lt;a href=&#34;https://lightjason.github.io/tutorials/actions/&#34;&gt;action&lt;/a&gt; tutorial to create a &lt;em&gt;send-action&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Don&amp;rsquo;t reinvent the edge&lt;/strong&gt;
+&lt;br/&gt;
+Communication can be a &lt;em&gt;very expensive&lt;/em&gt; calling structure, especially on distributed systems. If
+you build your own communication structure
+just think about multi-threading and performance aspects. Within this tutorial we cannot show you
+all details of fast and efficient communication
+data structure, so we would like to show you the basics only. On a distributed system you have to
+organize the naming schema and searching methods of names and objects. If you need to transfer
+messages over the network, just think about
+serialization and deserialization performance.
+Java supports a &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/jndi/objects/serial.html&#34;&gt;serialize interface&lt;/a&gt;
+so don&amp;rsquo;t create self-defined string data structure, because for such message transfering there
+are a lot of other and well-known and estabilished components. Well known formats
+are &lt;a href=&#34;https://en.wikipedia.org/wiki/JavaScript_Object_Notation&#34;&gt;JSON&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/YAML&#34;&gt;YAML&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/Java_Architecture_for_XML_Binding&#34;&gt;XML/XSD with Jaxb&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;agent&#34;&gt;Agent&lt;/h2&gt;
+
+&lt;p&gt;For this example we create a small agent, which sends a random message to the agent with the name &lt;code&gt;agent 0&lt;/code&gt;. The initial-goal triggers the &lt;code&gt;main&lt;/code&gt;-plan, which generates the message and calls the send action.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-agentspeak &#34;  data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+!main.
+&amp;#43;!main &amp;lt;-
+    
+    R = generic/string/random( 12, &amp;#34;abcdefghijklmnopqrstuvwxyz&amp;#34;);
+    
+    
+     message/send(&amp;#34;agent 0&amp;#34;, R)
+.
+&amp;#43;!message/receive(  message( Message ), from( AgentName )  ) &amp;lt;-
+    
+    generic/print( MyName, &amp;#34; received message [&amp;#34;, Message, &amp;#34;] from [&amp;#34;, AgentName, &amp;#34;] in cycle [&amp;#34;, Cycle, &amp;#34;]&amp;#34;)
+.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;agent-with-name&#34;&gt;Agent with name&lt;/h3&gt;
+
+&lt;p&gt;For communication a &lt;em&gt;name resolution&lt;/em&gt; is needed, so the agents needs to get a name (here a string). This name will be used to determine the sender
+of a message&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34;  &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.agent.IBaseAgent;
+import org.lightjason.agentspeak.configuration.IAgentConfiguration;
+final class MyCommunicationAgent extends IBaseAgent&amp;lt;MyCommunicationAgent&amp;gt;
+{
+    
+    private final String m_name;
+    
+    MyCommunicationAgent( final String p_name, final IAgentConfiguration&amp;lt;MyCommunicationAgent&amp;gt; p_configuration )
+    {
+        super( p_configuration );
+        m_name = p_name;
+    }
+    
+    final String name()
+    {
+        return m_name;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;agent-factory-with-name-generating&#34;&gt;Agent factory with name generating&lt;/h3&gt;
+
+&lt;p&gt;The agent factory must create the agent object and a unique name. Within this example we use one factory only, so
+each factory create a &lt;em&gt;send&lt;/em&gt; action and the send action contains the name resolution. Based on this, the action must
+be accessable within the factory to register each agent. The name definition is here with the schema &lt;code&gt;agent &amp;lt;number&amp;gt;&lt;/code&gt;
+but &lt;strong&gt;keep in mind that the generate method can be called in parallel, so the counter must be thread-safe.&lt;/strong&gt; Java
+supports such &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/essential/concurrency/atomicvars.html&#34;&gt;atomic variables&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34;  &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.common.CCommon;
+import org.lightjason.agentspeak.generator.IBaseAgentGenerator;
+import org.lightjason.agentspeak.language.score.IAggregation;
+import java.io.InputStream;
+import java.text.MessageFormat;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+final class MyAgentGenerator extends IBaseAgentGenerator&amp;lt;MyCommunicationAgent&amp;gt;
+{
+    
+    private final CSend m_send;
+    
+    private final AtomicLong m_counter = new AtomicLong();
+    
+    MyAgentGenerator( final CSend p_send, final InputStream p_stream ) throws Exception
+    {
+        super(
+            
+            p_stream,
+            
+            Stream.concat(
+                
+                CCommon.actionsFromPackage(),
+                
+                Stream.of( p_send )
+                
+            ).collect( Collectors.toSet() ),
+            
+            
+            IAggregation.EMPTY,
+            
+            new CVariableBuilder()
+        );
+        m_send = p_send;
+    }
+    
+    @Override
+    public final MyCommunicationAgent generatesingle( final Object... p_data )
+    {
+        
+        
+        return m_send.register(
+            new MyCommunicationAgent(
+                
+                
+                
+                MessageFormat.format( &amp;#34;agent {0}&amp;#34;, m_counter.getAndIncrement() ),
+                
+                m_configuration
+            )
+        );
+    }
+    
+    final void unregister( final MyCommunicationAgent p_agent )
+    {
+        m_send.unregister( p_agent );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;send-action-with-address-resolution&#34;&gt;Send-Action with address resolution&lt;/h2&gt;
+
+&lt;p&gt;For communication basisc a &lt;em&gt;send&lt;/em&gt; action must be created. This actions needs also an &lt;em&gt;address resolution&lt;/em&gt; for the agent names, this can be an URL access or a string name. Within this example we use a map with string for the agent name and the value for the agent object. Each generated agent must be registered at this action so that other agents can send messages. The action tries to find the agent object based on the name, builds the goal-trigger and transfer the data to the other agent. On the next cycle call of the receiving agent the message goal-plan will be triggered.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34;  &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.action.IBaseAction;
+import org.lightjason.agentspeak.agent.IAgent;
+import org.lightjason.agentspeak.common.CPath;
+import org.lightjason.agentspeak.common.IPath;
+import org.lightjason.agentspeak.language.CLiteral;
+import org.lightjason.agentspeak.language.CRawTerm;
+import org.lightjason.agentspeak.language.ITerm;
+import org.lightjason.agentspeak.language.execution.IContext;
+import org.lightjason.agentspeak.language.execution.fuzzy.CFuzzyValue;
+import org.lightjason.agentspeak.language.execution.fuzzy.IFuzzyValue;
+import org.lightjason.agentspeak.language.instantiable.plan.trigger.CTrigger;
+import org.lightjason.agentspeak.language.instantiable.plan.trigger.ITrigger;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+final class CSend extends IBaseAction
+{
+    
+    private final Map&amp;lt;String, MyCommunicationAgent&amp;gt; m_agents = new ConcurrentHashMap&amp;lt;&amp;gt;();
+    @Override
+    public final IPath name()
+    {
+        return CPath.from( &amp;#34;message/send&amp;#34; );
+    }
+    @Override
+    public final int minimalArgumentNumber()
+    {
+        return 2;
+    }
+    @Override
+    public final IFuzzyValue&amp;lt;Boolean&amp;gt; execute( final IContext p_context, final boolean p_parallel, final List&amp;lt;ITerm&amp;gt; p_argument,
+                                               final List&amp;lt;ITerm&amp;gt; p_return, final List&amp;lt;ITerm&amp;gt; p_annotation
+    )
+    {
+        
+        final IAgent&amp;lt;?&amp;gt; l_receiver = m_agents.get( p_argument.get( 0 ).&amp;lt;String&amp;gt;raw() );
+        
+        if ( l_receiver == null )
+            return CFuzzyValue.from( false );
+        
+        l_receiver.trigger(
+            CTrigger.from(
+                ITrigger.EType.ADDGOAL,
+                
+                
+                CLiteral.from(
+                    &amp;#34;message/receive&amp;#34;,
+                    
+                    CLiteral.from(
+                        &amp;#34;message&amp;#34;,
+                        
+                        
+                        p_argument
+                            .subList( 1, p_argument.size() )
+                            .stream()
+                            .map( i -&amp;gt; CRawTerm.from( i.raw() ) )
+                    ),
+                    
+                    
+                    
+                    CLiteral.from(
+                        &amp;#34;from&amp;#34;,
+                        CRawTerm.from(
+                            p_context.agent().&amp;lt;MyCommunicationAgent&amp;gt;raw().name()
+                        )
+                    )
+                )
+            )
+        );
+        return CFuzzyValue.from( true );
+    }
+    
+    final MyCommunicationAgent register( final MyCommunicationAgent p_agent )
+    {
+        m_agents.put( p_agent.name(), p_agent );
+        return p_agent;
+    }
+    
+    final MyCommunicationAgent unregister( final MyCommunicationAgent p_agent )
+    {
+        m_agents.remove( p_agent.name() );
+        return p_agent;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;variable-builder&#34;&gt;Variable-Builder&lt;/h2&gt;
+
+&lt;p&gt;The variable builder allows to create &lt;em&gt;individual variables and constants&lt;/em&gt; during runtin within a plan. In this case we crate the constant &lt;code&gt;MyName&lt;/code&gt; which stores the individual agent name. The &lt;code&gt;raw&lt;/code&gt;-method allows to create an object reference with a safe-cast. The variable builder is added to the agent factory.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34;  &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.agent.IAgent;
+import org.lightjason.agentspeak.language.execution.IVariableBuilder;
+import org.lightjason.agentspeak.language.instantiable.IInstantiable;
+import org.lightjason.agentspeak.language.variable.CConstant;
+import org.lightjason.agentspeak.language.variable.IVariable;
+import java.util.stream.Stream;
+final class CVariableBuilder implements IVariableBuilder
+{
+    @Override
+    public final Stream&amp;lt;IVariable&amp;lt;?&amp;gt;&amp;gt; generate( final IAgent&amp;lt;?&amp;gt; p_agent, final IInstantiable p_runningcontext )
+    {
+        return Stream.of(
+            new CConstant&amp;lt;&amp;gt;( &amp;#34;MyName&amp;#34;, p_agent.&amp;lt;MyCommunicationAgent&amp;gt;raw().name() )
+        );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;reference-solution&#34;&gt;Reference Solution&lt;/h2&gt;
+
+&lt;p&gt;This tutorial depends on the tutorial &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes&#34;&gt;AgentSpeak-in-15min&lt;/a&gt;, so the whole build process is explained within the basic tutorial. If you struggled at some point or wish to obtain our exemplary solution with code documentation to this tutorial, you can download the archive &lt;a href=&#34;https://github.com/LightJason/Examples/archive/tutorial-agent-communication.zip&#34;&gt;tutorial-agent-communication.zip&lt;/a&gt; containing the source code and a executable &lt;a href=&#34;https://github.com/LightJason/Examples/raw/jar-tutorial-agent-communication/myagentapp-1.0-SNAPSHOT.jar&#34;&gt;Jar file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you run the example the shown output can be different. For the first run we start the program with 10 agents and 5 iterations:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;agent 0    received message [   pqepkellesxa   ] from [   agent 2   ] in cycle [   0   ]
+agent 0    received message [   vxhfapwtulty   ] from [   agent 5   ] in cycle [   0   ]
+agent 0    received message [   ilmhcdofoevm   ] from [   agent 6   ] in cycle [   0   ]
+
+agent 0    received message [   rjnvygvwsbqo   ] from [   agent 0   ] in cycle [   1   ]
+agent 0    received message [   dhcfpfhqbpop   ] from [   agent 1   ] in cycle [   1   ]
+agent 0    received message [   khtsbiripesx   ] from [   agent 7   ] in cycle [   1   ]
+agent 0    received message [   fjxdyjcwfdby   ] from [   agent 4   ] in cycle [   1   ]
+agent 0    received message [   anhdriizkknv   ] from [   agent 9   ] in cycle [   1   ]
+agent 0    received message [   ewklpggifoym   ] from [   agent 8   ] in cycle [   1   ]
+agent 0    received message [   rtxtdqfcuzpl   ] from [   agent 3   ] in cycle [   1   ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and run it again with equal arguments&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;agent 0    received message [   ggbiaiijtvtz   ] from [   agent 0   ] in cycle [   1   ]
+agent 0    received message [   mmlxwmifnedq   ] from [   agent 8   ] in cycle [   1   ]
+agent 0    received message [   qileeboovtlc   ] from [   agent 2   ] in cycle [   1   ]
+agent 0    received message [   ixruabyhlxfi   ] from [   agent 7   ] in cycle [   1   ]
+agent 0    received message [   hwkcdbjuqqyc   ] from [   agent 3   ] in cycle [   1   ]
+agent 0    received message [   benrjxxkrcog   ] from [   agent 1   ] in cycle [   1   ]
+agent 0    received message [   sqkuorfmknuq   ] from [   agent 6   ] in cycle [   1   ]
+agent 0    received message [   hcyrnovvacsb   ] from [   agent 9   ] in cycle [   1   ]
+agent 0    received message [   ldvxkosghaax   ] from [   agent 5   ] in cycle [   1   ]
+agent 0    received message [   vbykpbivcwow   ] from [   agent 4   ] in cycle [   1   ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can see, that the agent 0 received messages in cycle 0 and 1 and the ordering of the executed plans are different. This behaviour is desired, because all agents run in parallel and so the agent can receive the message before it own cycle is called otherwise the cycle is called and after that the agent receive the message. &lt;strong&gt;So keep in mind that all execution is heavily asynchronized and parallel&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Develop an AgentSpeak Scenario in 15 Minutes</title>
+      <link>https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes/</guid>
+      <description>
+
+&lt;p&gt;This tutorial explains how to develop a simple, but full working scenario in 15 minutes with the most recent version of the AgentSpeak(L++) source code.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note: This tutorial aims at developers of multi-agent systems (MAS) and requires some basic understanding in programming.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div id=&#34;toccontainer&#34;&gt;Contents [&lt;a href=&#34;#&#34; id=&#34;tochideshow&#34;&gt;Hide&lt;/a&gt;]&lt;div id=&#34;toc&#34;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;previous-knowledge&#34;&gt;Previous Knowledge&lt;/h2&gt;
+
+&lt;p&gt;The basic knowledge about agents and their execution mechanism from the &lt;a href=&#34;https://lightjason.github.io/knowledgebase&#34;&gt;knowledgebase&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;tools-you-need&#34;&gt;Tools You Need&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Working Maven greater than 3.0 &lt;a href=&#34;http://maven.apache.org/install.html&#34;&gt;installation&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Java &lt;strong&gt;JDK&lt;/strong&gt; 1.8 installation which can be obtained &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Git installation (optional, but recommended)
+
+&lt;ul&gt;
+&lt;li&gt;Linux: Installing &lt;code&gt;git&lt;/code&gt; via your favourite package manager should be sufficient.&lt;/li&gt;
+&lt;li&gt;MacOS: Using &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt; with &lt;code&gt;brew install git&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-for-windows.github.io&#34;&gt;Git for Windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This tutorial gives you a &lt;em&gt;very short&lt;/em&gt; introduction into LightJason&amp;rsquo;s AgentSpeak(L++) structure. Our &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/index.html&#34;&gt;source code documentation&lt;/a&gt; can help you in developing your own MAS project according to your individual requirements.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Don&amp;rsquo;t hesitate to ask questions via email or on the &lt;a href=&#34;https://github.com/LightJason/AgentSpeak/issues&#34;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This tutorial is structured as follows:
+First you will build AgentSpeak(L++) from source and install the resulting &lt;em&gt;AgentSpeak&lt;/em&gt; package on your system, making it available as a dependency for your own MAS project.
+Then you will create your own MAS project based on the template created by the Maven tool.&lt;/p&gt;
+
+&lt;p&gt;All further configuration of &lt;code&gt;xml&lt;/code&gt; files and programming will then take place in your own project&amp;rsquo;s directory.&lt;/p&gt;
+
+&lt;p&gt;For the following sections we assume that you are working inside the directory &lt;code&gt;Developer&lt;/code&gt;. You are of course free to choose your own, in which case, please replace &lt;code&gt;Developer&lt;/code&gt; accordingly.&lt;/p&gt;
+
+&lt;h2 id=&#34;build-agentspeak-l-from-the-sources&#34;&gt;Build AgentSpeak(L++) from the Sources&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Obtain the current source code from &lt;a href=&#34;https://github.com/LightJason/AgentSpeak&#34;&gt;AgentSpeak(L++)&lt;/a&gt; and place it into &lt;code&gt;Developer/AgentSpeak&lt;/code&gt;. This can be done on the command line either via Git&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;cd Developer
+git clone https://github.com/LightJason/AgentSpeak.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;or by downloading the &lt;a href=&#34;https://github.com/LightJason/AgentSpeak/archive/master.zip&#34;&gt;ZIP archive&lt;/a&gt; and extracting it to &lt;code&gt;Developer&lt;/code&gt;.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;cd Developer
+unzip AgentSpeak-master.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you chose to download the &lt;em&gt;ZIP archive&lt;/em&gt;, be aware that the resulting directory will be &lt;code&gt;AgentSpeak-master&lt;/code&gt;. Either rename it to &lt;code&gt;AgentSpeak&lt;/code&gt; or keep this in mind in the following sections.&lt;/p&gt;
+
+&lt;p&gt;You should now have the following directory structure:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;├── Developer/
+│   └── AgentSpeak/      
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Change into the AgentSpeak project directory &lt;code&gt;Developer/AgentSpeak&lt;/code&gt; and run &lt;code&gt;mvn install&lt;/code&gt; to build and install AgentSpeak:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;cd Developer/AgentSpeak
+mvn install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;AgentSpeak will be installed as a local maven artifact in the directory &lt;code&gt;~/.m2&lt;/code&gt; and can be imported as a dependency by your project.&lt;/p&gt;
+
+&lt;p&gt;The build process should terminate with a &lt;code&gt;BUILD SUCCESS&lt;/code&gt; message.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;maven-project-configuration&#34;&gt;Maven Project Configuration&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create an empty Maven project (see &lt;a href=&#34;https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html&#34;&gt;Maven in 5 minutes tutorial&lt;/a&gt;) inside the &lt;code&gt;Developer&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;cd Developer
+mvn archetype:generate -DgroupId=myagentproject -DartifactId=myagentapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;Maven will then create a project template, resulting in the following directory structure:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;├── Developer/
+│   └── AgentSpeak/ &amp;lt;-- AgentSpeak project (added in previous section)
+│   └── myagentapp/ &amp;lt;-- created by Maven
+│       ├── pom.xml
+│       └── src/
+│           ├── main/
+│           │   └── java/
+│           │       └── myagentproject/
+│           │           └── App.java
+│           └── test/
+│               └── java/
+│                   └── myagentproject/
+│                       └── AppTest.java    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;code&gt;Developer/myagentapp/&lt;/code&gt; is the directory in which your own MAS projects resides.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Take a note of the current values of &lt;code&gt;groupId&lt;/code&gt;, &lt;code&gt;artifactId&lt;/code&gt; and &lt;code&gt;version&lt;/code&gt; from the AgentSpeak &lt;a href=&#34;https://github.com/LightJason/AgentSpeak/blob/master/pom.xml#L27&#34;&gt;pom.xml&lt;/a&gt;:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-xml &#34;  &gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.lightjason&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;AgentSpeak&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;p&gt;Inside &lt;code&gt;Developer/myagentapp/&lt;/code&gt; open the &lt;code&gt;pom.xml&lt;/code&gt; with your favourite (programming) editor, navigate to the &lt;code&gt;&amp;lt;dependencies&amp;gt;&lt;/code&gt; section and add the completed excerpt above or below the already present &lt;code&gt;&amp;lt;dependency&amp;gt;&lt;/code&gt; entries (for example, you will also find an entry for JUnit within this section).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;For LightJason/AgentSpeak to run, it is crucial to enforce Java 1.8 support&lt;/strong&gt; in your project. Add the following entry before the &lt;code&gt;&amp;lt;dependencies&amp;gt;&lt;/code&gt; section:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-xml &#34;  &gt;&lt;code class=&#34;language-xml&#34;&gt;
+    &amp;lt;properties&amp;gt;
+        &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+        &amp;lt;maven.compiler.source&amp;gt;1.8&amp;lt;/maven.compiler.source&amp;gt;
+        &amp;lt;maven.compiler.target&amp;gt;1.8&amp;lt;/maven.compiler.target&amp;gt;
+    &amp;lt;/properties&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Put the following code inside the &lt;code&gt;&amp;lt;project&amp;gt;&lt;/code&gt; section, e.g. after &lt;code&gt;&amp;lt;/dependencies&amp;gt;&lt;/code&gt;, to include the &lt;a href=&#34;https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html&#34;&gt;Maven Shade Plugin&lt;/a&gt; which creates an executable JAR when you build your project with &lt;code&gt;mvn package&lt;/code&gt;&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-xml &#34;  &gt;&lt;code class=&#34;language-xml&#34;&gt;
+    &amp;lt;build&amp;gt;
+        &amp;lt;plugins&amp;gt;
+            &amp;lt;plugin&amp;gt;
+                &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+                &amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
+                &amp;lt;version&amp;gt;2.4.3&amp;lt;/version&amp;gt;
+                &amp;lt;executions&amp;gt;
+                    &amp;lt;execution&amp;gt;
+                        &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt;
+                        &amp;lt;goals&amp;gt;
+                            &amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
+                        &amp;lt;/goals&amp;gt;
+                        &amp;lt;configuration&amp;gt;
+                            &amp;lt;transformers&amp;gt;
+                                &amp;lt;transformer implementation = &amp;#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&amp;#34;&amp;gt;
+                                    &amp;lt;mainClass&amp;gt;myagentproject.App&amp;lt;/mainClass&amp;gt;
+                                &amp;lt;/transformer&amp;gt;
+                            &amp;lt;/transformers&amp;gt;
+                        &amp;lt;/configuration&amp;gt;
+                    &amp;lt;/execution&amp;gt;
+                &amp;lt;/executions&amp;gt;
+            &amp;lt;/plugin&amp;gt;
+        &amp;lt;/plugins&amp;gt;
+    &amp;lt;/build&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Test-build your project by running &lt;code&gt;mvn package&lt;/code&gt; inside &lt;code&gt;Developer/myagentapp/&lt;/code&gt;, i.e. where your &lt;code&gt;pom.xml&lt;/code&gt; is located:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;cd Developer/myagentapp/
+mvn package
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It should print &lt;code&gt;BUILD SUCCESS&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The resulting, runnable JAR is located at  &lt;code&gt;Developer/myagentapp/target/myagentapp-1.0-SNAPSHOT.jar&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Import your Maven project into your favourite IDE.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;agent-and-generator-classes&#34;&gt;Agent and Generator Classes&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The file names and paths provided in the following sections are relative to your project folder. For example &lt;code&gt;src/main/java/myagentproject/MyAgent.java&lt;/code&gt; refers to the file &lt;code&gt;MyAgent.java&lt;/code&gt; located at &lt;code&gt;Developer/myagentapp/src/main/java/myagentproject/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;a-id-agentclass-a-agent-class&#34;&gt;&lt;a id=&#34;agentclass&#34;&gt;&lt;/a&gt; Agent Class&lt;/h3&gt;
+
+&lt;p&gt;Each agent, which you use, must be inherited from our base class &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/d3/d39/interfaceorg_1_1lightjason_1_1agentspeak_1_1agent_1_1IAgent_3_01T_01extends_01IAgent_3_04_4_01_4__coll__graph.svg&#34; data-lightbox=&#34;iagent&#34; data-title=&#34;IAgent&#34;&gt;IAgent&lt;/a&gt; interface, but we recommend our &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/d6/df3/classorg_1_1lightjason_1_1agentspeak_1_1agent_1_1IBaseAgent_3_01T_01extends_01IAgent_3_04_4_01_4__coll__graph_org.svg&#34; data-lightbox=&#34;ibaseagent&#34; data-title=&#34;IBaseAgent&#34;&gt;IBaseAgent&lt;/a&gt; with a complete execution mechanism. &lt;strong&gt;Please note&lt;/strong&gt; that you need to pass your agent class as a generic parameter to the definition of a LightJason agent class.&lt;/p&gt;
+
+&lt;p&gt;Create an agent class &lt;code&gt;MyAgent.java&lt;/code&gt; in &lt;code&gt;src/main/java/myagentproject/&lt;/code&gt; as follows:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34;  &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.agent.IBaseAgent;
+import org.lightjason.agentspeak.configuration.IAgentConfiguration;
+final class MyAgent extends IBaseAgent&amp;lt;MyAgent&amp;gt;
+{
+    
+    MyAgent( final IAgentConfiguration&amp;lt;MyAgent&amp;gt; p_configuration )
+    {
+        super( p_configuration );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;agent-generator-class&#34;&gt;Agent Generator Class&lt;/h3&gt;
+
+&lt;p&gt;Next create your own &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/d1/dc9/interfaceorg_1_1lightjason_1_1agentspeak_1_1generator_1_1IAgentGenerator_3_01T_01extends_01IAgent_3_04_4_01_4__inherit__graph.svg&#34; data-lightbox=&#34;agent-generator&#34; data-title=&#34;agent generator&#34;&gt;agent generator&lt;/a&gt; (agent factory). This component is based on the &lt;a href=&#34;https://en.wikipedia.org/wiki/Factory_method_pattern&#34;&gt;UML factory pattern&lt;/a&gt;. Within the factory the agent script (ASL) is parsed once and you can generate a lot of agents with a single factory. We support a general implementation of the factory the &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/dc/d04/classorg_1_1lightjason_1_1agentspeak_1_1generator_1_1IBaseAgentGenerator_3_01T_01extends_01IAgent_3_04_4_01_4__coll__graph.svg&#34; data-lightbox=&#34;ibaseagentgenerator&#34; data-title=&#34;IBaseAgentGenerator&#34;&gt;IBaseAgentGenerator&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Create an agent generator class &lt;code&gt;MyAgentGenerator.java&lt;/code&gt; in &lt;code&gt;src/main/java/myagentproject/&lt;/code&gt; as follows:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34;  &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.common.CCommon;
+import org.lightjason.agentspeak.generator.IBaseAgentGenerator;
+import org.lightjason.agentspeak.language.score.IAggregation;
+import java.io.InputStream;
+import java.util.stream.Collectors;
+final class MyAgentGenerator extends IBaseAgentGenerator&amp;lt;MyAgent&amp;gt;
+{
+    
+    MyAgentGenerator( final InputStream p_stream ) throws Exception
+    {
+        super(
+            
+            p_stream,
+            
+            CCommon.actionsFromPackage().collect( Collectors.toSet() ),
+            
+            
+            IAggregation.EMPTY
+        );
+    }
+    
+    @Override
+    public final MyAgent generatesingle( final Object... p_data )
+    {
+        return new MyAgent( m_configuration );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;write-your-own-runtime&#34;&gt;Write Your Own Runtime&lt;/h3&gt;
+
+&lt;p&gt;In this section you will write your own runtime&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:runtime&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:runtime&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; within the &lt;code&gt;main&lt;/code&gt; method of the &lt;code&gt;App&lt;/code&gt; class.
+The runtime is responsible for running the agents in each cycle.
+We are using &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/collections/streams/&#34;&gt;Java streams&lt;/a&gt; to execute the agent, but you can use also a &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html&#34;&gt;thread-pool&lt;/a&gt;, because all agents implement the &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html&#34;&gt;Callable&lt;/a&gt; interface (the &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html&#34;&gt;Future&lt;/a&gt; object is the agent in the state $cycle + 1$)&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34;  &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import java.io.FileInputStream;
+import java.util.Collections;
+import java.util.Set;
+import java.util.logging.LogManager;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+final class App
+{
+    static
+    {
+        
+        LogManager.getLogManager().reset();
+    }
+    
+    private App()
+    {
+    }
+    
+    public static void main( final String[] p_args )
+    {
+        if ( p_args.length &amp;lt; 2 )
+            throw new RuntimeException( &amp;#34;arguments are not set: ASL script, number of agents&amp;#34; );
+        
+        
+        
+        
+        final Set&amp;lt;MyAgent&amp;gt; l_agents;
+        try
+            (
+                final FileInputStream l_stream = new FileInputStream( p_args[0] );
+            )
+        {
+            
+            l_agents = Collections.unmodifiableSet(
+                new MyAgentGenerator( l_stream )
+                    .generatemultiple( Integer.parseInt( p_args[1] ) )
+                    .collect( Collectors.toSet() )
+            );
+        }
+        catch ( final Exception l_exception )
+        {
+            l_exception.printStackTrace();
+            return;
+        }
+        
+        IntStream
+            .range(
+                0,
+                p_args.length &amp;lt; 3
+                ? Integer.MAX_VALUE
+                : Integer.parseInt( p_args[2] )
+            )
+            .forEach( j -&amp;gt; l_agents.parallelStream().forEach( i -&amp;gt;
+                                                              {
+                                                                  try
+                                                                  {
+                                                                      i.call();
+                                                                  }
+                                                                  catch ( final Exception l_exception )
+                                                                  {
+                                                                      l_exception.printStackTrace();
+                                                                  }
+                                                              } ) );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;write-your-agent-script&#34;&gt;Write Your Agent Script&lt;/h3&gt;
+
+&lt;p&gt;Create a simple &lt;em&gt;Hello World&lt;/em&gt; agent for testing purposes.
+Add a file &lt;code&gt;agent.asl&lt;/code&gt; in the top-level directory of your project with the following content:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-agentspeak &#34;  data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+!main.
+&amp;#43;!main &amp;lt;-
+    generic/print(&amp;#34;Hello World!&amp;#34;);
+    !mynextgoal
+.
+&amp;#43;!mynextgoal &amp;lt;-
+    generic/print(&amp;#34;Hello World! (again)&amp;#34;, Cycle);
+    !mynextgoal
+.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;p&gt;The agent starts in cycle $0$ with the initial goal &lt;code&gt;!main&lt;/code&gt;. As the plan &lt;code&gt;main&lt;/code&gt; matches, it gets executed, i.e. printing &amp;ldquo;Hello World&amp;rdquo; and adding &lt;code&gt;mynextgoal&lt;/code&gt; to be triggered in the next cycle.
+In cycle $1$ and preceding cycles $1+n$ the agent will execute the plan &lt;code&gt;mynextgoal&lt;/code&gt;, printing &lt;code&gt;Hello World! (again)&lt;/code&gt; with the current cycle number and adds the trigger for the same plan for the preceding cycle.&lt;/p&gt;
+
+&lt;h3 id=&#34;run-it&#34;&gt;Run It&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Run Maven within your project directory to build the program:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;mvn package
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Run the program to create 500 agents based on the &lt;code&gt;agent.asl&lt;/code&gt; and the agents will run 1000 cycles:&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;java -jar target/myagentapp-1.0-SNAPSHOT.jar agent.asl 500 1000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Observe the CPU load and time with the print actions (code above) and without (code below):
+&lt;!-- htmlmin:ignore --&gt;
+&lt;pre class=&#34;language-agentspeak &#34;  data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+!main.
+&amp;#43;!main &amp;lt;-
+    !mynextgoal
+.
+&amp;#43;!mynextgoal &amp;lt;-
+    !mynextgoal
+.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;p&gt;i.e. run
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;java -jar target/myagentapp-1.0-SNAPSHOT.jar agent.asl 500 1000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;and compare it with
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;java -jar target/myagentapp-1.0-SNAPSHOT.jar agent_noprint.asl 500 1000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;On a recent dual-core 2C/4T laptop (benchmarked with the &lt;a href=&#34;https://linux.die.net/man/1/time&#34;&gt;Linux/Unix tool&lt;/a&gt; &lt;code&gt;time&lt;/code&gt;) this yields
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;time java -jar target/myagentapp-1.0-SNAPSHOT.jar agent.asl 500 1000
+...
+77.33s user 8.22s system 200% cpu 42.659 total
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;vs.
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;time java -jar target/myagentapp-1.0-SNAPSHOT.jar agent_noprint.asl 500 1000
+...
+37.77s user 1.14s system 327% cpu 11.888 total
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;It is noteworthy, that&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the load gets well distributed across the CPU-cores and&lt;/li&gt;
+&lt;li&gt;too many prints have a negative impact on the performance, as you are then basically benchmarking your shell ;-)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;reference-solution&#34;&gt;Reference Solution&lt;/h2&gt;
+
+&lt;p&gt;If you struggled at some point or wish to obtain our exemplary solution with code documentation to this tutorial, you can download the archive &lt;a href=&#34;https://github.com/LightJason/Examples/archive/tutorial-agentspeak-in-15min.zip&#34;&gt;tutorial-agentspeak-in-15min.zip&lt;/a&gt; containing the source code and a executable &lt;a href=&#34;https://github.com/LightJason/Examples/raw/jar-tutorial-agentspeak-in-15min/myagentapp-1.0-SNAPSHOT.jar&#34;&gt;Jar file&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:runtime&#34;&gt;For creating a complex and fast runtime have a look at general object-orientated programming patterns. Here we only provide a short example to show you how you can work with AgentSpeak(L++) agents.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:runtime&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Efficient Beliefbase</title>
+      <link>https://lightjason.github.io/tutorials/efficient-beliefbase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/tutorials/efficient-beliefbase/</guid>
+      <description>
+
+&lt;p&gt;In contrast to Prolog and original Jason, the beliefbase of LightJason is more than a list of facts.
+LightJason supports a hierarchical structure of beliefs.
+We support a more organised data structure with efficient searching and unification of beliefs.&lt;/p&gt;
+
+&lt;div id=&#34;toccontainer&#34;&gt;Contents [&lt;a href=&#34;#&#34; id=&#34;tochideshow&#34;&gt;Hide&lt;/a&gt;]&lt;div id=&#34;toc&#34;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;previous-knowledge&#34;&gt;Previous Knowledge&lt;/h2&gt;
+
+&lt;p&gt;This tutorial describs the usage of beliefbases in a more general usages but also with &lt;em&gt;on-demand access&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the scenario starts with the &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes/&#34;&gt;AgentSpeak 15min&lt;/a&gt; tutorial&lt;/li&gt;
+&lt;li&gt;it is also nessessary to understand the basic structure of &lt;a href=&#34;https://lightjason.github.io/knowledgebase/logicalprogramming/#a-name-atomliterals-atom-literals-a&#34;&gt;literals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;and the &lt;a href=&#34;https://lightjason.github.io/knowledgebase/differencetojason/#terms-and-literals&#34;&gt;extended literal&lt;/a&gt; structure in LightJason&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-is-the-basic-structure-of-a-beliefbase&#34;&gt;What is the basic structure of a beliefbase?&lt;/h2&gt;
+
+&lt;p&gt;The beliefbase consists of three different elements&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Storage&lt;/strong&gt; is a persistent thread-safe structure for the literals and views&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Views&lt;/strong&gt; are structured elements to build the hierarchical naming structure of the literal&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Beliefbase&lt;/strong&gt; is a middleware between views and storage to create goal-trigger&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;persistence&#34;&gt;Persistence&lt;/h3&gt;
+
+&lt;p&gt;In general, beliefs can be stored in a persistent way.
+So an literal object will be set into the storage and the views creates the tree structure.&lt;/p&gt;
+
+&lt;img src=&#34;https://lightjason.github.io/images/beliefbase.svg#centering&#34; alt=&#34;beliefbase&#34; style=&#34;width: 30%; &#34;/&gt;
+
+&lt;p&gt;In this example, there are two agents and both agents are referenced to the equal storage, but use different views.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Agent 1 gets access to the literal by the structure
+&lt;!-- htmlmin:ignore --&gt;
+&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;foo/value(5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Agent 2 gets access to the literal by the structure
+&lt;!-- htmlmin:ignore --&gt;
+&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;foo2/value(5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This structure allows the agent to store knowledge in a persistent way with generating the goals.
+But this type of beliefs consumes more memory and reduce performance during modification. On each cycle the storage can generate or delete beliefs which triggers the goals.&lt;/p&gt;
+
+&lt;h3 id=&#34;on-demand&#34;&gt;On-Demand&lt;/h3&gt;
+
+&lt;p&gt;The on-demand beliefbase allows you to create a non-persistence belief definition, which is suitable to get access to the environment / underlying software architecture. It follows up the &lt;a href=&#34;https://en.wikipedia.org/wiki/Lazy_loading&#34;&gt;lazy loading pattern&lt;/a&gt;)&lt;/p&gt;
+
+&lt;img src=&#34;https://lightjason.github.io/images/ondemandbeliefbase.svg#centering&#34; alt=&#34;on-demand beliefbase&#34; style=&#34;width: 50%; &#34;/&gt;
+
+&lt;p&gt;For some practical explanation, think about agents as:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Agents are &lt;em&gt;individual and self-organized&lt;/em&gt; items,
+which perceives their environment autonomous.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We built this structure with &lt;em&gt;on-demand beliefbases&lt;/em&gt; into LightJason/AgentSpeak(L++), so you get access to a belief which will be created if you access it and after usage the literal object will be removed. This is a very efficient way for perceiving. We recommend the following workflow:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;build an on-demand beliefbase for all dynamic access and changeable information e.g. environment, other agents&lt;/li&gt;
+&lt;li&gt;create a plan which will run continuously, i.e. the plan runs in each cycle&lt;/li&gt;
+&lt;li&gt;within this plan access the belief&lt;/li&gt;
+&lt;li&gt;if the belief can be unified within the plan condition, get the information out of the belief and put it &amp;ndash; if needed &amp;ndash; into a persistent beliefbase&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;agent-with-on-demand-beliefbase&#34;&gt;Agent with on-demand beliefbase&lt;/h4&gt;
+
+&lt;p&gt;Java agent class with inner on-demand beliefbase class. The inner class can get access to all properties within the agent class.
+The environment class contains attributes to generate data as literals for each agent.
+The on-demand beliefbase is only a wrapper for the environment literals.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;/* agent class which can deal with an environment */
+public final class MyAgent extends IBaseAgent&amp;lt;MyAgent&amp;gt;
+{
+    /**
+     * environment reference
+     */ 
+    private Environment m_environment;
+
+    /*
+     * constructor of the agent
+     * @param p_environment environment reference
+     * @param p_configuration agent configuration of the agent generator
+     */
+    public MyAgent( final Environment p_environment, final IAgentConfiguration&amp;lt;MyAgent&amp;gt; p_configuration )
+    {
+        super( p_configuration );
+        m_environment = p_environment;
+        
+        m_beliefbase
+            // the on-demand beliefbase referenced all beliefs with &amp;quot;env/&amp;quot;
+            .add( new EnvironmentBeliefbase().create( &amp;quot;env&amp;quot; ) );
+    }
+    
+    /* inner class with on-demand beliefbase */
+    private final class EnvironmentBeliefbase extends IDemandBeliefbase
+    {
+        @Override
+        public final int size()
+        {
+            // returns the number of the literals within the environment for the agent
+            return m_environment.size( MyAgent.this );
+        }
+
+        @Override
+        public final boolean empty()
+        {
+            // returns empty-flag for literals of this agent
+            return m_environment.empty( MyAgent.this );
+        }
+
+        @Override
+        public final boolean containsLiteral( final String p_key )
+        {
+            // checks the existence of a literal for the agent
+            return m_environment.containsKey( MyAgent.this, p_key.toLowerCase() );
+        }
+
+        @Override
+        public final Stream&amp;lt;ILiteral&amp;gt; streamLiteral()
+        {
+            // returns a stream of all literals for the agent
+            return m_environment.stream( MyAgent.this );
+        }
+
+        @Override
+        public final Collection&amp;lt;ILiteral&amp;gt; literal( final String p_key )
+        {
+            // return a collection of all literals for the agent
+            return this.containsLiteral( p_key )
+                   ? m_environment.stream( MyAgent.this ).collect( Collectors.toSet() )
+                   : Collections.emptySet();
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;h4 id=&#34;asl-of-the-agent&#34;&gt;ASL of the agent&lt;/h4&gt;
+
+&lt;p&gt;On the ASL side all beliefs with the prefix &lt;code&gt;env/&lt;/code&gt; will be matched to the on-demand beliefbase and will be passed back to the agent.
+On the unification (&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;) the literal will be generated and unified into the variable &lt;code&gt;X&lt;/code&gt;. After printing the value of X, it will be stored in the persistent beliefbase.
+Because of LightJason&amp;rsquo;s system architecture the &lt;code&gt;checkenvironment&lt;/code&gt; plan will be run in each cycle (in parallel to other plans), so you can control the agent&amp;rsquo;s perceptions in a clean way.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;!checkenvironment.&lt;/p&gt;
+
+&lt;p&gt;+!checkenvironment
+    : &amp;gt;&amp;gt;env/foo(X) &amp;lt;-
+        generic/print( &amp;ldquo;envrionment&amp;rdquo;, X );
+        +myknowledge(X);
+        !checkenvironment
+.&lt;/p&gt;
+
+&lt;p&gt;+myknowledge(T) &amp;lt;-
+    generic/print( &amp;ldquo;I get knowledge&amp;rdquo;, T )
+.&lt;br /&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Environment</title>
+      <link>https://lightjason.github.io/tutorials/environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/tutorials/environment/</guid>
+      <description>
+
+&lt;p&gt;LightJason system architecture does not require any environment, but you can easily write your own. Based on the &lt;em&gt;asynchronous and parallel&lt;/em&gt; execution model in LightJason you have to create thread-safe data structures for your environment to avoid any &lt;a href=&#34;https://en.wikipedia.org/wiki/Race_condition&#34;&gt;race condition&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Keep in mind that all calls of the environment are done in parallel and asynchronously, so your environment must handle these access correctly.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div id=&#34;toccontainer&#34;&gt;Contents [&lt;a href=&#34;#&#34; id=&#34;tochideshow&#34;&gt;Hide&lt;/a&gt;]&lt;div id=&#34;toc&#34;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;previous-knowledge&#34;&gt;Previous Knowledge&lt;/h2&gt;
+
+&lt;p&gt;We do the tutorial into three steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;create the basic agent structure based on the &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes/&#34;&gt;AgentSpeak 15min&lt;/a&gt;, &lt;a href=&#34;https://lightjason.github.io/tutorials/trigger/&#34;&gt;Triggering&lt;/a&gt; and &lt;a href=&#34;https://lightjason.github.io/tutorials/actions/&#34;&gt;Actions&lt;/a&gt; tutorials&lt;/li&gt;
+&lt;li&gt;we use the &lt;a href=&#34;https://lightjason.github.io/tutorials/actions/#object-actions-internal-actions&#34;&gt;object-actions (internal actions)&lt;/a&gt; to pass the calls from the agent to the evnironment&lt;/li&gt;
+&lt;li&gt;we create a &lt;em&gt;thread-safe&lt;/em&gt; environment which can execute the &lt;em&gt;object-actions&lt;/em&gt; from the agent&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;environment&#34;&gt;Environment&lt;/h2&gt;
+
+&lt;p&gt;For this example we use a small structure within the agent should change there position. The agent can move one cell to the left or right, but the agent can move if the cell is free. The number of cells is $1.5 \cdot \text{number of agents}$ so there is a guarantee that there is a free cell. The agent position will be set by random on initialization.&lt;/p&gt;
+
+&lt;img src=&#34;https://lightjason.github.io/images/environment.svg#centering&#34;  style=&#34;width: 35%; &#34;/&gt;
+
+&lt;p&gt;We need on the environment two structures for storing, both structures must be thread-safe&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a storage for the agents (the cell definition) &lt;a href=&#34;#source-env.13&#34;&gt;line 13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;a map to store agent an positon for read access &lt;a href=&#34;#source-env.15&#34;&gt;line 15&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For execution we need two methods&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a method for initial set of the agent &lt;a href=&#34;#source-env.35-49&#34;&gt;line 35-49&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;the method for moving, which is used for the agent action &lt;a href=&#34;#source-env.51-83&#34;&gt;line 51-83&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With a trigger &lt;a href=&#34;#source-env.65-72&#34;&gt;line 65-72&lt;/a&gt; we notify all other agents if an agents change the position &lt;a href=&#34;#source-env.78-79&#34;&gt;line 78-79&lt;/a&gt;. If the agent cannot move, because the cell is not empty, we thrown an exception on &lt;a href=&#34;#source-env.82&#34;&gt;line 82&lt;/a&gt; and this will fail the agent action.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34; id=&#34;source-env&#34; &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.language.CLiteral;
+import org.lightjason.agentspeak.language.CRawTerm;
+import org.lightjason.agentspeak.language.instantiable.plan.trigger.CTrigger;
+import org.lightjason.agentspeak.language.instantiable.plan.trigger.ITrigger;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicReferenceArray;
+final class CEnvironment
+{
+    
+    private final AtomicReferenceArray&amp;lt;MyAgent&amp;gt; m_position;
+    
+    private final Map&amp;lt;MyAgent, Integer&amp;gt; m_agentposition = new ConcurrentHashMap&amp;lt;&amp;gt;();
+    
+    private final int m_size;
+    
+    CEnvironment( final int p_size )
+    {
+        m_size = p_size;
+        m_position = new AtomicReferenceArray&amp;lt;&amp;gt;( new MyAgent[(int) ( m_size * 1.5 )] );
+    }
+    
+    final int length()
+    {
+        return m_size;
+    }
+    
+    final int size()
+    {
+        return m_position.length();
+    }
+    
+    final boolean initialset( final MyAgent p_agent, final int p_position )
+    {
+        
+        if ( m_agentposition.size() &amp;gt;= m_size )
+            return true;
+        
+        if ( ( p_position &amp;lt; 0 ) || ( p_position &amp;gt;= m_position.length() ) )
+            return false;
+        if ( m_position.compareAndSet( p_position, null, p_agent ) )
+        {
+            m_agentposition.put( p_agent, p_position );
+            return true;
+        }
+        return false;
+    }
+    
+    final void move( final MyAgent p_agent, final Number p_value )
+    {
+        
+        
+        if ( ( p_value.intValue() &amp;lt; 0 ) || ( p_value.intValue() &amp;gt;= m_position.length() ) )
+            throw new RuntimeException( &amp;#34;position index is incorrect&amp;#34; );
+        
+        if ( m_position.compareAndSet( p_value.intValue(), null, p_agent ) )
+        {
+            final int l_oldposition = m_agentposition.get( p_agent );
+            
+            m_position.set( l_oldposition, null );
+            m_agentposition.put( p_agent, p_value.intValue() );
+            
+            final ITrigger l_trigger = CTrigger.from(
+                ITrigger.EType.ADDGOAL,
+                CLiteral.from(
+                    &amp;#34;other/agent-position/changed&amp;#34;,
+                    CLiteral.from( &amp;#34;from&amp;#34;, CRawTerm.from( l_oldposition ) ),
+                    CLiteral.from( &amp;#34;to&amp;#34;, CRawTerm.from( p_value.intValue() ) )
+                )
+            );
+            
+            m_agentposition
+                .keySet()
+                .parallelStream()
+                
+                .filter( i -&amp;gt; !i.equals( p_agent ) )
+                .forEach( i -&amp;gt; i.trigger( l_trigger ) );
+        }
+        else
+            throw new RuntimeException( &amp;#34;position is not free&amp;#34; );
+    }
+    
+    final int position( final MyAgent p_agent )
+    {
+        return m_agentposition.get( p_agent );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;agent-with-environment-actions&#34;&gt;Agent with environment actions&lt;/h2&gt;
+
+&lt;p&gt;The agent class must define the actions which passed the call to the environment. Based on this definition the action can be called inside the agent script.&lt;/p&gt;
+
+&lt;h3 id=&#34;agent-class&#34;&gt;Agent class&lt;/h3&gt;
+
+&lt;p&gt;In this example we implement the action as &lt;a href=&#34;https://lightjason.github.io/tutorials/actions/#object-actions-internal-actions&#34;&gt;object-actions (internal actions)&lt;/a&gt; on &lt;a href=&#34;#source-agentclass.21-26&#34;&gt;line 21-26&lt;/a&gt;. The method name can be choosen arbitrary, so the annotation defines the action name. Arguments can be passed with the native Java type inside the method.&lt;/p&gt;
+
+&lt;p&gt;The method pass the data to the method of the environment object &lt;a href=&#34;#source-agentclass.25&#34;&gt;line 25&lt;/a&gt;. The environment object is set by the constructor and stored inside the agent object &lt;a href=&#34;#source-agentclass.13,15,18&#34;&gt;line 13, 15, 18&lt;/a&gt;. All agents references the same environment, because in Java all inheritance of objects are passed as references.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34; id=&#34;source-agentclass&#34; &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.action.binding.IAgentAction;
+import org.lightjason.agentspeak.action.binding.IAgentActionFilter;
+import org.lightjason.agentspeak.action.binding.IAgentActionName;
+import org.lightjason.agentspeak.agent.IBaseAgent;
+import org.lightjason.agentspeak.configuration.IAgentConfiguration;
+import java.util.concurrent.atomic.AtomicInteger;
+@IAgentAction
+final class MyAgent extends IBaseAgent&amp;lt;MyAgent&amp;gt;
+{
+    
+    private final CEnvironment m_environment;
+    
+    MyAgent( final IAgentConfiguration&amp;lt;MyAgent&amp;gt; p_configuration, final CEnvironment p_environment )
+    {
+        super( p_configuration );
+        m_environment = p_environment;
+    }
+    
+    @IAgentActionFilter
+    @IAgentActionName( name = &amp;#34;env/move&amp;#34; )
+    private void env_move( final Number p_value )
+    {
+        m_environment.move( this, p_value );
+    }
+    
+    final int position()
+    {
+        return m_environment.position( this );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;agent-agentspeak-l-script&#34;&gt;Agent AgentSpeak(L++) Script&lt;/h3&gt;
+
+&lt;p&gt;The agent script can use the action &lt;code&gt;env/move&lt;/code&gt; at &lt;a href=&#34;#source-asl.10&#34;&gt;line 10&lt;/a&gt;. The parameter is the new position, but this can fail, so the whole can fail also. Here we encapsulate the action with a plan to handle failure execution. The failure execution start with the plan &lt;a href=&#34;#source-asl.15-20&#34;&gt;line 15-20&lt;/a&gt;. Each of the &lt;em&gt;movement plans&lt;/em&gt; calls it self to create en &lt;em&gt;infinity loop&lt;/em&gt; of moving. In parallel the plan &lt;a href=&#34;#source-asl.21-23&#34;&gt;line 21-23&lt;/a&gt; will be executed if another agents has been moved.&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-agentspeak &#34; id=&#34;source-asl&#34; data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+!main.
+&amp;#43;!main &amp;lt;-
+    NewPosition = MyPosition &amp;#43; 1;
+    NewPosition = NewPosition % EnvSize;
+    !!move( NewPosition )
+.
+&amp;#43;!move(X) &amp;lt;-
+    generic/print( &amp;#34;agent&amp;#34;, MyName, &amp;#34;is on position&amp;#34;, MyPosition, &amp;#34;move to &amp;#34;, X );
+    env/move( X );
+    X&amp;#43;&amp;#43;;
+    X = X % EnvSize;
+    !move( X )
+.
+-!move(X) &amp;lt;-
+    Y = MyPosition - 1;
+    Y = Y &amp;lt; 0 ? EnvSize &amp;#43; Y : Y;
+    generic/print( &amp;#34;agent&amp;#34;, MyName, &amp;#34;cannot move from&amp;#34;, MyPosition, &amp;#34;to &amp;#34;, X, &amp;#34;try to move to&amp;#34;, Y );
+    !move(Y)
+.
+&amp;#43;!other/agent-position/changed( from(X), to(Y) ) &amp;lt;-
+    generic/print( &amp;#34;agent&amp;#34;, MyName, &amp;#34;get information that other agent has moved from&amp;#34;, X, &amp;#34;to&amp;#34;, Y )
+.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;agent-generator-with-environment&#34;&gt;Agent generator with environment&lt;/h2&gt;
+
+&lt;p&gt;The agent generator is structured for a flexible environment, so with the constuctor the environment object is set into &lt;a href=&#34;#source-generator.12,14,31&#34;&gt;line 12, 14, 31&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34; id=&#34;source-generator&#34; &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.common.CCommon;
+import org.lightjason.agentspeak.generator.IBaseAgentGenerator;
+import org.lightjason.agentspeak.language.score.IAggregation;
+import java.io.InputStream;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+final class MyAgentGenerator extends IBaseAgentGenerator&amp;lt;MyAgent&amp;gt;
+{
+    
+    private final CEnvironment m_environment;
+    
+    MyAgentGenerator( final InputStream p_stream, final CEnvironment p_environment ) throws Exception
+    {
+        super(
+            
+            p_stream,
+            Stream.concat(
+                
+                CCommon.actionsFromPackage(),
+                
+                CCommon.actionsFromAgentClass( MyAgent.class )
+            ).collect( Collectors.toSet() ),
+            
+            
+            IAggregation.EMPTY,
+            
+            new CVariableBuilder( p_environment )
+        );
+        m_environment = p_environment;
+    }
+    
+    @Override
+    public final MyAgent generatesingle( final Object... p_data )
+    {
+        
+        final MyAgent l_agent = new MyAgent( m_configuration, m_environment );
+        
+        int l_position = (int) ( Math.random() * m_environment.size() );
+        while ( !m_environment.initialset( l_agent, l_position ) )
+            l_position = (int) ( Math.random() * m_environment.size() );
+        return l_agent;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;variable-builder&#34;&gt;Variable Builder&lt;/h3&gt;
+
+&lt;p&gt;For creating fast access to data of the environment (size) and agent name (hashcode) we use a variable builder, that gets the environment also as reference &lt;a href=&#34;#source-variablebuilder.13,15,17&#34;&gt;line 13, 15, 17&lt;/a&gt;. The &lt;em&gt;generate&lt;/em&gt; method creates constants for each plan &lt;a href=&#34;#source-variablebuilder.20-27&#34;&gt;line 20-27&lt;/a&gt;. In detail to the environment data &lt;a href=&#34;#source-variablebuilder.25&#34;&gt;line 25&lt;/a&gt; create a variable with the size of the environment&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34; id=&#34;source-variablebuilder&#34; &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.agent.IAgent;
+import org.lightjason.agentspeak.language.execution.IVariableBuilder;
+import org.lightjason.agentspeak.language.instantiable.IInstantiable;
+import org.lightjason.agentspeak.language.variable.CConstant;
+import org.lightjason.agentspeak.language.variable.IVariable;
+import java.text.MessageFormat;
+import java.util.stream.Stream;
+final class CVariableBuilder implements IVariableBuilder
+{
+    
+    private final CEnvironment m_environment;
+    
+    CVariableBuilder( final CEnvironment p_environment )
+    {
+        m_environment = p_environment;
+    }
+    @Override
+    public final Stream&amp;lt;IVariable&amp;lt;?&amp;gt;&amp;gt; generate( final IAgent&amp;lt;?&amp;gt; p_agent, final IInstantiable p_runningcontext )
+    {
+        return Stream.of(
+            new CConstant&amp;lt;&amp;gt;( &amp;#34;MyPosition&amp;#34;, p_agent.&amp;lt;MyAgent&amp;gt;raw().position() ),
+            new CConstant&amp;lt;&amp;gt;( &amp;#34;MyName&amp;#34;, MessageFormat.format( &amp;#34;{0}&amp;#34;, p_agent.hashCode() ) ),
+            new CConstant&amp;lt;&amp;gt;( &amp;#34;EnvSize&amp;#34;, m_environment.length() )
+        );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;reference-solution&#34;&gt;Reference Solution&lt;/h2&gt;
+
+&lt;p&gt;If you struggled at some point or wish to obtain our exemplary solution with code documentation to this tutorial, you can download the archive &lt;a href=&#34;https://github.com/LightJason/Examples/archive/tutorial-environment.zip&#34;&gt;tutorial-environment.zip&lt;/a&gt; containing the source code and a executable &lt;a href=&#34;https://github.com/LightJason/Examples/raw/jar-tutorial-environment/myagentapp-1.0-SNAPSHOT.jar&#34;&gt;Jar file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We run the example with 5 agents and 5 cycles (different runs returns different outputs)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;agent   1.476.690.107   is on position   2   move to    3
+agent   1.758.056.825   is on position   0   move to    1
+agent   966.974.341   is on position   5   move to    1
+agent   90.603.167   is on position   3   move to    4
+agent   889.488.859   get information that other agent has moved from   0   to   1
+agent   889.488.859   is on position   6   move to    2
+
+agent   1.476.690.107   cannot move from   2   to    3   try to move to   1.0
+agent   1.476.690.107   get information that other agent has moved from   3   to   4
+agent   1.476.690.107   get information that other agent has moved from   0   to   1
+agent   966.974.341   cannot move from   5   to    1   try to move to   4.0
+agent   966.974.341   get information that other agent has moved from   3   to   4
+agent   966.974.341   get information that other agent has moved from   0   to   1
+agent   1.758.056.825   get information that other agent has moved from   3   to   4
+agent   889.488.859   cannot move from   6   to    2   try to move to   5.0
+agent   1.758.056.825   is on position   1   move to    2
+agent   889.488.859   get information that other agent has moved from   3   to   4
+agent   90.603.167   get information that other agent has moved from   0   to   1
+agent   90.603.167   is on position   4   move to    0
+
+agent   90.603.167   is on position   0   move to    1
+agent   966.974.341   is on position   5   move to    4.0
+agent   1.758.056.825   cannot move from   1   to    2   try to move to   0.0
+agent   1.758.056.825   get information that other agent has moved from   4   to   0
+agent   966.974.341   get information that other agent has moved from   4   to   0
+agent   1.476.690.107   is on position   2   move to    1.0
+agent   1.476.690.107   get information that other agent has moved from   4   to   0
+agent   889.488.859   is on position   6   move to    5.0
+agent   889.488.859   get information that other agent has moved from   4   to   0
+
+agent   966.974.341   is on position   4   move to    0
+agent   966.974.341   get information that other agent has moved from   6   to   5
+agent   1.476.690.107   get information that other agent has moved from   6   to   5
+agent   1.476.690.107   cannot move from   2   to    1.0   try to move to   1.0
+agent   1.476.690.107   get information that other agent has moved from   5   to   4
+agent   1.758.056.825   get information that other agent has moved from   6   to   5
+agent   889.488.859   is on position   5   move to    1
+agent   1.758.056.825   is on position   1   move to    0.0
+agent   889.488.859   get information that other agent has moved from   5   to   4
+agent   1.758.056.825   get information that other agent has moved from   5   to   4
+agent   90.603.167   get information that other agent has moved from   5   to   4
+agent   90.603.167   get information that other agent has moved from   6   to   5
+agent   90.603.167   cannot move from   0   to    1   try to move to   4.0
+
+agent   90.603.167   is on position   0   move to    4.0
+agent   966.974.341   cannot move from   4   to    0   try to move to   3.0
+agent   1.476.690.107   is on position   2   move to    1.0
+agent   1.758.056.825   cannot move from   1   to    0.0   try to move to   0.0
+agent   889.488.859   cannot move from   5   to    1   try to move to   4.0
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Triggering</title>
+      <link>https://lightjason.github.io/tutorials/trigger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/tutorials/trigger/</guid>
+      <description>
+
+&lt;p&gt;This tutorial explain the functionality of &lt;em&gt;agent triggering&lt;/em&gt;. For understanding purpose of triggers you have to understand the concept of events which is a well-known concept in &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/uiswing/events/&#34;&gt;UI programming&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div id=&#34;toccontainer&#34;&gt;Contents [&lt;a href=&#34;#&#34; id=&#34;tochideshow&#34;&gt;Hide&lt;/a&gt;]&lt;div id=&#34;toc&#34;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;previous-knowledge&#34;&gt;Previous Knowledge&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes/&#34;&gt;AgentSpeak 15min&lt;/a&gt; tutorial defines the basic knowledge and working scenario.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-are-triggers&#34;&gt;What are triggers?&lt;/h2&gt;
+
+&lt;p&gt;A short definition of triggers in LightJason&amp;rsquo;s agent concept it is&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;an event written in a first-order logical literal&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;On the other hand, the agent is&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;an event listener which executes a plan iif an event is released&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;what-kind-of-trigger-exists&#34;&gt;What kind of trigger exists?&lt;/h3&gt;
+
+&lt;p&gt;An agent is a &lt;em&gt;logical program&lt;/em&gt; which defines some knowledge elements e.g. beliefbase and the beliefs, so there are different kind of triggers to distinguish the elements:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;add goal (+!)&lt;/strong&gt; tells the agent try to reach the goal which is named by the trigger&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;delete goal (-!)&lt;/strong&gt; tells the agent that something is going wrong, the &lt;em&gt;delete goal&lt;/em&gt; is executed iif a plan was failed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;add belief (+)&lt;/strong&gt; is created if a belief is pushed into the beliefbase&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;delete belief (-)&lt;/strong&gt; is created if a belief is removed from the beliefbase&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-can-i-use-them&#34;&gt;How can I use them?&lt;/h2&gt;
+
+&lt;p&gt;On a global viewpoint a trigger is created on a &lt;em&gt;semantic definition&lt;/em&gt;, so there is no defined  type to call in a situation a certain trigger. It depends on your conceptional view of your multi-agent system and your individual execution model.&lt;/p&gt;
+
+&lt;p&gt;The usage is very simple, the agent class supports a &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/db/d62/interfaceorg_1_1lightjason_1_1agentspeak_1_1agent_1_1IAgent_3_01T_01extends_01IAgent_3_04_4_01_4.html#af453e6a5f02ca05958925af4a8c04c10&#34;&gt;trigger-method&lt;/a&gt;, so create your trigger and call this method.&lt;/p&gt;
+
+&lt;h3 id=&#34;java-implementation&#34;&gt;Java Implementation&lt;/h3&gt;
+
+&lt;p&gt;A trigger is a combination of a &lt;em&gt;literal&lt;/em&gt; and a &lt;em&gt;trigger type&lt;/em&gt;. Both elements are defined as classes &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/d1/d5a/classorg_1_1lightjason_1_1agentspeak_1_1language_1_1instantiable_1_1plan_1_1trigger_1_1CTrigger.html&#34;&gt;CTrigger&lt;/a&gt; and &lt;a href=&#34;http://lightjason.github.io/AgentSpeak/sources/d9/d18/enumorg_1_1lightjason_1_1agentspeak_1_1language_1_1instantiable_1_1plan_1_1trigger_1_1ITrigger_1_1EType.html&#34;&gt;ITrigger.EType&lt;/a&gt;. The code shows the usage of a &lt;em&gt;add goal trigger&lt;/em&gt; which defines on the first argument &lt;a href=&#34;#source-triggercreate.2&#34;&gt;line 2&lt;/a&gt; the type of the trigger and on the second argument the literal &lt;a href=&#34;#source-triggercreate.3-6&#34;&gt;line 3-6&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-java &#34; id=&#34;source-triggercreate&#34; &gt;&lt;code class=&#34;language-java&#34;&gt;
+package myagentproject;
+import org.lightjason.agentspeak.language.CLiteral;
+import org.lightjason.agentspeak.language.CRawTerm;
+import org.lightjason.agentspeak.language.instantiable.plan.trigger.CTrigger;
+import org.lightjason.agentspeak.language.instantiable.plan.trigger.ITrigger;
+import java.io.FileInputStream;
+import java.util.Collections;
+import java.util.Set;
+import java.util.logging.LogManager;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+final class App
+{
+    static
+    {
+        
+        LogManager.getLogManager().reset();
+    }
+    
+    private App()
+    {
+    }
+    
+    public static void main( final String[] p_args )
+    {
+        if ( p_args.length &amp;lt; 2 )
+            throw new RuntimeException( &amp;#34;arguments are not set: ASL script, number of agents&amp;#34; );
+        
+        
+        
+        
+        final Set&amp;lt;MyAgent&amp;gt; l_agents;
+        try
+            (
+                final FileInputStream l_stream = new FileInputStream( p_args[0] );
+            )
+        {
+            
+            l_agents = Collections.unmodifiableSet(
+                new MyAgentGenerator( l_stream )
+                    .generatemultiple( Integer.parseInt( p_args[1] ) )
+                    .collect( Collectors.toSet() )
+            );
+        }
+        catch ( final Exception l_exception )
+        {
+            l_exception.printStackTrace();
+            return;
+        }
+        
+        IntStream
+            .range(
+                0,
+                p_args.length &amp;lt; 3
+                ? Integer.MAX_VALUE
+                : Integer.parseInt( p_args[2] )
+            )
+            .forEach( j -&amp;gt; l_agents.parallelStream().forEach( i -&amp;gt;
+                                                              {
+                                                                  try
+                                                                  {
+                                                                      i.call();
+                                                                      
+                                                                      
+                                                                      if ( Math.random() &amp;lt; 0.5 )
+                                                                          i.trigger(
+                                                                              CTrigger.from(
+                                                                                  
+                                                                                  ITrigger.EType.ADDGOAL,
+                                                                                  
+                                                                                  CLiteral.from(
+                                                                                      &amp;#34;special-goal&amp;#34;,
+                                                                                      CRawTerm.from( 100 * Math.random() )
+                                                                                  )
+                                                                              )
+                                                                          );
+                                                                  }
+                                                                  catch ( final Exception l_exception )
+                                                                  {
+                                                                      l_exception.printStackTrace();
+                                                                  }
+                                                              } ) );
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;agentspeak-implementation&#34;&gt;AgentSpeak Implementation&lt;/h3&gt;
+
+&lt;p&gt;The agent (in detail the ASL script) can handle the trigger iif a plan (an instantiated goal) exists that matchs of the literal. For this example the agents need to define a plan only which matchs the literal (&lt;a href=&#34;#source-triggercall.1&#34;&gt;line 1&lt;/a&gt;) and executes a print message (&lt;a href=&#34;#source-triggercall.2&#34;&gt;line 2&lt;/a&gt;)&lt;/p&gt;
+
+&lt;!-- htmlmin:ignore --&gt;
+
+&lt;p&gt;&lt;pre class=&#34;language-agentspeak &#34; id=&#34;source-triggercall&#34; data-language=&#34;AgentSpeak(L++)&#34;&gt;&lt;code class=&#34;language-agentspeak&#34;&gt;
+!main.
+&amp;#43;!main &amp;lt;-
+    generic/print(&amp;#34;Hello World on agent&amp;#34;, MyName);
+    !mynextgoal
+.
+&amp;#43;!mynextgoal &amp;lt;-
+    generic/print( &amp;#34;Hello World again in cycle&amp;#34;, Cycle, &amp;#34;on agent&amp;#34;, MyName );
+    !mynextgoal
+.
+&amp;#43;!special-goal(X) &amp;lt;-
+    generic/print( &amp;#34;special goal with value&amp;#34;, X, &amp;#34;triggered in cycle&amp;#34;, Cycle, &amp;#34;on agent&amp;#34;, MyName )
+.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- htmlmin:ignore --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;trigger&lt;/code&gt;-method allows you to control the agent from Java-side, so that your system can execute any plans inside the agent. You can push the trigger at any time to the agent and the agent will execute the trigger as soon as possible, except you tell the agent that the trigger should execute immediatly (see method documentation second argument). The agent can sleeping so in that case the trigger will discarded.&lt;/p&gt;
+
+&lt;h2 id=&#34;reference-solution&#34;&gt;Reference Solution&lt;/h2&gt;
+
+&lt;p&gt;The referenced solution based on the &lt;a href=&#34;https://lightjason.github.io/tutorials/agentspeak-in-fifteen-minutes&#34;&gt;agentspeak-in-15min&lt;/a&gt; tutorial, so we extend this tutorial with trigger behaviour. If you struggled at some point or wish to obtain our exemplary solution with code documentation to this tutorial, you can download the archive &lt;a href=&#34;https://github.com/LightJason/Examples/archive/tutorial-agent-trigger.zip&#34;&gt;tutorial-agent-trigger.zip&lt;/a&gt; containing the source code and a executable &lt;a href=&#34;https://github.com/LightJason/Examples/raw/jar-tutorial-agent-trigger/myagentapp-1.0-SNAPSHOT.jar&#34;&gt;Jar file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We run the program with 3 agents and 4 cycles two times and get the following output, first run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;Hello World on agent   1.947.742.554
+Hello World on agent   1.063.980.005
+Hello World on agent   751.667.802
+Hello World again in cycle   1   on agent   1.947.742.554
+special goal with value   74.1958139935533   triggered in cycle   1   on agent   1.947.742.554
+Hello World again in cycle   1   on agent   751.667.802
+special goal with value   91.4937051630679   triggered in cycle   1   on agent   751.667.802
+special goal with value   69.25366960123473   triggered in cycle   1   on agent   1.063.980.005
+Hello World again in cycle   1   on agent   1.063.980.005
+Hello World again in cycle   2   on agent   1.947.742.554
+special goal with value   84.62165681593554   triggered in cycle   2   on agent   1.947.742.554
+special goal with value   45.02418617261314   triggered in cycle   2   on agent   1.063.980.005
+Hello World again in cycle   2   on agent   1.063.980.005
+Hello World again in cycle   2   on agent   751.667.802
+special goal with value   55.45082951862753   triggered in cycle   3   on agent   1.947.742.554
+Hello World again in cycle   3   on agent   1.947.742.554
+Hello World again in cycle   3   on agent   751.667.802
+special goal with value   36.29125934123333   triggered in cycle   3   on agent   1.063.980.005
+Hello World again in cycle   3   on agent   1.063.980.005
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;second run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-commandline&#34;&gt;Hello World on agent   1.134.917.509
+Hello World on agent   997.055.773
+Hello World on agent   1.947.742.554
+Hello World again in cycle   1   on agent   1.134.917.509
+Hello World again in cycle   1   on agent   997.055.773
+special goal with value   78.7078311643193   triggered in cycle   1   on agent   997.055.773
+Hello World again in cycle   1   on agent   1.947.742.554
+Hello World again in cycle   2   on agent   1.134.917.509
+special goal with value   96.71357720851132   triggered in cycle   2   on agent   1.134.917.509
+Hello World again in cycle   2   on agent   997.055.773
+special goal with value   91.03853574178903   triggered in cycle   2   on agent   997.055.773
+Hello World again in cycle   2   on agent   1.947.742.554
+special goal with value   44.63147387811583   triggered in cycle   2   on agent   1.947.742.554
+Hello World again in cycle   3   on agent   1.134.917.509
+Hello World again in cycle   3   on agent   997.055.773
+Hello World again in cycle   3   on agent   1.947.742.554
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Based on the random execution of the trigger the results are different.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://lightjason.github.io/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/tutorials/</guid>
+      <description>
+
+&lt;p&gt;In this Section we introduce LightJason/AgentSpeak(L++) from a &lt;em&gt;hands-on&lt;/em&gt; perspective by providing tutorials for understanding the practical applications of our framework.&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-tutorials&#34;&gt;Basic Tutorials&lt;/h2&gt;
+
+&lt;p&gt;Having &lt;a href=&#34;https://lightjason.github.io/knowledgebase&#34;&gt;basic knowledge&lt;/a&gt; about the &lt;a href=&#34;https://en.wikipedia.org/wiki/Belief%E2%80%93desire%E2%80%93intention_software_model&#34;&gt;belief–desire–intention model&lt;/a&gt; of multi-agent systems and understanding of logical programming concepts, i.e. &lt;a href=&#34;https://en.wikipedia.org/wiki/Prolog&#34;&gt;Prolog&lt;/a&gt;, as well as Object Oriented Programming (OOP) with &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/&#34;&gt;Java&lt;/a&gt; is helpful (but not strictly required) to follow our tutorials.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;agentspeak-in-fifteen-minutes&#34;&gt;Develop an AgentSpeak Scenario in 15 Minutes&lt;/a&gt; a minimal example to develop an agent scenario in 15 minutes from scratch with the current developer source codes of AgentSpeak.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;trigger&#34;&gt;Triggering&lt;/a&gt; is a tutorial to control the execution of an agent&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;actions&#34;&gt;Actions&lt;/a&gt; is a tutorial to define own actions&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;communication&#34;&gt;Communication&lt;/a&gt; is a tutorial on how to realise communication&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;environment&#34;&gt;Environment&lt;/a&gt; is a tutorial to create an environment (which is not necessarily required in LightJason)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;efficient-beliefbase&#34;&gt;Efficient Beliefbase&lt;/a&gt; is a tutorial for creating efficient beliefbase structures&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on LightJason</title>
+    <link>https://lightjason.github.io/publication/index.xml</link>
+    <description>Recent content in Publications on LightJason</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <atom:link href="https://lightjason.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>EMAS 2014 - A scalable runtime platform for multiagent-based simulation</title>
+      <link>https://lightjason.github.io/publication/2014-emas-maserati/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/publication/2014-emas-maserati/</guid>
+      <description>&lt;p&gt;Within this publication we present an architecture of a &lt;em&gt;scalable multi-agent framework&lt;/em&gt;. This idea based on the problem, that all current frameworks at one point are not constructed for a large number of agents nor flexible enough to create a very detailed behaviour, or add to an existing platform.&lt;/p&gt;
+
+&lt;p&gt;Based on this problem, we try to separate different elements on a multi-agent system:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Microkernel:&lt;/em&gt; The &lt;em&gt;execution&lt;/em&gt; of an agents and the whole system. So it describes the runtime model of the system.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Agent-Model-Layer:&lt;/em&gt; The &lt;em&gt;abstraction of a runtime model&lt;/em&gt;, so that we can define a multi-agent system with all elements e.g. agents, artefacts, norms, &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Scenario-Model:&lt;/em&gt; The &lt;em&gt;top-level abstraction&lt;/em&gt; of the system, within all definition of the scenario-depended elements e.g. on a traffic simulation for example points of interests&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This first idea was a main goal of the architecture of &lt;a href=&#34;https://lightjason.github.io/framework&#34;&gt;LightJason AgentSpeak(L++)&lt;/a&gt;, but the idea cannot transformed retrospective into a source code architecture, because the &lt;em&gt;microkernel&lt;/em&gt; was an abstraction of another structure, but we defined this structure not within the paper. So LightJason goes one step back and starts up from scratch&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Publication</title>
+      <link>https://lightjason.github.io/publication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lightjason.github.io/publication/</guid>
+      <description>&lt;p&gt;Here, we list all publications about/on our work (&lt;a href=&#34;https://lightjason.github.io/references.bib&#34;&gt;BibTeX format&lt;/a&gt;), but we complement some publications with comments containing additional information to give you an overview about the publication.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

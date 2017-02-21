@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta name="msvalidate.01" content="2EB13C5538E9973D8DFC39C6A455DEFE"><meta name="google-site-verification" content="sVNU1mmaPgvbzlig03vdNtqHYnJNzvbdQYLCWqvtxRU"><meta name="description" content="LightJason is an artificial intelligence BDI multi-agent framework for adding AI with optimization and fuzzy-logical concepts to existing software-architecture"><meta name="keywords" content="AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=0.9"><link href="https://fonts.googleapis.com/css?family=Pridi:200,300,400,500,600,700" rel="stylesheet" media="all"><script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script><link href="https://lightjason.github.io/css/prism.css" rel="stylesheet" media="all"><link href="https://lightjason.github.io/css/layout.css" rel="stylesheet" media="all"><link href="https://lightjason.github.io/css/print.css" rel="stylesheet" media="print"><link href="https://lightjason.github.io/css/mobile.css" rel="stylesheet" media="screen and (max-width:1000px)"><link href="https://lightjason.github.io/css/lightbox.min.css" rel="stylesheet" media="screen"><script src="https://lightjason.github.io/js/prism.js"></script><script src="https://lightjason.github.io/js/prism-agentspeak.js"></script><script src="https://lightjason.github.io/js/toc.min.js"></script><script src="https://lightjason.github.io/js/teletype.js"></script><script src="https://lightjason.github.io/js/script.js"></script><script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-89676576-1","auto"),ga("send","pageview")</script><script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!1,skipTags:["script","noscript","style","textarea","pre","code"],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["autoload-all.js"]}}})</script><link href="https://lightjason.github.io/images/favicon.png" type="image/png" rel="shortcut icon"><link href="https://lightjason.github.io/news/index.xml" type="application/rss+xml" rel="alternate" title="LightJason"><title>LightJason — AgentSpeak(L++) Language Features</title><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@LightJasonAI"><meta name="twitter:title" content="LightJason - AgentSpeak(L++) Language Features"><meta name="twitter:description" content="We present here a short overview of language examples of our AgentSpeak(L++) syntax. You can found the full EBNF description of the language syntax on the project documentation page. The Railroad / Syntax diagrams of the AgentSpeak(L++) language:
+ Agent Railroad / Syntax Diagram PlanBundle Railroad / Syntax Diagram  Lambda Expression The language does not support a looping directly, but we are using lambda expression which care based on the theoretical structure of a lambda calculus...."><meta name="twitter:image" content="https://lightjason.github.io/images/logo.png"><meta property="og:site_name" content="LightJason"><meta property="og:url" content="http://lightjason.org"><meta property="og:title" content="LightJason - AgentSpeak(L++) Language Features"><meta property="og:image" content="https://lightjason.github.io/images/logo.png"><meta property="og:description" content="We present here a short overview of language examples of our AgentSpeak(L++) syntax. You can found the full EBNF description of the language syntax on the project documentation page. The Railroad / Syntax diagrams of the AgentSpeak(L++) language:
+ Agent Railroad / Syntax Diagram PlanBundle Railroad / Syntax Diagram  Lambda Expression The language does not support a looping directly, but we are using lambda expression which care based on the theoretical structure of a lambda calculus...."><script type="application/ld+json">[{
+	"@context": "http://schema.org",
+	"@type": "Organization",	
+	"name" : "LightJason",
+	"email" : "info@lightjason.org",
+	"url" : "http://lightjason.org",
+	"logo" : "https://lightjason.github.io/images/logo.png",
+	"founders": [{
+			"@type": "Person",
+			"email" : "malte@lightjason.org",
+			"name" : "Malte Aschermann",
+			"givenName" : "Malte",
+			"familyName" : "Aschermann"
+			, "image" : "http://meclab.in.tu-clausthal.de/images/people/malte_aschermann.png"
+		}
+		,{
+			"@type": "Person",
+			"email" : "philipp@lightjson.org",
+			"name" : "Philipp Kraus",
+			"givenName" : "Philipp",
+			"familyName" : "Kraus"
+			, "image" : "http://www.gravatar.com/avatar/2de3ae533823dae934d3b45b239f797c"
+			, "sameAs" : [
+				"http://xing.to/philippkraus",
+				"http://www.linkedin.com/in/philipp-kraus"
+			]
+		}
+		]
+},
+
+
+{
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	"name": "LightJason",
+	"alternateName": "LightJason",
+	"url":"http://lightjason.org"
+	, "license" : "https://creativecommons.org/licenses/by-sa/4.0/"
+	, "genre" : "AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation", "keywords" : "AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation"
+	, "author" : [{
+			"@type": "Person",
+			"email" : "malte@lightjason.org",
+			"name" : "Malte Aschermann",
+			"givenName" : "Malte",
+			"familyName" : "Aschermann"
+			, "image" : "http://meclab.in.tu-clausthal.de/images/people/malte_aschermann.png"
+		}
+		,{
+			"@type": "Person",
+			"email" : "philipp@lightjson.org",
+			"name" : "Philipp Kraus",
+			"givenName" : "Philipp",
+			"familyName" : "Kraus"
+			, "image" : "http://www.gravatar.com/avatar/2de3ae533823dae934d3b45b239f797c"
+			, "sameAs" : [
+				"http://xing.to/philippkraus",
+				"http://www.linkedin.com/in/philipp-kraus"
+			]
+		}
+		]
+}
+]</script></head><body><div class="document"><div id="nav">☰</div><div class="documentwrapper"><div class="bodywrapper"><div class="body"><h1 id="root"><a href="#root">AgentSpeak(L++) Language Features</a></h1><p>We present here a short overview of language examples of our <em>AgentSpeak(L++)</em> syntax. You can found the full <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form">EBNF description</a> of the language syntax on the project <a href="http://lightjason.github.io/AgentSpeak/">documentation page</a>. The Railroad / Syntax diagrams of the <em>AgentSpeak(L++)</em> language:</p><ul><li><a href="http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/">Agent Railroad / Syntax Diagram</a></li><li><a href="http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/PlanBundle.g4/">PlanBundle Railroad / Syntax Diagram</a></li></ul><h2 id="a-name-lambdaexpression-a-lambda-expression"><a name="lambdaexpression"></a>Lambda Expression</h2><p>The language does not support a looping directly, but we are using <a href="http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#945f3fc449518a73b9f5f32868db466c">lambda expression</a> which care based on the theoretical structure of a <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a>. In a short word we use a defintion like a <em>for each</em> call, so each element in a variable can be looped.</p><blockquote><p>The example creates a list of the number <em>[1,20)</em> and we are looping over the elements, first in sequential order and call the <em>print</em> action for each element and in the second call we are summarize each value to the variable <em>R</em>. <em>R</em> is in this case the <em>returning variable</em></p></blockquote>
+
+<p><pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">L = collection/list/range(1, 20);
+(L) -&gt; Y : generic/print(Y);
+(L) -&gt; Y | R : R = Y+1;
+</code></pre>
+<p></p><h2 id="a-name-repairaction-a-explicit-repair-action"><a name="repairaction"></a>Explicit Repair-Action</h2><p>In generell supports the implementation <em>repair planning</em> with the default behaviour <code>-!</code>. In this additional structure we support also <a href="http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#503f34271b101269197f766a6b90e4a9">repair action chains</a>.</p><blockquote><p>The example shows the execution of three actions <em>actionA</em>, <em>actionB</em>, <em>actionC</em>. The system execute the <em>actionA</em> first, if the action fails, <em>actionB</em> will be executed, if this also fails <em>actionC</em> will be executed. If <em>actionC</em> fails also, the whole plan fails.</p></blockquote>
+
+<p><pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">
+actionA &lt;&lt; actionB &lt;&lt; actionC;
+</code></pre>
+<p></p><blockquote><p>If you don’t want, that a plan is failing, if an action fails you can put at the end of this chain a <code>true</code> value. This models the behaviour <em>anything can go wrong, but the agent ignore the error(s)</em>.</p></blockquote><p><pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">actionA &lt;&lt; true;
+</code></pre></p><h2 id="a-name-multiplanrule-a-multi-plan-and-rule-definition"><a name="multiplanrule"></a>Multi-Plan and Rule Definition</h2><p>In general Prolog uses only logical rules, <em>AgentSpeak(L)</em> and <em>AgentSpeak(L++)</em> use rules and also adds a plan structure. Within a Prolog structure the ordering of rules and plans are neccessary of the execution semantic (see in <a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&pageid=lpn-htmlse10">Learn Prolog Now!</a>).</p><p>But in the <em>AgentSpeak(L++)</em> the ordering of rules and plans are not relevant for the execution semantic. On this case within the source code plan and rule structures are grouped.</p><blockquote><p>This example shows the <a href="https://en.wikipedia.org/wiki/Ackermann_function">Ackermann function</a>. The first line defines the <a href="http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#d0404623ab035c7e30f997d91d173a52">rule</a> name (literal) similar to Prolog. Each rule will be added by the <code>:-</code> rule-sign under the literal. In classical Prolog the rule-literal must be for each different rule and Prolog executes the rules in sequential order. In our case we change this behaviour, so that each rule, which can be executed, will be executed. So we put a condition first to the rule, so this condition will deny or allow the execution. After that the rule-body will be added. For calling a rule from a plan or a rule, you need to put a <code>$</code>-sign in front of the rule-name.</p></blockquote>
+
+<p><pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">ackermann(N, M, R)
+    :- N == 0; M &gt; 0; R = M+1
+    :- M == 0; N &gt; 0; TN = N-1; $ackermann(TN, 1, RA); R = RA
+    :- N &gt; 0; M &gt; 0; TN = N-1; TM = M-1; $ackermann(N, TM, RI); $ackermann(TN, RI, RO); R = RO
+</code></pre>
+<p></p><blockquote><p>The second example shows the structure for <a href="http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#5fc25157650d0cb24f02216d904584df">plans</a>. For plans it is similar to the rule structure, but the <code>&lt;-</code> plan-sign is used and a condition of the plan execution can be added. Here exist three plans, the first will be executed, iif there is a belief <code>hello</code> with a string value, the second plan will be executed, iif there exists a belief <code>hello</code> with a numeric value which is greater than $1000$ and the third plan will be run every time (default plan).</p></blockquote>
+
+<p><pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">+!main</p>
+
+<pre><code>: &gt;&gt;( hallo(X), generic/type/isstring(X) ) &lt;-
+        generic/print(&quot;---&quot;, &quot;first plan&quot;, &quot;---&quot;, &quot;unification variables&quot;, X)
+
+: &gt;&gt;( hallo(X), generic/type/isnumeric(X) &amp;&amp; X &gt; 1000 )  &lt;-
+    generic/print(&quot;---&quot;, &quot;second plan&quot;, &quot;---&quot;, &quot;unification variables&quot;, X)
+
+&lt;- generic/print(&quot;---&quot;, &quot;third (default) plan&quot;, &quot;---&quot;).
+</code></pre>
+
+<p></code></pre>
+<p></p><h2 id="a-name-multiassignment-a-multi-assignments"><a name="multiassignment"></a>Multi Assignments</h2><p>The <a href="http://lightjason.github.io/AgentSpeak/rrd-output/html/org/lightjason/agentspeak/grammar/Agent.g4/index.htm#aaf72be46bb3458f45cf02c8858d96be">multi-assignment</a> allowed to extract elements from a list into different variables. It is similar to the <a href="https://en.wikibooks.org/wiki/Prolog/Lists">head-tail-notation of Prolog</a> but here we can create complex structures.</p><blockquote><p>The examples creates a list if number within in the range <em>[1,20)</em> and 1 will be put into the variable <em>A</em>, 2 in <em>B</em>, 3 in <em>C</em>, 4 will be ignore, 5 in <em>D</em>, 6 in <em>E</em>, 7 in <em>F</em> and the list <em>[8,20)</em> in <em>G</em></p></blockquote>
+
+<p><pre data-language="AgentSpeak(L++)"><code class="language-agentspeak">L = collection/list/range(1, 20);
+[A|B|C|_|D|E|F|G] = L;
+</code></pre>
+<p></p><h2 id="a-name-parallelism-a-parallelism-thread-safe-variables"><a name="parallelism"></a>Parallelism & Thread-Safe Variables</h2><p>The main sign for parallelism ist the <em>at-sign (@)</em> character. If the @ is put in front of an action or variable the action will be executioned in parallel and the variable will be thread-safe. Not each action supports a parallel execution</p></div></div></div><div class="sidebar" role="navigation" aria-label="main navigation"><div class="sidebarwrapper"><div class="logo"><a href="https://lightjason.github.io/">LightJason</a><div class="subtitle">Concurrent BDI multi-agent system</div></div><ul><li><a class="reference internal" href="/news/">News</a> <span class="sublink">(<a href="/news/index.xml">RSS</a>)</span></li><li><a class="reference internal" href="/publication/">Publication</a></li><li><a class="reference internal" href="/framework/">Framework</a></li><li><a class="reference internal" href="/knowledgebase/">Knowledge Base</a></li><li><a class="reference internal" href="/tutorials/">Tutorials</a></li><li><a class="reference internal" href="/about/">About</a></li><li><a class="reference internal" href="/contact/">Contact</a></li></ul><ul class="horizontal socialmedia"><li><a href="https://github.com/LightJason"><img src="/images/github.svg" alt="github" class="socialmediaimg"></a></li><li><a href="http://twitter.com/LightJasonAI"><img src="/images/twitter.svg" alt="twitter" class="socialmediaimg"></a></li><li><a href="https://vimeo.com/lightjason"><img src="/images/vimeo.svg" alt="vimeo" class="socialmediaimg"></a></li></ul><ul class="socialmediaaction"><li><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs")</script><a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a></li><li><script src="https://apis.google.com/js/platform.js" async defer></script><script>window.___gcfg={lang:"en-GB",parsetags:"onload"}</script><div class="g-plus" data-action="share" data-annotation="none"></div></li><li><script>!function(e,n,t){var o,c=e.getElementsByTagName(n)[0];e.getElementById(t)||(o=e.createElement(n),o.id=t,o.src="//connect.facebook.net/en-GB/sdk.js#xfbml=1&version=v2.8&appId=360647707384539",c.parentNode.insertBefore(o,c))}(document,"script","facebook-jssdk")</script><div class="fb-like" data-href="http://lightjason.org/framework/agentspeak/" data-layout="button" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div></li></ul></div></div><div class="clear"></div></div><div class="footer"><span class="contact">info [at] lightjason.org</span><ul class="horizontal"><li><a href="https://github.com/LightJason/AgentSpeak">AgentSpeak(L++) Repository</a></li><li><a href="https://github.com/LightJason/REST">REST-API Repository</a></li><li>© Feb 2017</li></ul></div><script src="https://lightjason.github.io/js/lightbox.min.js"></script></body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta name="msvalidate.01" content="2EB13C5538E9973D8DFC39C6A455DEFE"><meta name="google-site-verification" content="sVNU1mmaPgvbzlig03vdNtqHYnJNzvbdQYLCWqvtxRU"><meta name="description" content="LightJason is an artificial intelligence BDI multi-agent framework for adding AI with optimization and fuzzy-logical concepts to existing software-architecture"><meta name="keywords" content="AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=0.9"><link href="https://fonts.googleapis.com/css?family=Pridi:200,300,400,500,600,700" rel="stylesheet" media="all"><script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script><link href="https://lightjason.github.io/css/prism.css" rel="stylesheet" media="all"><link href="https://lightjason.github.io/css/layout.css" rel="stylesheet" media="all"><link href="https://lightjason.github.io/css/print.css" rel="stylesheet" media="print"><link href="https://lightjason.github.io/css/mobile.css" rel="stylesheet" media="screen and (max-width:1000px)"><link href="https://lightjason.github.io/css/lightbox.min.css" rel="stylesheet" media="screen"><script src="https://lightjason.github.io/js/prism.js"></script><script src="https://lightjason.github.io/js/prism-agentspeak.js"></script><script src="https://lightjason.github.io/js/toc.min.js"></script><script src="https://lightjason.github.io/js/teletype.js"></script><script src="https://lightjason.github.io/js/script.js"></script><script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-89676576-1","auto"),ga("send","pageview")</script><script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!1,skipTags:["script","noscript","style","textarea","pre","code"],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["autoload-all.js"]}}})</script><link href="https://lightjason.github.io/images/favicon.png" type="image/png" rel="shortcut icon"><link href="https://lightjason.github.io/news/index.xml" type="application/rss+xml" rel="alternate" title="LightJason"><title>LightJason — Tutorial: Communication</title><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@LightJasonAI"><meta name="twitter:title" content="LightJason - Tutorial: Communication"><meta name="twitter:description" content="LightJason architecture does not support in general a build-in communication, because communication and agent addressing / naming depends on the domain or underlying software architecture. To create a communication structure you have to build-up your own naming model, a send action with a receiving plan and a data structure to map agent names / addresses to agent objects.
+ Previous Knowledge The tutorial can be done into two steps:..."><meta name="twitter:image" content="https://lightjason.github.io/images/logo.png"><meta property="og:site_name" content="LightJason"><meta property="og:url" content="http://lightjason.org"><meta property="og:title" content="LightJason - Tutorial: Communication"><meta property="og:image" content="https://lightjason.github.io/images/logo.png"><meta property="og:description" content="LightJason architecture does not support in general a build-in communication, because communication and agent addressing / naming depends on the domain or underlying software architecture. To create a communication structure you have to build-up your own naming model, a send action with a receiving plan and a data structure to map agent names / addresses to agent objects.
+ Previous Knowledge The tutorial can be done into two steps:..."><script type="application/ld+json">[{
+	"@context": "http://schema.org",
+	"@type": "Organization",	
+	"name" : "LightJason",
+	"email" : "info@lightjason.org",
+	"url" : "http://lightjason.org",
+	"logo" : "https://lightjason.github.io/images/logo.png",
+	"founders": [{
+			"@type": "Person",
+			"email" : "malte@lightjason.org",
+			"name" : "Malte Aschermann",
+			"givenName" : "Malte",
+			"familyName" : "Aschermann"
+			, "image" : "http://meclab.in.tu-clausthal.de/images/people/malte_aschermann.png"
+		}
+		,{
+			"@type": "Person",
+			"email" : "philipp@lightjson.org",
+			"name" : "Philipp Kraus",
+			"givenName" : "Philipp",
+			"familyName" : "Kraus"
+			, "image" : "http://www.gravatar.com/avatar/2de3ae533823dae934d3b45b239f797c"
+			, "sameAs" : [
+				"http://xing.to/philippkraus",
+				"http://www.linkedin.com/in/philipp-kraus"
+			]
+		}
+		]
+},
+
+
+{
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	"name": "LightJason",
+	"alternateName": "LightJason",
+	"url":"http://lightjason.org"
+	, "license" : "https://creativecommons.org/licenses/by-sa/4.0/"
+	, "genre" : "AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation", "keywords" : "AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation"
+	, "author" : [{
+			"@type": "Person",
+			"email" : "malte@lightjason.org",
+			"name" : "Malte Aschermann",
+			"givenName" : "Malte",
+			"familyName" : "Aschermann"
+			, "image" : "http://meclab.in.tu-clausthal.de/images/people/malte_aschermann.png"
+		}
+		,{
+			"@type": "Person",
+			"email" : "philipp@lightjson.org",
+			"name" : "Philipp Kraus",
+			"givenName" : "Philipp",
+			"familyName" : "Kraus"
+			, "image" : "http://www.gravatar.com/avatar/2de3ae533823dae934d3b45b239f797c"
+			, "sameAs" : [
+				"http://xing.to/philippkraus",
+				"http://www.linkedin.com/in/philipp-kraus"
+			]
+		}
+		]
+}
+,{
+	"@context" : "http://schema.org",
+	"@type" : "TechArticle",
+	"headline" : "Tutorial: Communication",
+	"proficiencyLevel" : "Beginner",
+	"wordCount" :  1500 ,
+	"datePublished" : "2017-01-01T12:00:00+01:00",
+	"image" : "https://lightjason.github.io/images/logo.png" 
+}
+,{
+	"@context" : "http://schema.org",
+	"@type" : "Course",
+	"name" : "Tutorial: Communication",
+	"description" : "LightJason architecture does not support in general a build-in communication, because communication and agent addressing / naming depends on the domain or underlying software architecture. To create a communication structure you have to build-up your own naming model, a send action with a receiving plan and a data structure to map agent names / addresses to agent objects.  Previous Knowledge The tutorial can be done into two steps:",
+	"provider" : {
+		"@type" : "Organization",
+		"name" : "LightJason",
+		"sameAs" : "http://lightjason.org"
+	}
+}
+]</script></head><body><div class="document"><div id="nav">☰</div><div class="documentwrapper"><div class="bodywrapper"><div class="body"><h1 id="root"><a href="#root">Tutorial: Communication</a></h1><p>LightJason architecture does not support in general a build-in communication, because communication and agent addressing / naming depends on the domain or underlying software architecture. To create a communication structure you have to build-up your own naming model, a send action with a receiving plan and a data structure to map agent names / addresses to agent objects.</p><div id="toccontainer">Contents [<a href="#" id="tochideshow">Hide</a>]<div id="toc"></div></div><h2 id="previous-knowledge">Previous Knowledge</h2><p>The tutorial can be done into two steps:</p><ol><li>the basic agent definition from the <a href="/tutorials/agentspeak-in-fifteen-minutes/">AgentSpeak 15min</a> tutorial</li><li>the <a href="/tutorials/trigger/">triggering</a> and <a href="/tutorials/actions/">action</a> tutorial to create a <em>send-action</em></li></ol><blockquote><p><strong>Don’t reinvent the edge</strong><br>Communication can be a <em>very expensive</em> calling structure, especially on distributed systems. If you build your own communication structure just think about multi-threading and performance aspects. Within this tutorial we cannot show you all details of fast and efficient communication data structure, so we would like to show you the basics only. On a distributed system you have to organize the naming schema and searching methods of names and objects. If you need to transfer messages over the network, just think about serialization and deserialization performance. Java supports a <a href="https://docs.oracle.com/javase/tutorial/jndi/objects/serial.html">serialize interface</a> so don’t create self-defined string data structure, because for such message transfering there are a lot of other and well-known and estabilished components. Well known formats are <a href="https://en.wikipedia.org/wiki/JavaScript_Object_Notation">JSON</a>, <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> or <a href="https://en.wikipedia.org/wiki/Java_Architecture_for_XML_Binding">XML/XSD with Jaxb</a></p></blockquote><h2 id="agent">Agent</h2><p>For this example we create a small agent, which sends a random message to the agent with the name <code>agent 0</code>. The initial-goal triggers the <code>main</code>-plan, which generates the message and calls the send action.</p>
+
+<p><pre class="language-agentspeak "  data-language="AgentSpeak(L++)"><code class="language-agentspeak">
+!main.
+&#43;!main &lt;-
+    
+    R = generic/string/random( 12, &#34;abcdefghijklmnopqrstuvwxyz&#34;);
+    
+    
+     message/send(&#34;agent 0&#34;, R)
+.
+&#43;!message/receive(  message( Message ), from( AgentName )  ) &lt;-
+    
+    generic/print( MyName, &#34; received message [&#34;, Message, &#34;] from [&#34;, AgentName, &#34;] in cycle [&#34;, Cycle, &#34;]&#34;)
+.
+</code></pre>
+<p></p><h3 id="agent-with-name">Agent with name</h3><p>For communication a <em>name resolution</em> is needed, so the agents needs to get a name (here a string). This name will be used to determine the sender of a message</p>
+
+<p><pre class="language-java "  ><code class="language-java">
+package myagentproject;
+import org.lightjason.agentspeak.agent.IBaseAgent;
+import org.lightjason.agentspeak.configuration.IAgentConfiguration;
+final class MyCommunicationAgent extends IBaseAgent&lt;MyCommunicationAgent&gt;
+{
+    
+    private final String m_name;
+    
+    MyCommunicationAgent( final String p_name, final IAgentConfiguration&lt;MyCommunicationAgent&gt; p_configuration )
+    {
+        super( p_configuration );
+        m_name = p_name;
+    }
+    
+    final String name()
+    {
+        return m_name;
+    }
+}
+</code></pre>
+<p></p><h3 id="agent-factory-with-name-generating">Agent factory with name generating</h3><p>The agent factory must create the agent object and a unique name. Within this example we use one factory only, so each factory create a <em>send</em> action and the send action contains the name resolution. Based on this, the action must be accessable within the factory to register each agent. The name definition is here with the schema <code>agent &lt;number></code> but <strong>keep in mind that the generate method can be called in parallel, so the counter must be thread-safe.</strong> Java supports such <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/atomicvars.html">atomic variables</a>.</p>
+
+<p><pre class="language-java "  ><code class="language-java">
+package myagentproject;
+import org.lightjason.agentspeak.common.CCommon;
+import org.lightjason.agentspeak.generator.IBaseAgentGenerator;
+import org.lightjason.agentspeak.language.score.IAggregation;
+import java.io.InputStream;
+import java.text.MessageFormat;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+final class MyAgentGenerator extends IBaseAgentGenerator&lt;MyCommunicationAgent&gt;
+{
+    
+    private final CSend m_send;
+    
+    private final AtomicLong m_counter = new AtomicLong();
+    
+    MyAgentGenerator( final CSend p_send, final InputStream p_stream ) throws Exception
+    {
+        super(
+            
+            p_stream,
+            
+            Stream.concat(
+                
+                CCommon.actionsFromPackage(),
+                
+                Stream.of( p_send )
+                
+            ).collect( Collectors.toSet() ),
+            
+            
+            IAggregation.EMPTY,
+            
+            new CVariableBuilder()
+        );
+        m_send = p_send;
+    }
+    
+    @Override
+    public final MyCommunicationAgent generatesingle( final Object... p_data )
+    {
+        
+        
+        return m_send.register(
+            new MyCommunicationAgent(
+                
+                
+                
+                MessageFormat.format( &#34;agent {0}&#34;, m_counter.getAndIncrement() ),
+                
+                m_configuration
+            )
+        );
+    }
+    
+    final void unregister( final MyCommunicationAgent p_agent )
+    {
+        m_send.unregister( p_agent );
+    }
+}
+</code></pre>
+<p></p><h2 id="send-action-with-address-resolution">Send-Action with address resolution</h2><p>For communication basisc a <em>send</em> action must be created. This actions needs also an <em>address resolution</em> for the agent names, this can be an URL access or a string name. Within this example we use a map with string for the agent name and the value for the agent object. Each generated agent must be registered at this action so that other agents can send messages. The action tries to find the agent object based on the name, builds the goal-trigger and transfer the data to the other agent. On the next cycle call of the receiving agent the message goal-plan will be triggered.</p>
+
+<p><pre class="language-java "  ><code class="language-java">
+package myagentproject;
+import org.lightjason.agentspeak.action.IBaseAction;
+import org.lightjason.agentspeak.agent.IAgent;
+import org.lightjason.agentspeak.common.CPath;
+import org.lightjason.agentspeak.common.IPath;
+import org.lightjason.agentspeak.language.CLiteral;
+import org.lightjason.agentspeak.language.CRawTerm;
+import org.lightjason.agentspeak.language.ITerm;
+import org.lightjason.agentspeak.language.execution.IContext;
+import org.lightjason.agentspeak.language.execution.fuzzy.CFuzzyValue;
+import org.lightjason.agentspeak.language.execution.fuzzy.IFuzzyValue;
+import org.lightjason.agentspeak.language.instantiable.plan.trigger.CTrigger;
+import org.lightjason.agentspeak.language.instantiable.plan.trigger.ITrigger;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+final class CSend extends IBaseAction
+{
+    
+    private final Map&lt;String, MyCommunicationAgent&gt; m_agents = new ConcurrentHashMap&lt;&gt;();
+    @Override
+    public final IPath name()
+    {
+        return CPath.from( &#34;message/send&#34; );
+    }
+    @Override
+    public final int minimalArgumentNumber()
+    {
+        return 2;
+    }
+    @Override
+    public final IFuzzyValue&lt;Boolean&gt; execute( final IContext p_context, final boolean p_parallel, final List&lt;ITerm&gt; p_argument,
+                                               final List&lt;ITerm&gt; p_return, final List&lt;ITerm&gt; p_annotation
+    )
+    {
+        
+        final IAgent&lt;?&gt; l_receiver = m_agents.get( p_argument.get( 0 ).&lt;String&gt;raw() );
+        
+        if ( l_receiver == null )
+            return CFuzzyValue.from( false );
+        
+        l_receiver.trigger(
+            CTrigger.from(
+                ITrigger.EType.ADDGOAL,
+                
+                
+                CLiteral.from(
+                    &#34;message/receive&#34;,
+                    
+                    CLiteral.from(
+                        &#34;message&#34;,
+                        
+                        
+                        p_argument
+                            .subList( 1, p_argument.size() )
+                            .stream()
+                            .map( i -&gt; CRawTerm.from( i.raw() ) )
+                    ),
+                    
+                    
+                    
+                    CLiteral.from(
+                        &#34;from&#34;,
+                        CRawTerm.from(
+                            p_context.agent().&lt;MyCommunicationAgent&gt;raw().name()
+                        )
+                    )
+                )
+            )
+        );
+        return CFuzzyValue.from( true );
+    }
+    
+    final MyCommunicationAgent register( final MyCommunicationAgent p_agent )
+    {
+        m_agents.put( p_agent.name(), p_agent );
+        return p_agent;
+    }
+    
+    final MyCommunicationAgent unregister( final MyCommunicationAgent p_agent )
+    {
+        m_agents.remove( p_agent.name() );
+        return p_agent;
+    }
+}
+</code></pre>
+<p></p><h2 id="variable-builder">Variable-Builder</h2><p>The variable builder allows to create <em>individual variables and constants</em> during runtin within a plan. In this case we crate the constant <code>MyName</code> which stores the individual agent name. The <code>raw</code>-method allows to create an object reference with a safe-cast. The variable builder is added to the agent factory.</p>
+
+<p><pre class="language-java "  ><code class="language-java">
+package myagentproject;
+import org.lightjason.agentspeak.agent.IAgent;
+import org.lightjason.agentspeak.language.execution.IVariableBuilder;
+import org.lightjason.agentspeak.language.instantiable.IInstantiable;
+import org.lightjason.agentspeak.language.variable.CConstant;
+import org.lightjason.agentspeak.language.variable.IVariable;
+import java.util.stream.Stream;
+final class CVariableBuilder implements IVariableBuilder
+{
+    @Override
+    public final Stream&lt;IVariable&lt;?&gt;&gt; generate( final IAgent&lt;?&gt; p_agent, final IInstantiable p_runningcontext )
+    {
+        return Stream.of(
+            new CConstant&lt;&gt;( &#34;MyName&#34;, p_agent.&lt;MyCommunicationAgent&gt;raw().name() )
+        );
+    }
+}
+</code></pre>
+<p></p><h2 id="reference-solution">Reference Solution</h2><p>This tutorial depends on the tutorial <a href="/tutorials/agentspeak-in-fifteen-minutes">AgentSpeak-in-15min</a>, so the whole build process is explained within the basic tutorial. If you struggled at some point or wish to obtain our exemplary solution with code documentation to this tutorial, you can download the archive <a href="https://github.com/LightJason/Examples/archive/tutorial-agent-communication.zip">tutorial-agent-communication.zip</a> containing the source code and a executable <a href="https://github.com/LightJason/Examples/raw/jar-tutorial-agent-communication/myagentapp-1.0-SNAPSHOT.jar">Jar file</a>.</p><p>If you run the example the shown output can be different. For the first run we start the program with 10 agents and 5 iterations:</p><pre><code class="language-commandline">agent 0    received message [   pqepkellesxa   ] from [   agent 2   ] in cycle [   0   ]
+agent 0    received message [   vxhfapwtulty   ] from [   agent 5   ] in cycle [   0   ]
+agent 0    received message [   ilmhcdofoevm   ] from [   agent 6   ] in cycle [   0   ]
+
+agent 0    received message [   rjnvygvwsbqo   ] from [   agent 0   ] in cycle [   1   ]
+agent 0    received message [   dhcfpfhqbpop   ] from [   agent 1   ] in cycle [   1   ]
+agent 0    received message [   khtsbiripesx   ] from [   agent 7   ] in cycle [   1   ]
+agent 0    received message [   fjxdyjcwfdby   ] from [   agent 4   ] in cycle [   1   ]
+agent 0    received message [   anhdriizkknv   ] from [   agent 9   ] in cycle [   1   ]
+agent 0    received message [   ewklpggifoym   ] from [   agent 8   ] in cycle [   1   ]
+agent 0    received message [   rtxtdqfcuzpl   ] from [   agent 3   ] in cycle [   1   ]
+</code></pre><p>and run it again with equal arguments</p><pre><code class="language-commandline">agent 0    received message [   ggbiaiijtvtz   ] from [   agent 0   ] in cycle [   1   ]
+agent 0    received message [   mmlxwmifnedq   ] from [   agent 8   ] in cycle [   1   ]
+agent 0    received message [   qileeboovtlc   ] from [   agent 2   ] in cycle [   1   ]
+agent 0    received message [   ixruabyhlxfi   ] from [   agent 7   ] in cycle [   1   ]
+agent 0    received message [   hwkcdbjuqqyc   ] from [   agent 3   ] in cycle [   1   ]
+agent 0    received message [   benrjxxkrcog   ] from [   agent 1   ] in cycle [   1   ]
+agent 0    received message [   sqkuorfmknuq   ] from [   agent 6   ] in cycle [   1   ]
+agent 0    received message [   hcyrnovvacsb   ] from [   agent 9   ] in cycle [   1   ]
+agent 0    received message [   ldvxkosghaax   ] from [   agent 5   ] in cycle [   1   ]
+agent 0    received message [   vbykpbivcwow   ] from [   agent 4   ] in cycle [   1   ]
+</code></pre><p>You can see, that the agent 0 received messages in cycle 0 and 1 and the ordering of the executed plans are different. This behaviour is desired, because all agents run in parallel and so the agent can receive the message before it own cycle is called otherwise the cycle is called and after that the agent receive the message. <strong>So keep in mind that all execution is heavily asynchronized and parallel</strong></p></div></div></div><div class="sidebar" role="navigation" aria-label="main navigation"><div class="sidebarwrapper"><div class="logo"><a href="https://lightjason.github.io/">LightJason</a><div class="subtitle">Concurrent BDI multi-agent system</div></div><ul><li><a class="reference internal" href="/news/">News</a> <span class="sublink">(<a href="/news/index.xml">RSS</a>)</span></li><li><a class="reference internal" href="/publication/">Publication</a></li><li><a class="reference internal" href="/framework/">Framework</a></li><li><a class="reference internal" href="/knowledgebase/">Knowledge Base</a></li><li><a class="reference internal" href="/tutorials/">Tutorials</a></li><li><a class="reference internal" href="/about/">About</a></li><li><a class="reference internal" href="/contact/">Contact</a></li></ul><ul class="horizontal socialmedia"><li><a href="https://github.com/LightJason"><img src="/images/github.svg" alt="github" class="socialmediaimg"></a></li><li><a href="http://twitter.com/LightJasonAI"><img src="/images/twitter.svg" alt="twitter" class="socialmediaimg"></a></li><li><a href="https://vimeo.com/lightjason"><img src="/images/vimeo.svg" alt="vimeo" class="socialmediaimg"></a></li></ul><ul class="socialmediaaction"><li><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs")</script><a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a></li><li><script src="https://apis.google.com/js/platform.js" async defer></script><script>window.___gcfg={lang:"en-GB",parsetags:"onload"}</script><div class="g-plus" data-action="share" data-annotation="none"></div></li><li><script>!function(e,n,t){var o,c=e.getElementsByTagName(n)[0];e.getElementById(t)||(o=e.createElement(n),o.id=t,o.src="//connect.facebook.net/en-GB/sdk.js#xfbml=1&version=v2.8&appId=360647707384539",c.parentNode.insertBefore(o,c))}(document,"script","facebook-jssdk")</script><div class="fb-like" data-href="http://lightjason.org/tutorials/communication/" data-layout="button" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div></li></ul></div></div><div class="clear"></div></div><div class="footer"><span class="contact">info [at] lightjason.org</span><ul class="horizontal"><li><a href="https://github.com/LightJason/AgentSpeak">AgentSpeak(L++) Repository</a></li><li><a href="https://github.com/LightJason/REST">REST-API Repository</a></li><li>© Feb 2017</li></ul></div><script src="https://lightjason.github.io/js/lightbox.min.js"></script></body></html>

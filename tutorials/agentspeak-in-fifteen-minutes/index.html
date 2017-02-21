@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta name="msvalidate.01" content="2EB13C5538E9973D8DFC39C6A455DEFE"><meta name="google-site-verification" content="sVNU1mmaPgvbzlig03vdNtqHYnJNzvbdQYLCWqvtxRU"><meta name="description" content="LightJason is an artificial intelligence BDI multi-agent framework for adding AI with optimization and fuzzy-logical concepts to existing software-architecture"><meta name="keywords" content="AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=0.9"><link href="https://fonts.googleapis.com/css?family=Pridi:200,300,400,500,600,700" rel="stylesheet" media="all"><script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script><link href="https://lightjason.github.io/css/prism.css" rel="stylesheet" media="all"><link href="https://lightjason.github.io/css/layout.css" rel="stylesheet" media="all"><link href="https://lightjason.github.io/css/print.css" rel="stylesheet" media="print"><link href="https://lightjason.github.io/css/mobile.css" rel="stylesheet" media="screen and (max-width:1000px)"><link href="https://lightjason.github.io/css/lightbox.min.css" rel="stylesheet" media="screen"><script src="https://lightjason.github.io/js/prism.js"></script><script src="https://lightjason.github.io/js/prism-agentspeak.js"></script><script src="https://lightjason.github.io/js/toc.min.js"></script><script src="https://lightjason.github.io/js/teletype.js"></script><script src="https://lightjason.github.io/js/script.js"></script><script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-89676576-1","auto"),ga("send","pageview")</script><script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!1,skipTags:["script","noscript","style","textarea","pre","code"],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["autoload-all.js"]}}})</script><link href="https://lightjason.github.io/images/favicon.png" type="image/png" rel="shortcut icon"><link href="https://lightjason.github.io/news/index.xml" type="application/rss+xml" rel="alternate" title="LightJason"><title>LightJason — Tutorial: Develop an AgentSpeak Scenario in 15 Minutes</title><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@LightJasonAI"><meta name="twitter:title" content="LightJason - Tutorial: Develop an AgentSpeak Scenario in 15 Minutes"><meta name="twitter:description" content="This tutorial explains how to develop a simple, but full working scenario in 15 minutes with the most recent version of the AgentSpeak(L++) source code.
+Note: This tutorial aims at developers of multi-agent systems (MAS) and requires some basic understanding in programming.
+ Previous Knowledge The basic knowledge about agents and their execution mechanism from the knowledgebase
+Tools You Need  Working Maven greater than 3.0 installation. Java JDK 1...."><meta name="twitter:image" content="https://lightjason.github.io/images/logo.png"><meta property="og:site_name" content="LightJason"><meta property="og:url" content="http://lightjason.org"><meta property="og:title" content="LightJason - Tutorial: Develop an AgentSpeak Scenario in 15 Minutes"><meta property="og:image" content="https://lightjason.github.io/images/logo.png"><meta property="og:description" content="This tutorial explains how to develop a simple, but full working scenario in 15 minutes with the most recent version of the AgentSpeak(L++) source code.
+Note: This tutorial aims at developers of multi-agent systems (MAS) and requires some basic understanding in programming.
+ Previous Knowledge The basic knowledge about agents and their execution mechanism from the knowledgebase
+Tools You Need  Working Maven greater than 3.0 installation. Java JDK 1...."><script type="application/ld+json">[{
+	"@context": "http://schema.org",
+	"@type": "Organization",	
+	"name" : "LightJason",
+	"email" : "info@lightjason.org",
+	"url" : "http://lightjason.org",
+	"logo" : "https://lightjason.github.io/images/logo.png",
+	"founders": [{
+			"@type": "Person",
+			"email" : "malte@lightjason.org",
+			"name" : "Malte Aschermann",
+			"givenName" : "Malte",
+			"familyName" : "Aschermann"
+			, "image" : "http://meclab.in.tu-clausthal.de/images/people/malte_aschermann.png"
+		}
+		,{
+			"@type": "Person",
+			"email" : "philipp@lightjson.org",
+			"name" : "Philipp Kraus",
+			"givenName" : "Philipp",
+			"familyName" : "Kraus"
+			, "image" : "http://www.gravatar.com/avatar/2de3ae533823dae934d3b45b239f797c"
+			, "sameAs" : [
+				"http://xing.to/philippkraus",
+				"http://www.linkedin.com/in/philipp-kraus"
+			]
+		}
+		]
+},
+
+
+{
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	"name": "LightJason",
+	"alternateName": "LightJason",
+	"url":"http://lightjason.org"
+	, "license" : "https://creativecommons.org/licenses/by-sa/4.0/"
+	, "genre" : "AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation", "keywords" : "AI, BDI, Agent, Multiagentsystem, Concurrency, Java, Development, Artificial Intelligence, Software, Psychology, Sociology, Simulation"
+	, "author" : [{
+			"@type": "Person",
+			"email" : "malte@lightjason.org",
+			"name" : "Malte Aschermann",
+			"givenName" : "Malte",
+			"familyName" : "Aschermann"
+			, "image" : "http://meclab.in.tu-clausthal.de/images/people/malte_aschermann.png"
+		}
+		,{
+			"@type": "Person",
+			"email" : "philipp@lightjson.org",
+			"name" : "Philipp Kraus",
+			"givenName" : "Philipp",
+			"familyName" : "Kraus"
+			, "image" : "http://www.gravatar.com/avatar/2de3ae533823dae934d3b45b239f797c"
+			, "sameAs" : [
+				"http://xing.to/philippkraus",
+				"http://www.linkedin.com/in/philipp-kraus"
+			]
+		}
+		]
+}
+,{
+	"@context" : "http://schema.org",
+	"@type" : "TechArticle",
+	"headline" : "Tutorial: Develop an AgentSpeak Scenario in 15 Minutes",
+	"proficiencyLevel" : "Beginner",
+	"wordCount" :  1500 ,
+	"datePublished" : "2017-01-01T12:00:00+01:00",
+	"image" : "https://lightjason.github.io/images/logo.png" 
+}
+,{
+	"@context" : "http://schema.org",
+	"@type" : "Course",
+	"name" : "Tutorial: Develop an AgentSpeak Scenario in 15 Minutes",
+	"description" : "This tutorial explains how to develop a simple, but full working scenario in 15 minutes with the most recent version of the AgentSpeak(L++) source code. Note: This tutorial aims at developers of multi-agent systems (MAS) and requires some basic understanding in programming.  Previous Knowledge The basic knowledge about agents and their execution mechanism from the knowledgebase Tools You Need  Working Maven greater than 3.0 installation. Java JDK 1.",
+	"provider" : {
+		"@type" : "Organization",
+		"name" : "LightJason",
+		"sameAs" : "http://lightjason.org"
+	}
+}
+]</script></head><body><div class="document"><div id="nav">☰</div><div class="documentwrapper"><div class="bodywrapper"><div class="body"><h1 id="root"><a href="#root">Tutorial: Develop an AgentSpeak Scenario in 15 Minutes</a></h1><p>This tutorial explains how to develop a simple, but full working scenario in 15 minutes with the most recent version of the AgentSpeak(L++) source code.</p><p><strong>Note: This tutorial aims at developers of multi-agent systems (MAS) and requires some basic understanding in programming.</strong></p><div id="toccontainer">Contents [<a href="#" id="tochideshow">Hide</a>]<div id="toc"></div></div><h2 id="previous-knowledge">Previous Knowledge</h2><p>The basic knowledge about agents and their execution mechanism from the <a href="/knowledgebase">knowledgebase</a></p><h2 id="tools-you-need">Tools You Need</h2><ul><li>Working Maven greater than 3.0 <a href="http://maven.apache.org/install.html">installation</a>.</li><li>Java <strong>JDK</strong> 1.8 installation which can be obtained <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">here</a>.</li><li>Git installation (optional, but recommended)<ul><li>Linux: Installing <code>git</code> via your favourite package manager should be sufficient.</li><li>MacOS: Using <a href="http://brew.sh">Homebrew</a> with <code>brew install git</code>.</li><li><a href="https://git-for-windows.github.io">Git for Windows</a></li></ul></li></ul><h2 id="introduction">Introduction</h2><p>This tutorial gives you a <em>very short</em> introduction into LightJason’s AgentSpeak(L++) structure. Our <a href="http://lightjason.github.io/AgentSpeak/sources/index.html">source code documentation</a> can help you in developing your own MAS project according to your individual requirements.</p><p><strong>Note:</strong> Don’t hesitate to ask questions via email or on the <a href="https://github.com/LightJason/AgentSpeak/issues">issue tracker</a>.</p><p>This tutorial is structured as follows: First you will build AgentSpeak(L++) from source and install the resulting <em>AgentSpeak</em> package on your system, making it available as a dependency for your own MAS project. Then you will create your own MAS project based on the template created by the Maven tool.</p><p>All further configuration of <code>xml</code> files and programming will then take place in your own project’s directory.</p><p>For the following sections we assume that you are working inside the directory <code>Developer</code>. You are of course free to choose your own, in which case, please replace <code>Developer</code> accordingly.</p><h2 id="build-agentspeak-l-from-the-sources">Build AgentSpeak(L++) from the Sources</h2><ol><li><p>Obtain the current source code from <a href="https://github.com/LightJason/AgentSpeak">AgentSpeak(L++)</a> and place it into <code>Developer/AgentSpeak</code>. This can be done on the command line either via Git</p>
+
+<pre><code class="language-commandline">cd Developer
+git clone https://github.com/LightJason/AgentSpeak.git
+</code></pre>
+
+<p>or by downloading the <a href="https://github.com/LightJason/AgentSpeak/archive/master.zip">ZIP archive</a> and extracting it to <code>Developer</code>.</p>
+
+<pre><code class="language-commandline">cd Developer
+unzip AgentSpeak-master.zip
+</code></pre>
+
+<p><strong>Note:</strong> If you chose to download the <em>ZIP archive</em>, be aware that the resulting directory will be <code>AgentSpeak-master</code>. Either rename it to <code>AgentSpeak</code> or keep this in mind in the following sections.</p><p>You should now have the following directory structure:</p>
+
+<pre><code class="language-commandline">├── Developer/
+│   └── AgentSpeak/      
+</code></pre>
+
+</li><li><p>Change into the AgentSpeak project directory <code>Developer/AgentSpeak</code> and run <code>mvn install</code> to build and install AgentSpeak:</p>
+
+<pre><code class="language-commandline">cd Developer/AgentSpeak
+mvn install
+</code></pre>
+
+<p>AgentSpeak will be installed as a local maven artifact in the directory <code>~/.m2</code> and can be imported as a dependency by your project.</p><p>The build process should terminate with a <code>BUILD SUCCESS</code> message.</p></li></ol><h2 id="maven-project-configuration">Maven Project Configuration</h2><ol><li><p>Create an empty Maven project (see <a href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven in 5 minutes tutorial</a>) inside the <code>Developer</code> directory:</p>
+
+<pre><code class="language-commandline">cd Developer
+mvn archetype:generate -DgroupId=myagentproject -DartifactId=myagentapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+</code></pre>
+
+<p>Maven will then create a project template, resulting in the following directory structure:</p>
+
+<pre><code class="language-commandline">├── Developer/
+│   └── AgentSpeak/ &lt;-- AgentSpeak project (added in previous section)
+│   └── myagentapp/ &lt;-- created by Maven
+│       ├── pom.xml
+│       └── src/
+│           ├── main/
+│           │   └── java/
+│           │       └── myagentproject/
+│           │           └── App.java
+│           └── test/
+│               └── java/
+│                   └── myagentproject/
+│                       └── AppTest.java    
+</code></pre>
+
+<p><code>Developer/myagentapp/</code> is the directory in which your own MAS projects resides.</p></li><li><p>Take a note of the current values of <code>groupId</code>, <code>artifactId</code> and <code>version</code> from the AgentSpeak <a href="https://github.com/LightJason/AgentSpeak/blob/master/pom.xml#L27">pom.xml</a>:</p>
+
+<p><pre class="language-xml "  ><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.lightjason&lt;/groupId&gt;
+    &lt;artifactId&gt;AgentSpeak&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<p></p><p>Inside <code>Developer/myagentapp/</code> open the <code>pom.xml</code> with your favourite (programming) editor, navigate to the <code>&lt;dependencies></code> section and add the completed excerpt above or below the already present <code>&lt;dependency></code> entries (for example, you will also find an entry for JUnit within this section).</p></li><li><p><strong>For LightJason/AgentSpeak to run, it is crucial to enforce Java 1.8 support</strong> in your project. Add the following entry before the <code>&lt;dependencies></code> section:</p>
+
+<p><pre class="language-xml "  ><code class="language-xml">
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+        &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+    &lt;/properties&gt;
+</code></pre>
+<p></p></li><li><p>Put the following code inside the <code>&lt;project></code> section, e.g. after <code>&lt;/dependencies></code>, to include the <a href="https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html">Maven Shade Plugin</a> which creates an executable JAR when you build your project with <code>mvn package</code></p>
+
+<p><pre class="language-xml "  ><code class="language-xml">
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.4.3&lt;/version&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;phase&gt;package&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;shade&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;configuration&gt;
+                            &lt;transformers&gt;
+                                &lt;transformer implementation = &#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&#34;&gt;
+                                    &lt;mainClass&gt;myagentproject.App&lt;/mainClass&gt;
+                                &lt;/transformer&gt;
+                            &lt;/transformers&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+</code></pre>
+<p></p></li><li><p>Test-build your project by running <code>mvn package</code> inside <code>Developer/myagentapp/</code>, i.e. where your <code>pom.xml</code> is located:</p>
+
+<pre><code class="language-commandline">cd Developer/myagentapp/
+mvn package
+</code></pre>
+
+<p>It should print <code>BUILD SUCCESS</code>.</p>
+
+<p>The resulting, runnable JAR is located at  <code>Developer/myagentapp/target/myagentapp-1.0-SNAPSHOT.jar</code>.</p></li>
+
+<li><p>Import your Maven project into your favourite IDE.</p></li>
+</ol>
+
+<h2 id="agent-and-generator-classes">Agent and Generator Classes</h2>
+
+<p><strong>Note:</strong> The file names and paths provided in the following sections are relative to your project folder. For example <code>src/main/java/myagentproject/MyAgent.java</code> refers to the file <code>MyAgent.java</code> located at <code>Developer/myagentapp/src/main/java/myagentproject/</code>.</p>
+
+<h3 id="a-id-agentclass-a-agent-class"><a id="agentclass"></a> Agent Class</h3>
+
+<p>Each agent, which you use, must be inherited from our base class <a href="http://lightjason.github.io/AgentSpeak/sources/d3/d39/interfaceorg_1_1lightjason_1_1agentspeak_1_1agent_1_1IAgent_3_01T_01extends_01IAgent_3_04_4_01_4__coll__graph.svg" data-lightbox="iagent" data-title="IAgent">IAgent</a> interface, but we recommend our <a href="http://lightjason.github.io/AgentSpeak/sources/d6/df3/classorg_1_1lightjason_1_1agentspeak_1_1agent_1_1IBaseAgent_3_01T_01extends_01IAgent_3_04_4_01_4__coll__graph_org.svg" data-lightbox="ibaseagent" data-title="IBaseAgent">IBaseAgent</a> with a complete execution mechanism. <strong>Please note</strong> that you need to pass your agent class as a generic parameter to the definition of a LightJason agent class.</p>
+
+<p>Create an agent class <code>MyAgent.java</code> in <code>src/main/java/myagentproject/</code> as follows:</p>
+
+<p><pre class="language-java"><code class="language-java">
+package myagentproject;
+import org.lightjason.agentspeak.agent.IBaseAgent;
+import org.lightjason.agentspeak.configuration.IAgentConfiguration;
+final class MyAgent extends IBaseAgent&lt;MyAgent>
+{
+    
+    MyAgent( final IAgentConfiguration&lt;MyAgent> p_configuration )
+    {
+        super( p_configuration );
+    }
+}
+</code></pre></p>
+
+<h3 id="agent-generator-class">Agent Generator Class</h3>
+
+<p>Next create your own <a href="http://lightjason.github.io/AgentSpeak/sources/d1/dc9/interfaceorg_1_1lightjason_1_1agentspeak_1_1generator_1_1IAgentGenerator_3_01T_01extends_01IAgent_3_04_4_01_4__inherit__graph.svg" data-lightbox="agent-generator" data-title="agent generator">agent generator</a> (agent factory). This component is based on the <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">UML factory pattern</a>. Within the factory the agent script (ASL) is parsed once and you can generate a lot of agents with a single factory. We support a general implementation of the factory the <a href="http://lightjason.github.io/AgentSpeak/sources/dc/d04/classorg_1_1lightjason_1_1agentspeak_1_1generator_1_1IBaseAgentGenerator_3_01T_01extends_01IAgent_3_04_4_01_4__coll__graph.svg" data-lightbox="ibaseagentgenerator" data-title="IBaseAgentGenerator">IBaseAgentGenerator</a>.</p>
+
+<p>Create an agent generator class <code>MyAgentGenerator.java</code> in <code>src/main/java/myagentproject/</code> as follows:</p>
+
+</p><p><pre class="language-java"><code class="language-java">
+package myagentproject;
+import org.lightjason.agentspeak.common.CCommon;
+import org.lightjason.agentspeak.generator.IBaseAgentGenerator;
+import org.lightjason.agentspeak.language.score.IAggregation;
+import java.io.InputStream;
+import java.util.stream.Collectors;
+final class MyAgentGenerator extends IBaseAgentGenerator&lt;MyAgent>
+{
+    
+    MyAgentGenerator( final InputStream p_stream ) throws Exception
+    {
+        super(
+            
+            p_stream,
+            
+            CCommon.actionsFromPackage().collect( Collectors.toSet() ),
+            
+            
+            IAggregation.EMPTY
+        );
+    }
+    
+    @Override
+    public final MyAgent generatesingle( final Object... p_data )
+    {
+        return new MyAgent( m_configuration );
+    }
+}
+</code></pre></p>
+
+<h3 id="write-your-own-runtime">Write Your Own Runtime</h3>
+
+<p>In this section you will write your own runtime<sup class="footnote-ref" id="fnref:runtime"><a rel="footnote" href="#fn:runtime">1</a></sup> within the <code>main</code> method of the <code>App</code> class.
+The runtime is responsible for running the agents in each cycle.
+We are using <a href="https://docs.oracle.com/javase/tutorial/collections/streams/">Java streams</a> to execute the agent, but you can use also a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html">thread-pool</a>, because all agents implement the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html">Callable</a> interface (the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html">Future</a> object is the agent in the state $cycle + 1$)</p>
+
+</p><p><pre class="language-java"><code class="language-java">
+package myagentproject;
+import java.io.FileInputStream;
+import java.util.Collections;
+import java.util.Set;
+import java.util.logging.LogManager;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+final class App
+{
+    static
+    {
+        
+        LogManager.getLogManager().reset();
+    }
+    
+    private App()
+    {
+    }
+    
+    public static void main( final String[] p_args )
+    {
+        if ( p_args.length &lt; 2 )
+            throw new RuntimeException( "arguments are not set: ASL script, number of agents" );
+        
+        
+        
+        
+        final Set&lt;MyAgent> l_agents;
+        try
+            (
+                final FileInputStream l_stream = new FileInputStream( p_args[0] );
+            )
+        {
+            
+            l_agents = Collections.unmodifiableSet(
+                new MyAgentGenerator( l_stream )
+                    .generatemultiple( Integer.parseInt( p_args[1] ) )
+                    .collect( Collectors.toSet() )
+            );
+        }
+        catch ( final Exception l_exception )
+        {
+            l_exception.printStackTrace();
+            return;
+        }
+        
+        IntStream
+            .range(
+                0,
+                p_args.length &lt; 3
+                ? Integer.MAX_VALUE
+                : Integer.parseInt( p_args[2] )
+            )
+            .forEach( j -> l_agents.parallelStream().forEach( i ->
+                                                              {
+                                                                  try
+                                                                  {
+                                                                      i.call();
+                                                                  }
+                                                                  catch ( final Exception l_exception )
+                                                                  {
+                                                                      l_exception.printStackTrace();
+                                                                  }
+                                                              } ) );
+    }
+}
+</code></pre></p>
+
+<h3 id="write-your-agent-script">Write Your Agent Script</h3>
+
+<p>Create a simple <em>Hello World</em> agent for testing purposes.
+Add a file <code>agent.asl</code> in the top-level directory of your project with the following content:</p>
+
+</p><p><pre class="language-agentspeak" data-language="AgentSpeak(L++)"><code class="language-agentspeak">
+!main.
++!main &lt;-
+    generic/print("Hello World!");
+    !mynextgoal
+.
++!mynextgoal &lt;-
+    generic/print("Hello World! (again)", Cycle);
+    !mynextgoal
+.
+</code></pre></p>
+
+<p>The agent starts in cycle $0$ with the initial goal <code>!main</code>. As the plan <code>main</code> matches, it gets executed, i.e. printing &ldquo;Hello World&rdquo; and adding <code>mynextgoal</code> to be triggered in the next cycle.
+In cycle $1$ and preceding cycles $1+n$ the agent will execute the plan <code>mynextgoal</code>, printing <code>Hello World! (again)</code> with the current cycle number and adds the trigger for the same plan for the preceding cycle.</p>
+
+<h3 id="run-it">Run It</h3>
+
+<ol>
+<li><p>Run Maven within your project directory to build the program:</p>
+
+<pre><code class="language-commandline">mvn package
+</code></pre></li>
+
+<li><p>Run the program to create 500 agents based on the <code>agent.asl</code> and the agents will run 1000 cycles:</p>
+
+<pre><code class="language-commandline">java -jar target/myagentapp-1.0-SNAPSHOT.jar agent.asl 500 1000
+</code></pre></li>
+
+<li><p>Observe the CPU load and time with the print actions (code above) and without (code below):
+<pre class="language-agentspeak" data-language="AgentSpeak(L++)"><code class="language-agentspeak">
+!main.
++!main &lt;-
+    !mynextgoal
+.
++!mynextgoal &lt;-
+    !mynextgoal
+.
+</code></pre></p>
+
+<p>i.e. run
+</p><pre><code class="language-commandline">java -jar target/myagentapp-1.0-SNAPSHOT.jar agent.asl 500 1000
+</code></pre>
+
+<p>and compare it with
+<p></p><pre><code class="language-commandline">java -jar target/myagentapp-1.0-SNAPSHOT.jar agent_noprint.asl 500 1000
+</code></pre>
+
+<p>On a recent dual-core 2C/4T laptop (benchmarked with the <a href="https://linux.die.net/man/1/time">Linux/Unix tool</a> <code>time</code>) this yields
+<p></p><pre><code class="language-commandline">time java -jar target/myagentapp-1.0-SNAPSHOT.jar agent.asl 500 1000
+...
+77.33s user 8.22s system 200% cpu 42.659 total
+</code></pre>
+
+<p>vs.
+<p></p><pre><code class="language-commandline">time java -jar target/myagentapp-1.0-SNAPSHOT.jar agent_noprint.asl 500 1000
+...
+37.77s user 1.14s system 327% cpu 11.888 total
+</code></pre><p>It is noteworthy, that</p><ul><li>the load gets well distributed across the CPU-cores and</li><li>too many prints have a negative impact on the performance, as you are then basically benchmarking your shell ;-)</li></ul></li></ol><h2 id="reference-solution">Reference Solution</h2><p>If you struggled at some point or wish to obtain our exemplary solution with code documentation to this tutorial, you can download the archive <a href="https://github.com/LightJason/Examples/archive/tutorial-agentspeak-in-15min.zip">tutorial-agentspeak-in-15min.zip</a> containing the source code and a executable <a href="https://github.com/LightJason/Examples/raw/jar-tutorial-agentspeak-in-15min/myagentapp-1.0-SNAPSHOT.jar">Jar file</a>.</p><div class="footnotes"><hr><ol><li id="fn:runtime">For creating a complex and fast runtime have a look at general object-orientated programming patterns. Here we only provide a short example to show you how you can work with AgentSpeak(L++) agents. <a class="footnote-return" href="#fnref:runtime"><sup>[return]</sup></a></li></ol></div></div></div></div><div class="sidebar" role="navigation" aria-label="main navigation"><div class="sidebarwrapper"><div class="logo"><a href="https://lightjason.github.io/">LightJason</a><div class="subtitle">Concurrent BDI multi-agent system</div></div><ul><li><a class="reference internal" href="/news/">News</a> <span class="sublink">(<a href="/news/index.xml">RSS</a>)</span></li><li><a class="reference internal" href="/publication/">Publication</a></li><li><a class="reference internal" href="/framework/">Framework</a></li><li><a class="reference internal" href="/knowledgebase/">Knowledge Base</a></li><li><a class="reference internal" href="/tutorials/">Tutorials</a></li><li><a class="reference internal" href="/about/">About</a></li><li><a class="reference internal" href="/contact/">Contact</a></li></ul><ul class="horizontal socialmedia"><li><a href="https://github.com/LightJason"><img src="/images/github.svg" alt="github" class="socialmediaimg"></a></li><li><a href="http://twitter.com/LightJasonAI"><img src="/images/twitter.svg" alt="twitter" class="socialmediaimg"></a></li><li><a href="https://vimeo.com/lightjason"><img src="/images/vimeo.svg" alt="vimeo" class="socialmediaimg"></a></li></ul><ul class="socialmediaaction"><li><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs")</script><a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a></li><li><script src="https://apis.google.com/js/platform.js" async defer></script><script>window.___gcfg={lang:"en-GB",parsetags:"onload"}</script><div class="g-plus" data-action="share" data-annotation="none"></div></li><li><script>!function(e,n,t){var o,c=e.getElementsByTagName(n)[0];e.getElementById(t)||(o=e.createElement(n),o.id=t,o.src="//connect.facebook.net/en-GB/sdk.js#xfbml=1&version=v2.8&appId=360647707384539",c.parentNode.insertBefore(o,c))}(document,"script","facebook-jssdk")</script><div class="fb-like" data-href="http://lightjason.org/tutorials/agentspeak-in-fifteen-minutes/" data-layout="button" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div></li></ul></div></div><div class="clear"></div></div><div class="footer"><span class="contact">info [at] lightjason.org</span><ul class="horizontal"><li><a href="https://github.com/LightJason/AgentSpeak">AgentSpeak(L++) Repository</a></li><li><a href="https://github.com/LightJason/REST">REST-API Repository</a></li><li>© Feb 2017</li></ul></div><script src="https://lightjason.github.io/js/lightbox.min.js"></script></body></html>

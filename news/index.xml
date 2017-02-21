@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on LightJason</title>
+    <link>https://lightjason.github.io/news/index.xml</link>
+    <description>Recent content  in News  on LightJason</description><language>en-GB</language><lastBuildDate>Fri, 17 Feb 2017 20:29:56 +0100</lastBuildDate><atom:link href="/news/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Update actions and agent cycle documentation</title>
+      <link>https://lightjason.github.io/news/2017-02-actionscycle/</link>
+      <pubDate>Fri, 17 Feb 2017 20:29:56 +0100</pubDate><guid>https://lightjason.github.io/news/2017-02-actionscycle/</guid>
+      <description>Update actions and agent cycle description within the knowledge base. The agent cycle images allows you to use a mouse over effect to highlight elements. The action list links to the source code documentation. We will append the description of the actions soon.
+</description>
+    </item><item>
+      <title>Tutorial and knowledge base working in progress</title>
+      <link>https://lightjason.github.io/news/2017-02-tutorials/</link>
+      <pubDate>Fri, 10 Feb 2017 00:11:43 +0100</pubDate><guid>https://lightjason.github.io/news/2017-02-tutorials/</guid>
+      <description>Update the knowledge base and tutorials and add an example repository with source codes and generated jar files also:  We reduce the tutorials, so that each tutorial contains only one description with sources. For each tutorial we create a full working example and explain it. On the knowledge base we put a schematic illustration of our agent cycle and compare it with the original Jason cycle.  Tutorials and knowledge base are heavily under developing, because we would like to use LightJason also in teaching
+</description>
+    </item><item>
+      <title>Add emergency video</title>
+      <link>https://lightjason.github.io/news/2017-02-video/</link>
+      <pubDate>Thu, 02 Feb 2017 01:13:14 +0100</pubDate><guid>https://lightjason.github.io/news/2017-02-video/</guid>
+      <description>Our first benchmarking video (which is also inserted into our technical report). The video present a performance test of our framework with 15.000 agents on an emergency scenarion. The video is running in realtime on a single computer (iMac with 2,9 GHz Intel Core i5, 16 GB RAM and OSX El Captain 10.11.6).
+ https://vimeo.com/lightjason/emergencyscenario</description>
+    </item><item>
+      <title>Update publication</title>
+      <link>https://lightjason.github.io/news/2017-02-publication/</link>
+      <pubDate>Wed, 01 Feb 2017 06:18:00 +0100</pubDate><guid>https://lightjason.github.io/news/2017-02-publication/</guid>
+      <description>We have updated the our publication list and the PDF files for downloading.
+</description>
+    </item><item>
+      <title>Mobile website</title>
+      <link>https://lightjason.github.io/news/2017-01-mobile/</link>
+      <pubDate>Thu, 05 Jan 2017 16:17:51 +0100</pubDate><guid>https://lightjason.github.io/news/2017-01-mobile/</guid>
+      <description>We have created a mobile version of our website for any mobile devices, but we need to optimize the website for caching.
+</description>
+    </item><item>
+      <title>Tutorial Update</title>
+      <link>https://lightjason.github.io/news/2017-01-tutorial/</link>
+      <pubDate>Sun, 01 Jan 2017 22:02:54 +0100</pubDate><guid>https://lightjason.github.io/news/2017-01-tutorial/</guid>
+      <description>We update the tutorials with a short introduction in efficient beliefbases and communication The LightJason achitecture allows you to create on-demand beliefbases (which uses a lazy loading) structure. The beliefs within the beliefbase are generated during the agent gets access to the literal. This pattern is very fast and efficient.
+The communication of LightJason does not define any build-in agent communication, so for each scenario you need to create your own communication structure. within the tutorial we show you a baseline example to implement communication.
+</description>
+    </item><item>
+      <title>EUMAS 2016 Slides</title>
+      <link>https://lightjason.github.io/news/2016-12-eumas/</link>
+      <pubDate>Thu, 15 Dec 2016 17:30:49 +0100</pubDate><guid>https://lightjason.github.io/news/2016-12-eumas/</guid>
+      <description>Our slides of our EUMAS 2016 talk, a 15min tutorial to create a full working AgentSpeak(L&#43;&#43;) example from scratch. </description>
+    </item><item>
+      <title>REST-API</title>
+      <link>https://lightjason.github.io/news/2016-12-restapi/</link>
+      <pubDate>Thu, 01 Dec 2016 17:23:49 +0100</pubDate><guid>https://lightjason.github.io/news/2016-12-restapi/</guid>
+      <description>We added a REST-API to control the agent execution structure and behaviour. The API is written with Jersey and can be included into existing Servlet structures. The component is written as a single add-on for our AgentSpeak(L&#43;&#43;) agents and is located in its own repository.
+</description>
+    </item><item>
+      <title>EUMAS 2016</title>
+      <link>https://lightjason.github.io/news/2016-11-eumas/</link>
+      <pubDate>Fri, 25 Nov 2016 11:30:33 +0200</pubDate><guid>https://lightjason.github.io/news/2016-11-eumas/</guid>
+      <description>We will join the EUMAS 2016 conference and present our current work. Right now we are within the testing-phase of LightJason&amp;rsquo;s AgentSpeak(L&#43;&#43;). Right now there exist some examples for various domains and applications:  Towers of Hanoi ASL and Java class Pokemon-Scenario currently under development Asimov our new research project A full documentation on the website is also still under construction (hope for finishing at the end of Jan 2017) </description>
+    </item><item>
+      <title>Add Railroad / Syntax Diagrams</title>
+      <link>https://lightjason.github.io/news/2016-07-railroad/</link>
+      <pubDate>Sat, 16 Jul 2016 00:31:06 +0200</pubDate><guid>https://lightjason.github.io/news/2016-07-railroad/</guid>
+      <description>For our AgentSpeak(L&#43;&#43;) language defintion, we have created railroad / syntax diagrams based on the EBNF grammar definition. There are two main diagram types. The diagram are interactive so the grammar rules can be swapped and each element within a rule is clickable and referenced its own definition. The grammar files will be generated automatically based on the current source code definition
+ Agent PlanBundle </description>
+    </item><item>
+      <title>Project is start-up</title>
+      <link>https://lightjason.github.io/news/2016-07-projectonline/</link>
+      <pubDate>Fri, 01 Jul 2016 19:30:33 +0200</pubDate><guid>https://lightjason.github.io/news/2016-07-projectonline/</guid>
+      <description>We have created the main website of the project, registered the domain lightjason.org and right now trying to create the first full Maven package. We are working on a first example similar to the Gold Miners scenario (see JaCaMo) but with OpenGL support with the Java LibGDX library. We will be working on the project and the website continuously.
+</description>
+    </item></channel>
+</rss>
